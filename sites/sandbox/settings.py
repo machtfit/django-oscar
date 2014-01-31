@@ -306,6 +306,7 @@ INSTALLED_APPS = [
     'south',
     'rosetta',          # For i18n testing
     'compressor',
+    'django_tables2',
     'apps.gateway',     # For allowing dashboard access
 ]
 from oscar import get_core_apps

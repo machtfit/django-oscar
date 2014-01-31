@@ -247,6 +247,7 @@ INSTALLED_APPS = [
     # External apps
     'django_extensions',
     'debug_toolbar',
+    'django_tables2',
     # For profile testing
     'apps.user',
     'apps.bigbang',

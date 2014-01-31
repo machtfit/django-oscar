@@ -30,6 +30,7 @@ def configure():
                 'django.contrib.staticfiles',
                 'sorl.thumbnail',
                 'compressor',
+                'django_tables2',
                 # Use a custom partner app to test overriding models.  I can't
                 # find a way of doing this on a per-test basis, so I'm using a
                 # global change.
