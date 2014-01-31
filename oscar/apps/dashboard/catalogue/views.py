@@ -335,6 +335,7 @@ class ProductCreateUpdateView(generic.UpdateView):
             {
                 'product': self.object,
                 'creating': self.creating,
+                'request': self.request
             })
         messages.success(self.request, msg)
         url = reverse('dashboard:catalogue-product-list')
