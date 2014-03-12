@@ -186,9 +186,13 @@ def get_model(app_label, model_name, *args, **kwargs):
     model class can't be imported.
     This is merely a thin wrapper around Django's get_model function.
     """
+    kwargs.update(only_installed=False)
     model = django_get_model(app_label, model_name, *args, **kwargs)
     if model is None:
-        raise ImportError(
-            "{app_label}.{model_name} could not be imported.".format(
-                app_label=app_label, model_name=model_name))
+        import inspect
+        stack = inspect.stack()
+        print("get_model: {app_label}.{model_name} could not be imported."
+              .format(app_label=app_label, model_name=model_name))
+        print("in {frame[1]}:{frame[2]}\n\t{frame[4][0]}"
+              .format(frame=stack[1]))
     return model
