@@ -3776,7 +3776,8 @@ div[data-spy="affix"].affix {
   margin: 0 -3px 0 0;
 }
 /* Changes for wysihtml5 */
-textarea {
+textarea.wysiwyg,
+form.wysiwyg textarea {
   width: 500px;
   height: 400px;
 }
