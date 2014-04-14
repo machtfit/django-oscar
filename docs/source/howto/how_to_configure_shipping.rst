@@ -16,12 +16,12 @@ How Oscar handles shipping charges
 Oscar uses a "repository" class to manage shipping charges.  The class is used
 in two ways:
 
-* _It provides a list of shipping methods available to the user._  This is used to
+* **It provides a list of shipping methods available to the user.**  This is used to
   generate the content for the shipping methods page of checkout, where the user
   can choose a shipping method.  The methods available generally depend on the
   user, the basket and the shipping address.
 
-* _It allows a shipping method to be retrieved based on a identifying code._  When
+* **It allows a shipping method to be retrieved based on a identifying code.**  When
   a user selects a shipping method during checkout, it is persisted in the
   session using a code.  This code is used to retrieve the chosen shipping
   method when it is required.
@@ -109,10 +109,10 @@ The repository class is responsible for return shipping method instances.  Oscar
 defines several of these but it is easy to write your own, their interface is
 simple.
 
-The base shipping method class ``oscar.apps.shipping.base.ShippingMethod`` (that
+The base shipping method class ``oscar.apps.shipping.base.Base`` (that
 all shipping methods should subclass has API:
 
-.. autoclass:: oscar.apps.shipping.base.ShippingMethod
+.. autoclass:: oscar.apps.shipping.base.Base
     :members:
     :noindex:
 
@@ -152,4 +152,4 @@ to implement your custom shipping charge logic.
 .. tip::
 
     Most of the shipping logic should live in the repository class, the method
-    instance is only responsble for returning the charge for a given basket.
+    instance is only responsible for returning the charge for a given basket.

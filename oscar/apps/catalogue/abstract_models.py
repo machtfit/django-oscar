@@ -68,7 +68,8 @@ class AbstractProductClass(models.Model):
 
 class AbstractCategory(MP_Node):
     """
-    A product category.
+    A product category. Merely used for navigational purposes; has no
+    effects on business logic.
 
     Uses django-treebeard.
     """
@@ -199,7 +200,7 @@ class AbstractProduct(models.Model):
     For example, a canonical product would have a title like "Green fleece"
     while its children would be "Green fleece - size L".
     """
-    #: Universal product code
+
     upc = NullCharField(
         _("UPC"), max_length=64, blank=True, null=True, unique=True,
         help_text=_("Universal Product Code (UPC) is an identifier for "
@@ -496,7 +497,13 @@ class AbstractProduct(models.Model):
         Returns the primary image for a product. Usually used when one can
         only display one product image, e.g. in a list of products.
         """
-        images = self.images.all().order_by('display_order')
+        images = self.images.all()
+        ordering = self.images.model.Meta.ordering
+        if not ordering or ordering[0] != 'display_order':
+            # Only apply order_by() if a custom model doesn't use default
+            # ordering. Applying order_by() busts the prefetch cache of
+            # the ProductManager
+            images = images.order_by('display_order')
         try:
             return images[0]
         except IndexError:
@@ -1000,7 +1007,7 @@ class AbstractOption(models.Model):
 
     This is not the same as an 'attribute' as options do not have a fixed value
     for a particular item.  Instead, option need to be specified by a customer
-    when add the item to their basket.
+    when they add the item to their basket.
     """
     name = models.CharField(_("Name"), max_length=128)
     code = AutoSlugField(_("Code"), max_length=128, unique=True,
@@ -1085,6 +1092,8 @@ class AbstractProductImage(models.Model):
     class Meta:
         abstract = True
         unique_together = ("product", "display_order")
+        # Any custom models should ensure that this ordering is unchanged, or
+        # your query count will explode. See AbstractProduct.primary_image.
         ordering = ["display_order"]
         verbose_name = _('Product Image')
         verbose_name_plural = _('Product Images')

@@ -31,11 +31,9 @@ var oscar = (function(o, $) {
                     toolbar: "styleselect | bold italic blockquote | bullist numlist | link"
                 }
             };
-            o.dashboard.options = $.extend(defaults, options);
+            o.dashboard.options = $.extend(true, defaults, options);
 
             o.dashboard.initWidgets(window.document);
-
-            $('.scroll-pane').jScrollPane();
 
             $(".category-select ul").prev('a').on('click', function(){
                 var $this = $(this),
