@@ -23,6 +23,8 @@ class Shop(Application):
     dashboard_app = get_class('dashboard.app', 'application')
     offer_app = get_class('offer.app', 'application')
 
+    PasswordResetForm = get_class('customer.forms', 'PasswordResetForm')
+
     def get_urls(self):
         urls = [
             url(r'^catalogue/', include(self.catalogue_app.urls)),
@@ -38,7 +40,7 @@ class Shop(Application):
             # the reverse function from working.
             url(r'^password-reset/$',
                 login_forbidden(auth_views.password_reset),
-                {'password_reset_form': forms.PasswordResetForm,
+                {'password_reset_form': self.PasswordResetForm,
                  'post_reset_redirect': reverse_lazy('password-reset-done')},
                 name='password-reset'),
             url(r'^password-reset/done/$',
