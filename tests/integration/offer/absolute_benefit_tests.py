@@ -19,7 +19,6 @@ class TestAnAbsoluteDiscountAppliedWithCountCondition(TestCase):
             type=models.Condition.COUNT,
             value=2)
         self.offer = mock.Mock()
-        self.offer.applies_to_tax_exclusive_prices = False
         self.benefit = models.AbsoluteDiscountBenefit.objects.create(
             range=range,
             type=models.Benefit.FIXED,
@@ -112,7 +111,6 @@ class TestAnAbsoluteDiscount(TestCase):
             type=models.Benefit.FIXED,
             value=D('4.00'))
         self.offer = mock.Mock()
-        self.offer.applies_to_tax_exclusive_prices = False
         self.basket = factories.create_basket(empty=True)
 
     def test_applies_correctly_when_discounts_need_rounding(self):
@@ -144,7 +142,6 @@ class TestAnAbsoluteDiscountWithMaxItemsSetAppliedWithCountCondition(TestCase):
             value=D('3.00'),
             max_affected_items=1)
         self.offer = mock.Mock()
-        self.offer.applies_to_tax_exclusive_prices = False
         self.basket = factories.create_basket(empty=True)
 
     def test_applies_correctly_to_empty_basket(self):
@@ -189,7 +186,6 @@ class TestAnAbsoluteDiscountAppliedWithValueCondition(TestCase):
             type=models.Benefit.FIXED,
             value=D('3.00'))
         self.offer = mock.Mock()
-        self.offer.applies_to_tax_exclusive_prices = False
         self.basket = factories.create_basket(empty=True)
 
     def test_applies_correctly_to_empty_basket(self):
@@ -242,7 +238,6 @@ class TestAnAbsoluteDiscountWithMaxItemsSetAppliedWithValueCondition(TestCase):
             value=D('3.00'),
             max_affected_items=1)
         self.offer = mock.Mock()
-        self.offer.applies_to_tax_exclusive_prices = False
         self.basket = factories.create_basket(empty=True)
 
     def test_applies_correctly_to_empty_basket(self):
