@@ -10,17 +10,17 @@ from oscar.test import factories
 class TestANoneConditionWithPercentageDiscount(TestCase):
 
     def setUp(self):
-        range = models.Range.objects.create(
+        range = models.Range(
             name="All products", includes_all_products=True)
-        condition = models.Condition.objects.create(
+        condition = models.NoneCondition(
             range=range,
             type=models.Condition.NONE)
-        benefit = models.Benefit.objects.create(
+        benefit = models.PercentageDiscountBenefit(
             range=range,
             type=models.Benefit.PERCENTAGE,
             value=20,
             max_affected_items=1)
-        self.offer = models.ConditionalOffer.objects.create(
+        self.offer = models.ConditionalOffer(
             name="Test",
             offer_type=models.ConditionalOffer.SITE,
             condition=condition,

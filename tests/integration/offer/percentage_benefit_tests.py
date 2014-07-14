@@ -11,12 +11,12 @@ from oscar.test.basket import add_product, add_products
 class TestAPercentageDiscountAppliedWithNoneCondition(TestCase):
 
     def setUp(self):
-        range = models.Range.objects.create(
+        range = models.Range(
             name="All products", includes_all_products=True)
-        self.condition = models.NoneCondition.objects.create(
+        self.condition = models.NoneCondition(
             range=range,
             type=models.Condition.NONE)
-        self.benefit = models.PercentageDiscountBenefit.objects.create(
+        self.benefit = models.PercentageDiscountBenefit(
             range=range,
             type=models.Benefit.PERCENTAGE,
             value=20)
@@ -55,12 +55,12 @@ class TestAPercentageDiscountAppliedWithNoneCondition(TestCase):
 class TestAPercentageDiscountWithMaxItemsSetAppliedWithNoneCondition(TestCase):
 
     def setUp(self):
-        range = models.Range.objects.create(
+        range = models.Range(
             name="All products", includes_all_products=True)
-        self.condition = models.NoneCondition.objects.create(
+        self.condition = models.NoneCondition(
             range=range,
             type=models.Condition.NONE)
-        self.benefit = models.PercentageDiscountBenefit.objects.create(
+        self.benefit = models.PercentageDiscountBenefit(
             range=range,
             type=models.Benefit.PERCENTAGE,
             value=20,
