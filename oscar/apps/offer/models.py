@@ -545,6 +545,15 @@ class Benefit(models.Model):
         verbose_name_plural = _("Benefits")
 
     def proxy(self):
+        klassmap = {
+            self.PERCENTAGE: PercentageDiscountBenefit,
+            self.SHIPPING_ABSOLUTE: ShippingAbsoluteDiscountBenefit,
+            self.SHIPPING_FIXED_PRICE: ShippingFixedPriceBenefit,
+            self.SHIPPING_PERCENTAGE: ShippingPercentageDiscountBenefit}
+
+        if self.__class__ in klassmap.values():
+            return self
+
         field_dict = dict(self.__dict__)
         for field in list(field_dict.keys()):
             if field.startswith('_'):
@@ -553,11 +562,6 @@ class Benefit(models.Model):
         if self.proxy_class:
             klass = load_proxy(self.proxy_class)
             return klass(**field_dict)
-        klassmap = {
-            self.PERCENTAGE: PercentageDiscountBenefit,
-            self.SHIPPING_ABSOLUTE: ShippingAbsoluteDiscountBenefit,
-            self.SHIPPING_FIXED_PRICE: ShippingFixedPriceBenefit,
-            self.SHIPPING_PERCENTAGE: ShippingPercentageDiscountBenefit}
         if self.type in klassmap:
             return klassmap[self.type](**field_dict)
         raise RuntimeError("Unrecognised benefit type (%s)" % self.type)
