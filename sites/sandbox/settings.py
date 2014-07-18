@@ -412,7 +412,7 @@ OSCAR_ORDER_STATUS_CASCADE = {
 
 USE_LESS = False
 
-COMPRESS_ENABLED = True
+COMPRESS_ENABLED = False
 COMPRESS_PRECOMPILERS = (
     ('text/less', 'lessc {infile} {outfile}'),
 )
