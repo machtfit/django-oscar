@@ -6,6 +6,7 @@ from django.core.urlresolvers import reverse
 from django.views.generic import ListView, DetailView, DeleteView, \
     UpdateView, FormView, TemplateView
 from django.views.generic.detail import SingleObjectMixin
+from django.views.generic.edit import FormMixin
 
 from django_tables2 import SingleTableMixin
 
@@ -24,7 +25,7 @@ ProductAlert = get_model('customer', 'ProductAlert')
 User = get_user_model()
 
 
-class IndexView(BulkEditMixin, SingleTableMixin, TemplateView):
+class IndexView(BulkEditMixin, SingleTableMixin, FormMixin, TemplateView):
     template_name = 'dashboard/users/index.html'
     table_pagination = True
     model = User
@@ -37,23 +38,39 @@ class IndexView(BulkEditMixin, SingleTableMixin, TemplateView):
 
     def get_queryset(self):
         queryset = self.model.objects.all().order_by('-date_joined')
+        return self.process_search(queryset)
+
+    def get_form_kwargs(self):
+        """
+        Pass GET data to form if search form was submitted
+        """
+        kwargs = super(IndexView, self).get_form_kwargs()
+
+        if 'search' in self.request.GET:
+            kwargs.update({
+                'data': self.request.GET,
+            })
+
+        return kwargs
+
+    def process_search(self, queryset):
         self.desc_ctx = {
             'main_filter': _('All users'),
             'email_filter': '',
             'name_filter': '',
         }
 
-        if 'email' not in self.request.GET:
-            self.form = self.form_class()
-            return queryset
-
-        self.form = self.form_class(self.request.GET)
+        form_class = self.get_form_class()
+        self.form = self.get_form(form_class)
 
         if not self.form.is_valid():
             return queryset
 
         data = self.form.cleaned_data
 
+        return self.filter_by_search(queryset, data)
+
+    def filter_by_search(self, queryset, data):
         if data['email']:
             email = normalise_email(data['email'])
             queryset = queryset.filter(email__istartswith=email)
