@@ -80,12 +80,6 @@ class ProductListView(SingleTableMixin, generic.TemplateView):
         ctx = super(ProductListView, self).get_context_data(**kwargs)
         ctx['form'] = self.form
         ctx['productclass_form'] = self.productclass_form_class()
-        if 'recently_edited' in self.request.GET:
-            ctx['queryset_description'] \
-                = _("Last %(num_products)d edited products") \
-                % {'num_products': self.recent_products}
-        else:
-            ctx['queryset_description'] = self.description
 
         return ctx
 
@@ -93,7 +87,14 @@ class ProductListView(SingleTableMixin, generic.TemplateView):
         if 'recently_edited' in self.request.GET:
             kwargs.update(dict(orderable=False))
 
-        return super(ProductListView, self).get_table(**kwargs)
+        table = super(ProductListView, self).get_table(**kwargs)
+        if 'recently_edited' in self.request.GET:
+            table.caption = _("Last %(num_products)d edited products") \
+                % {'num_products': self.recent_products}
+        else:
+            table.caption = self.description
+
+        return table
 
     def get_table_pagination(self):
         return dict(per_page=20)
@@ -409,7 +410,6 @@ class CategoryListView(SingleTableMixin, generic.TemplateView):
     def get_context_data(self, *args, **kwargs):
         ctx = super(CategoryListView, self).get_context_data(*args, **kwargs)
         ctx['child_categories'] = Category.get_root_nodes()
-        ctx['queryset_description'] = _("Categories")
         return ctx
 
 
@@ -428,7 +428,6 @@ class CategoryDetailListView(SingleTableMixin, generic.DetailView):
                                                                    **kwargs)
         ctx['child_categories'] = self.object.get_children()
         ctx['ancestors'] = self.object.get_ancestors()
-        ctx['queryset_description'] = _("Categories")
         return ctx
 
 
