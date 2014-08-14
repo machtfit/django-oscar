@@ -10,6 +10,7 @@ from django.forms.widgets import FileInput
 from django.template import Context
 from django.template.loader import render_to_string
 from django.utils.encoding import force_text
+from django.utils.formats import get_format
 from django.utils.html import format_html
 from django.utils.safestring import mark_safe
 
@@ -61,15 +62,15 @@ class WYSIWYGTextArea(forms.Textarea):
 
 def datetime_format_to_js_date_format(format):
     """
-    Convert a Python datetime format to a date format suitable for use with JS
-    date pickers
+    Convert a Python datetime format to a date format suitable for use with
+    the JS date picker we use.
     """
+    format = format.split(' ')[0]
     converted = format
     replacements = {
         '%Y': 'yy',
         '%m': 'mm',
         '%d': 'dd',
-        '%H:%M': '',
     }
     for search, replace in six.iteritems(replacements):
         converted = converted.replace(search, replace)
@@ -78,16 +79,18 @@ def datetime_format_to_js_date_format(format):
 
 def datetime_format_to_js_time_format(format):
     """
-    Convert a Python datetime format to a time format suitable for use with JS
-    date pickers
+    Convert a Python datetime format to a time format suitable for use with the
+    JS time picker we use.
     """
+    try:
+        format = format.split(' ')[1]
+    except IndexError:
+        pass
     converted = format
     replacements = {
-        '%Y': '',
-        '%m': '',
-        '%d': '',
         '%H': 'HH',
         '%M': 'mm',
+        '%S': 'ss',
     }
     for search, replace in six.iteritems(replacements):
         converted = converted.replace(search, replace)
@@ -121,16 +124,38 @@ class DatePickerInput(forms.DateInput):
 
 
 class DateTimePickerInput(forms.DateTimeInput):
-    # Build a widget which uses the locale datetime format but without seconds.
-    # We also use data attributes to pass these formats to the JS datepicker.
+    """
+    A widget that passes the datetime format to the JS datetime picker in a
+    data attribute.
 
+    It also removes seconds by default. However this only works with widgets
+    without localize=True.
+
+    For localized widgets refer to
+    https://docs.djangoproject.com/en/1.6/topics/i18n/formatting/#creating-custom-format-files # noqa
+    instead to override the format.
+    """
     def __init__(self, *args, **kwargs):
         include_seconds = kwargs.pop('include_seconds', False)
         super(DateTimePickerInput, self).__init__(*args, **kwargs)
 
         if not include_seconds:
             self.format = re.sub(':?%S', '', self.format)
-        add_js_formats(self)
+
+    def render(self, name, value, attrs=None):
+        if attrs is None:
+            attrs = {}
+
+        format = self.format
+        if self.is_localized and not self.manual_format:
+            format = force_text(get_format('DATETIME_INPUT_FORMATS')[0])
+
+        attrs.update({
+            'data-dateFormat': datetime_format_to_js_date_format(format),
+            'data-timeFormat': datetime_format_to_js_time_format(format)
+        })
+
+        return super(DateTimePickerInput, self).render(name, value, attrs)
 
 
 class AdvancedSelect(forms.Select):
