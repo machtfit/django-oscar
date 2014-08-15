@@ -9,8 +9,10 @@ from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext_lazy as _
 from django.template.loader import render_to_string
 
-from oscar.core.loading import get_classes, get_model
-from oscar.views import sort_queryset
+from oscar.core.loading import get_class, get_classes, get_model
+
+from django_tables2 import SingleTableMixin
+
 from oscar.views.generic import ObjectLookupView
 
 (ProductForm,
@@ -34,6 +36,9 @@ from oscar.views.generic import ObjectLookupView
                    'ProductCategoryFormSet',
                    'ProductImageFormSet',
                    'ProductRecommendationFormSet'))
+ProductTable, CategoryTable \
+    = get_classes('dashboard.catalogue.tables',
+                  ('ProductTable', 'CategoryTable'))
 Product = get_model('catalogue', 'Product')
 Category = get_model('catalogue', 'Category')
 ProductImage = get_model('catalogue', 'ProductImage')
@@ -57,33 +62,42 @@ def filter_products(queryset, user):
     return queryset.filter(stockrecords__partner__users__pk=user.pk).distinct()
 
 
-class ProductListView(generic.ListView):
+class ProductListView(SingleTableMixin, generic.TemplateView):
     """
     Dashboard view of the product list.
     Supports the permission-based dashboard.
     """
 
     template_name = 'dashboard/catalogue/product_list.html'
-    model = Product
-    context_object_name = 'products'
     form_class = ProductSearchForm
     productclass_form_class = ProductClassSelectForm
     description_template = _(u'Products %(upc_filter)s %(title_filter)s')
-    paginate_by = 20
     recent_products = 5
+    table_class = ProductTable
+    context_table_name = 'products'
 
     def get_context_data(self, **kwargs):
         ctx = super(ProductListView, self).get_context_data(**kwargs)
         ctx['form'] = self.form
         ctx['productclass_form'] = self.productclass_form_class()
-        if 'recently_edited' in self.request.GET:
-            ctx['queryset_description'] \
-                = _("Last %(num_products)d edited products") \
-                % {'num_products': self.recent_products}
-        else:
-            ctx['queryset_description'] = self.description
 
         return ctx
+
+    def get_table(self, **kwargs):
+        if 'recently_edited' in self.request.GET:
+            kwargs.update(dict(orderable=False))
+
+        table = super(ProductListView, self).get_table(**kwargs)
+        if 'recently_edited' in self.request.GET:
+            table.caption = _("Last %(num_products)d edited products") \
+                % {'num_products': self.recent_products}
+        else:
+            table.caption = self.description
+
+        return table
+
+    def get_table_pagination(self):
+        return dict(per_page=20)
 
     def filter_queryset(self, queryset):
         """
@@ -107,10 +121,7 @@ class ProductListView(generic.ListView):
             # Just show recently edited
             queryset = queryset.order_by('-date_updated')
             queryset = queryset[:self.recent_products]
-        else:
-            # Allow sorting when all
-            queryset = sort_queryset(queryset, self.request,
-                                     ['title'], '-date_created')
+
         return queryset
 
     def apply_search(self, queryset):
@@ -332,6 +343,7 @@ class ProductCreateUpdateView(generic.UpdateView):
             {
                 'product': self.object,
                 'creating': self.creating,
+                'request': self.request
             })
         messages.success(self.request, msg, extra_tags="safe noicon")
         url = reverse('dashboard:catalogue-product-list')
@@ -387,8 +399,13 @@ class StockAlertListView(generic.ListView):
         return self.model.objects.all()
 
 
-class CategoryListView(generic.TemplateView):
+class CategoryListView(SingleTableMixin, generic.TemplateView):
     template_name = 'dashboard/catalogue/category_list.html'
+    table_class = CategoryTable
+    context_table_name = 'categories'
+
+    def get_queryset(self):
+        return Category.get_root_nodes()
 
     def get_context_data(self, *args, **kwargs):
         ctx = super(CategoryListView, self).get_context_data(*args, **kwargs)
@@ -396,10 +413,15 @@ class CategoryListView(generic.TemplateView):
         return ctx
 
 
-class CategoryDetailListView(generic.DetailView):
+class CategoryDetailListView(SingleTableMixin, generic.DetailView):
     template_name = 'dashboard/catalogue/category_list.html'
     model = Category
     context_object_name = 'category'
+    table_class = CategoryTable
+    context_table_name = 'categories'
+
+    def get_table_data(self):
+        return self.object.get_children()
 
     def get_context_data(self, *args, **kwargs):
         ctx = super(CategoryDetailListView, self).get_context_data(*args,
