@@ -18,7 +18,8 @@ var oscar = (function(o, $) {
             // Run initialisation that should take place on every page of the dashboard.
             var defaults = {
                 'dateFormat': 'yy-mm-dd',
-                'timeFormat': 'HH:mm',
+                'timeFormat': 'hh:ii',
+                'datetimeFormat': 'yy-mm-dd hh:ii',
                 'stepMinute': 15,
                 'tinyConfig': {
                     statusbar: false,
@@ -124,41 +125,52 @@ var oscar = (function(o, $) {
         initDatePickers: function(el) {
             // Use datepicker for all inputs that have 'date' or 'datetime' in the name
             $inputs = $(el).find('input').not('.no-widget-init input').not('.no-widget-init');
-            if ($.datepicker) {
-                var defaultDatepickerConfig = {'dateFormat': o.dashboard.options.dateFormat};
+            if ($.fn.datetimepicker) {
+                var defaultDatepickerConfig = {
+                    'format': o.dashboard.options.dateFormat,
+                    'autoclose': true,
+                    'minView': 2
+                };
                 $inputs.filter('[name^="date"], [name$="date"]').each(function(ind, ele) {
                     var $ele = $(ele),
                         config = $.extend({}, defaultDatepickerConfig, {
-                            'dateFormat': $ele.data('dateformat')
+                            'format': $ele.data('dateformat')
                         });
-                    $ele.datepicker(config);
+                    $ele.datetimepicker(config);
                 });
             }
-            if ($.ui.timepicker) {
+            if ($.fn.datetimepicker) {
                 var defaultDatetimepickerConfig = {
-                    'dateFormat': o.dashboard.options.dateFormat,
-                    'timeFormat': o.dashboard.options.timeFormat,
-                    'stepMinute': o.dashboard.options.stepMinute
+                    'format': o.dashboard.options.datetimeFormat,
+                    'minuteStep': o.dashboard.options.stepMinute,
+                    'autoclose': true
                 };
                 $inputs.filter('[name$="datetime"]').each(function(ind, ele) {
                     var $ele = $(ele),
                         config = $.extend({}, defaultDatetimepickerConfig, {
-                        'dateFormat': $ele.data('dateformat'),
-                        'timeFormat': $ele.data('timeformat'),
-                        'stepMinute': $ele.data('stepminute')});
+                          'format': $ele.data('datetimeformat'),
+                          'minuteStep': $ele.data('stepminute')
+                        });
                     $ele.datetimepicker(config);
                 });
 
+            }
+            if ($.fn.datetimepicker) {
                 var defaultTimepickerConfig = {
-                    'timeFormat': o.dashboard.options.timeFormat,
-                    'stepMinute': o.dashboard.options.stepMinute
+                    'format': o.dashboard.options.timeFormat,
+                    'minuteStep': o.dashboard.options.stepMinute,
+                    'autoclose': true
                 };
                 $inputs.filter('[name$="time"]').not('[name$="datetime"]').each(function(ind, ele) {
                     var $ele = $(ele),
                         config = $.extend({}, defaultTimepickerConfig, {
-                        'timeFormat': $ele.data('timeformat'),
-                        'stepMinute': $ele.data('stepminute')});
-                    $ele.timepicker(config);
+                          'format': $ele.data('datetimeformat'),
+                          'minuteStep': $ele.data('stepminute'),
+                          'startView': 1,
+                          'maxView': 1,
+                          'formatViewType': 'time'
+                        });
+                    $ele.datetimepicker(config);
                 });
             }
         },
