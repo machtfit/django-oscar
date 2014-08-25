@@ -2883,11 +2883,6 @@ form.flat {
 .form-inline input[type=text] {
   width: 140px;
 }
-.table-bordered,
-.table-bordered th,
-.table-bordered td {
-  border-color: #bbb;
-}
 .table {
   background-color: #ffffff;
 }
@@ -3215,7 +3210,6 @@ caption > i,
   *zoom: 1;
   box-shadow: none;
   background-color: #efefef;
-  border-color: #bbb;
 }
 .well:before,
 .well:after {
