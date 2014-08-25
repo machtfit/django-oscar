@@ -632,23 +632,11 @@ class AbstractLine(models.Model):
             self._discount_excl_tax += discount_value
         self._affected_quantity += int(affected_quantity)
 
-    def consume(self, quantity):
-        """
-        Mark all or part of the line as 'consumed'
-
-        Consumed items are no longer available to be used in offers.
-        """
-        if quantity > self.quantity - self._affected_quantity:
-            inc = self.quantity - self._affected_quantity
-        else:
-            inc = quantity
-        self._affected_quantity += int(inc)
-
     def get_price_breakdown(self):
         """
         Return a breakdown of line prices after discounts have been applied.
 
-        Returns a list of (unit_price_incl_tx, unit_price_excl_tax, quantity)
+        Returns a list of (unit_price_incl_tax, unit_price_excl_tax, quantity)
         tuples.
         """
         if not self.is_tax_known:

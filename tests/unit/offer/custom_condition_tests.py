@@ -1,40 +1,36 @@
+from decimal import Decimal as D
+
 from django.test import TestCase
-from django_dynamic_fixture import G
 
 from oscar.apps.offer import custom, models
-from oscar.apps.basket.models import Basket
-from oscar.core.compat import get_user_model
+from oscar.apps.offer.utils import SetOfLines
+from oscar.test.offer import add_line
 
 
-User = get_user_model()
-
-
-class BasketOwnerCalledBarry(models.Condition):
+class TotalIsNearPi(models.Condition):
 
     class Meta:
         proxy = True
 
-    def is_satisfied(self, offer, basket):
-        if not basket.owner:
-            return False
-        return basket.owner.first_name.lower() == 'barry'
-
-    def can_apply_condition(self, product):
+    def is_satisfied(self, set_of_lines):
+        if (sum(line.price * line.quantity for line in set_of_lines)
+                == D('3.14')):
+            return True
         return False
 
 
 class TestCustomCondition(TestCase):
 
     def setUp(self):
-        self.condition = custom.create_condition(BasketOwnerCalledBarry)
-        self.offer = models.ConditionalOffer(
-            condition=self.condition)
-        self.basket = Basket()
+        self.condition = custom.create_condition(TotalIsNearPi)
+        self.set_of_lines = SetOfLines([])
 
-    def test_is_not_satified_by_non_match(self):
-        self.basket.owner = G(User, first_name="Alan")
-        self.assertFalse(self.offer.is_condition_satisfied(self.basket))
+    def test_is_satisfied_by_matching_set_of_lines(self):
+        add_line(self.set_of_lines, D('1.12'), 1)
+        add_line(self.set_of_lines, D('1.01'), 2)
+        self.assertTrue(self.condition.proxy().is_satisfied(self.set_of_lines))
 
-    def test_is_satified_by_match(self):
-        self.basket.owner = G(User, first_name="Barry")
-        self.assertTrue(self.offer.is_condition_satisfied(self.basket))
+    def test_is_not_satified_by_non_matching_set_of_lines(self):
+        add_line(self.set_of_lines, D('1.12'), 2)
+        add_line(self.set_of_lines, D('1.01'), 2)
+        self.assertFalse(self.condition.proxy().is_satisfied(self.set_of_lines))
