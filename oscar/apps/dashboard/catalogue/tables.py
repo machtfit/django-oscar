@@ -2,7 +2,7 @@ from django.db.models import get_model
 from django.utils.safestring import mark_safe
 from django.utils.translation import ugettext_lazy as _
 
-from django_tables2 import Table, Column, LinkColumn, TemplateColumn, A
+from django_tables2 import Column, LinkColumn, TemplateColumn, A
 
 from oscar.core.loading import get_class
 
@@ -11,7 +11,7 @@ Product = get_model('catalogue', 'Product')
 Category = get_model('catalogue', 'Category')
 
 
-class ProductTable(Table):
+class ProductTable(DashboardTable):
     title = TemplateColumn(
         template_name='dashboard/catalogue/product_row_title.html',
         order_by='title', accessor=A('get_title'))
@@ -39,7 +39,7 @@ class ProductTable(Table):
                     'parent', 'children', 'stock_records', '...', 'actions')
 
 
-class CategoryTable(Table):
+class CategoryTable(DashboardTable):
     name = LinkColumn('dashboard:catalogue-category-update', args=[A('pk')])
     description = TemplateColumn(
         template_code='{{ record.description|default:""|striptags'
