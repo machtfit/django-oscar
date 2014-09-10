@@ -1,9 +1,10 @@
 from django.utils import six
 
 from django.conf import settings
-from django.contrib.auth import get_user_model as django_get_user_model
 from django.contrib.auth.models import User
 from django.core.exceptions import ImproperlyConfigured
+
+from oscar.core.loading import get_model
 
 
 def get_user_model():
@@ -16,7 +17,15 @@ def get_user_model():
     get_user_model remains because code relies on us annotating the _meta class
     with the additional fields, and other code might rely on it as well.
     """
-    model = django_get_user_model()
+    try:
+        model = get_model(*settings.AUTH_USER_MODEL.rsplit('.', 1))
+    except ValueError:
+        raise ImproperlyConfigured("AUTH_USER_MODEL must be of the form "
+                                   "'app_label.model_name'")
+    except LookupError:
+        raise ImproperlyConfigured("AUTH_USER_MODEL refers to model '%s' that "
+                                   "has not been installed"
+                                   % settings.AUTH_USER_MODEL)
 
     # Test if user model has any custom fields and add attributes to the _meta
     # class
