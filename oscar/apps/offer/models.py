@@ -1682,6 +1682,7 @@ class RangeProductFileUpload(models.Model):
         _("Number of Duplicate SKUs"), null=True)
 
     class Meta:
+        app_label = 'offer'
         ordering = ('-date_uploaded',)
         verbose_name = _("Range Product Uploaded File")
         verbose_name_plural = _("Range Product Uploaded Files")
