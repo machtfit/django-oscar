@@ -916,6 +916,7 @@ class NoneCondition(Condition):
             'range': range_anchor(self.range)}
 
     class Meta:
+        app_label = 'offer'
         proxy = True
         verbose_name = _("No Condition")
         verbose_name_plural = _("No Conditions")
@@ -1033,6 +1034,7 @@ class PercentageDiscountBenefit(Benefit):
             'range': range_anchor(self.range)}
 
     class Meta:
+        app_label = 'offer'
         proxy = True
         verbose_name = _("Percentage discount benefit")
         verbose_name_plural = _("Percentage discount benefits")
@@ -1095,6 +1097,7 @@ class ShippingBenefit(Benefit):
         return SHIPPING_DISCOUNT
 
     class Meta:
+        app_label = 'offer'
         proxy = True
 
 
@@ -1107,6 +1110,7 @@ class ShippingAbsoluteDiscountBenefit(ShippingBenefit):
             'amount': currency(self.value)}
 
     class Meta:
+        app_label = 'offer'
         proxy = True
         verbose_name = _("Shipping absolute discount benefit")
         verbose_name_plural = _("Shipping absolute discount benefits")
@@ -1124,6 +1128,7 @@ class ShippingFixedPriceBenefit(ShippingBenefit):
             'amount': currency(self.value)}
 
     class Meta:
+        app_label = 'offer'
         proxy = True
         verbose_name = _("Fixed price shipping benefit")
         verbose_name_plural = _("Fixed price shipping benefits")
@@ -1143,6 +1148,7 @@ class ShippingPercentageDiscountBenefit(ShippingBenefit):
             'value': self.value}
 
     class Meta:
+        app_label = 'offer'
         proxy = True
         verbose_name = _("Shipping percentage discount benefit")
         verbose_name_plural = _("Shipping percentage discount benefits")
@@ -1182,6 +1188,7 @@ class RangeProductFileUpload(models.Model):
         _("Number of Duplicate SKUs"), null=True)
 
     class Meta:
+        app_label = 'offer'
         ordering = ('-date_uploaded',)
         verbose_name = _("Range Product Uploaded File")
         verbose_name_plural = _("Range Product Uploaded Files")
