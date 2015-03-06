@@ -96,14 +96,17 @@ compiledmessages:
 	# Compile the gettext files
 	cd src/oscar; django-admin.py compilemessages
 
-css:
-	# Compile CSS files from LESS
-	lessc --source-map --source-map-less-inline src/oscar/static/oscar/less/styles.less src/oscar/static/oscar/css/styles.css
-	lessc --source-map --source-map-less-inline src/oscar/static/oscar/less/responsive.less src/oscar/static/oscar/css/responsive.css
-	lessc --source-map --source-map-less-inline src/oscar/static/oscar/less/dashboard.less src/oscar/static/oscar/css/dashboard.css
-	# Compile CSS for demo site
-	lessc --source-map --source-map-less-inline sites/demo/static/demo/less/styles.less sites/demo/static/demo/css/styles.css
-	lessc --source-map --source-map-less-inline sites/demo/static/demo/less/responsive.less sites/demo/static/demo/css/responsive.css
+src/oscar/static/oscar/css/%.css: src/oscar/static/oscar/less/%.less
+	lessc --source-map --source-map-less-inline $< $@
+
+sites/demo/static/demo/css/%.css: sites/demo/static/demo/less/%.less
+	lessc --source-map --source-map-less-inline $< $@
+
+css-oscar: src/oscar/static/oscar/css/styles.css src/oscar/static/oscar/css/dashboard.css
+
+css-demo: sites/demo/static/demo/css/styles.css sites/demo/static/demo/css/responsive.css
+
+css: css-oscar css-demo
 
 clean:
 	# Remove files not in source control
