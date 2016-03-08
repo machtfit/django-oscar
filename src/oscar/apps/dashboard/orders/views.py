@@ -1,5 +1,6 @@
 import datetime
 from decimal import Decimal as D, InvalidOperation
+from collections import OrderedDict
 
 from django.contrib import messages
 from django.utils.translation import ugettext_lazy as _
@@ -8,7 +9,6 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.db.models import fields, Q, Sum, Count
 from django.http import HttpResponse, HttpResponseRedirect, Http404
 from django.shortcuts import get_object_or_404, redirect
-from django.utils.datastructures import SortedDict
 from django.views.generic import ListView, DetailView, UpdateView, FormView
 from django.conf import settings
 
@@ -336,7 +336,7 @@ class OrderListView(BulkEditMixin, ListView):
                      ('shipping_address_name', _('Deliver to name')),
                      ('billing_address_name', _('Bill to name')),
                      )
-        columns = SortedDict()
+        columns = OrderedDict()
         for k, v in meta_data:
             columns[k] = v
 

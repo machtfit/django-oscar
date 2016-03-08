@@ -2,13 +2,14 @@ from collections import OrderedDict
 from decimal import Decimal as D
 import hashlib
 
+from collections import OrderedDict
+
 from django.conf import settings
 from django.db import models
 from django.db.models import Sum
 from django.utils import timezone
 from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext_lazy as _, pgettext_lazy
-from django.utils.datastructures import SortedDict
 from django.utils.timezone import now
 
 from oscar.core.utils import get_default_currency
@@ -653,7 +654,7 @@ class AbstractLine(models.Model):
         """
         Returns a dict of shipping events that this line has been through
         """
-        status_map = SortedDict()
+        status_map = OrderedDict()
         for event in self.shipping_events.all():
             event_type = event.event_type
             event_name = event_type.name
