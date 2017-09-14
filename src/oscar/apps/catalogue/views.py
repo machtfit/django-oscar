@@ -81,19 +81,6 @@ class ProductDetailView(DetailView):
             '%s/detail.html' % (self.template_folder)]
 
 
-class CatalogueView(TemplateView):
-    """
-    Browse all products in the catalogue
-    """
-    context_object_name = "products"
-    template_name = 'catalogue/browse.html'
-
-    def get_context_data(self, **kwargs):
-        ctx = {}
-        ctx['summary'] = _("All products")
-        return ctx
-
-
 class ProductCategoryView(TemplateView):
     """
     Browse products in a given category
