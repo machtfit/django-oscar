@@ -53,9 +53,6 @@ OSCAR_PROMOTION_POSITIONS = (('page', 'Page'),
                              ('right', 'Right-hand sidebar'),
                              ('left', 'Left-hand sidebar'))
 
-# Accounts
-OSCAR_ACCOUNTS_REDIRECT_URL = 'customer:profile-view'
-
 # This enables sending alert notifications/emails instantly when products get
 # back in stock by listening to stock record update signals.
 # This might impact performance for large numbers of stock record updates.
