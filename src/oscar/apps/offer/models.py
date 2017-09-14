@@ -726,10 +726,6 @@ class Range(models.Model):
     def __str__(self):
         return self.name
 
-    def get_absolute_url(self):
-        return reverse(
-            'catalogue:range', kwargs={'slug': self.slug})
-
     def add_product(self, product, display_order=None):
         """ Add product to the range
 
