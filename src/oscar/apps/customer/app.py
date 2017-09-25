@@ -9,7 +9,6 @@ class CustomerApplication(Application):
     name = 'customer'
     order_history_view = get_class('customer.views', 'OrderHistoryView')
 
-    profile_view = get_class('customer.views', 'ProfileView')
     change_password_view = get_class('customer.views', 'ChangePasswordView')
 
     def get_urls(self):
@@ -19,10 +18,6 @@ class CustomerApplication(Application):
                 login_required(self.change_password_view.as_view()),
                 name='change-password'),
 
-            # Profile
-            url(r'^profile/$',
-                login_required(self.profile_view.as_view()),
-                name='profile-view'),
 
             # Order history
             url(r'^orders/$',

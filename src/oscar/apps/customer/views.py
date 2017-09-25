@@ -1,14 +1,13 @@
 from django.shortcuts import redirect
 from django.views import generic
 from django.core.urlresolvers import reverse_lazy
-from django.core.exceptions import ObjectDoesNotExist
 from django.contrib import messages
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.sites.models import get_current_site
 
 from oscar.apps.customer.utils import get_password_reset_url
 from oscar.core.loading import (
-    get_class, get_profile_class, get_classes, get_model)
+    get_class, get_classes, get_model)
 from oscar.core.compat import get_user_model
 
 PageTitleMixin, RegisterUserMixin = get_classes(
@@ -21,61 +20,6 @@ ConfirmPasswordForm = get_class('customer.forms', 'ConfirmPasswordForm')
 Order = get_model('order', 'Order')
 
 User = get_user_model()
-
-
-# =============
-# Profile
-# =============
-
-
-class ProfileView(PageTitleMixin, generic.TemplateView):
-    template_name = 'customer/profile/profile.html'
-    page_title = _('Profile')
-    active_tab = 'profile'
-
-    def get_context_data(self, **kwargs):
-        ctx = super(ProfileView, self).get_context_data(**kwargs)
-        ctx['profile_fields'] = self.get_profile_fields(self.request.user)
-        return ctx
-
-    def get_profile_fields(self, user):
-        field_data = []
-
-        # Check for custom user model
-        for field_name in User._meta.additional_fields:
-            field_data.append(
-                self.get_model_field_data(user, field_name))
-
-        # Check for profile class
-        profile_class = get_profile_class()
-        if profile_class:
-            try:
-                profile = profile_class.objects.get(user=user)
-            except ObjectDoesNotExist:
-                profile = profile_class(user=user)
-
-            field_names = [f.name for f in profile._meta.local_fields]
-            for field_name in field_names:
-                if field_name in ('user', 'id'):
-                    continue
-                field_data.append(
-                    self.get_model_field_data(profile, field_name))
-
-        return field_data
-
-    def get_model_field_data(self, model_class, field_name):
-        """
-        Extract the verbose name and value for a model's field value
-        """
-        field = model_class._meta.get_field(field_name)
-        if field.choices:
-            value = getattr(model_class, 'get_%s_display' % field_name)()
-        else:
-            value = getattr(model_class, field_name)
-        return {
-            'name': getattr(field, 'verbose_name'),
-            'value': value,
-        }
 
 
 class ChangePasswordView(PageTitleMixin, generic.FormView):
