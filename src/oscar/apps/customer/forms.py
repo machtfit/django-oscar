@@ -3,7 +3,6 @@ import random
 
 from django import forms
 from django.conf import settings
-from django.contrib.auth.forms import AuthenticationForm
 from django.core.exceptions import ValidationError
 from django.utils.http import is_safe_url
 from django.utils.translation import ugettext_lazy as _
@@ -31,27 +30,6 @@ def generate_username():
         return generate_username()
     except User.DoesNotExist:
         return uname
-
-
-
-class EmailAuthenticationForm(AuthenticationForm):
-    """
-    Extends the standard django AuthenticationForm, to support 75 character
-    usernames. 75 character usernames are needed to support the EmailOrUsername
-    auth backend.
-    """
-    username = forms.EmailField(label=_('Email address'))
-    redirect_url = forms.CharField(
-        widget=forms.HiddenInput, required=False)
-
-    def __init__(self, host, *args, **kwargs):
-        self.host = host
-        super(EmailAuthenticationForm, self).__init__(*args, **kwargs)
-
-    def clean_redirect_url(self):
-        url = self.cleaned_data['redirect_url'].strip()
-        if url and is_safe_url(url, self.host):
-            return url
 
 
 class ConfirmPasswordForm(forms.Form):
