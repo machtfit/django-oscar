@@ -1,13 +1,11 @@
 from django.shortcuts import redirect
 from django.views import generic
-from django.core.urlresolvers import reverse, reverse_lazy
+from django.core.urlresolvers import reverse_lazy
 from django.core.exceptions import ObjectDoesNotExist
 from django.contrib import messages
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.sites.models import get_current_site
-from django.conf import settings
 
-from oscar.core.utils import safe_referrer
 from oscar.apps.customer.utils import get_password_reset_url
 from oscar.core.loading import (
     get_class, get_profile_class, get_classes, get_model)
@@ -23,40 +21,6 @@ ConfirmPasswordForm = get_class('customer.forms', 'ConfirmPasswordForm')
 Order = get_model('order', 'Order')
 
 User = get_user_model()
-
-
-class AccountRegistrationView(RegisterUserMixin, generic.FormView):
-    form_class = EmailUserCreationForm
-    template_name = 'customer/registration.html'
-    redirect_field_name = 'next'
-
-    def get(self, request, *args, **kwargs):
-        if request.user.is_authenticated():
-            return redirect(settings.LOGIN_REDIRECT_URL)
-        return super(AccountRegistrationView, self).get(
-            request, *args, **kwargs)
-
-    def get_logged_in_redirect(self):
-        return reverse('customer:summary')
-
-    def get_form_kwargs(self):
-        kwargs = super(AccountRegistrationView, self).get_form_kwargs()
-        kwargs['initial'] = {
-            'email': self.request.GET.get('email', ''),
-            'redirect_url': self.request.GET.get(self.redirect_field_name, '')
-        }
-        kwargs['host'] = self.request.get_host()
-        return kwargs
-
-    def get_context_data(self, *args, **kwargs):
-        ctx = super(AccountRegistrationView, self).get_context_data(
-            *args, **kwargs)
-        ctx['cancel_url'] = safe_referrer(self.request, '')
-        return ctx
-
-    def form_valid(self, form):
-        self.register_user(form)
-        return redirect(form.cleaned_data['redirect_url'])
 
 
 # =============

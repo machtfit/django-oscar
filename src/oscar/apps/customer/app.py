@@ -9,13 +9,12 @@ class CustomerApplication(Application):
     name = 'customer'
     order_history_view = get_class('customer.views', 'OrderHistoryView')
 
-    register_view = get_class('customer.views', 'AccountRegistrationView')
     profile_view = get_class('customer.views', 'ProfileView')
     change_password_view = get_class('customer.views', 'ChangePasswordView')
 
     def get_urls(self):
         urls = [
-            url(r'^register/$', self.register_view.as_view(), name='register'),
+
             url(r'^change-password/$',
                 login_required(self.change_password_view.as_view()),
                 name='change-password'),
