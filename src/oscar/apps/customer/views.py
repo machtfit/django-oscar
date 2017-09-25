@@ -1,11 +1,7 @@
 from django.shortcuts import redirect
 from django.views import generic
-from django.core.urlresolvers import reverse_lazy
-from django.contrib import messages
 from django.utils.translation import ugettext_lazy as _
-from django.contrib.sites.models import get_current_site
 
-from oscar.apps.customer.utils import get_password_reset_url
 from oscar.core.loading import (
     get_class, get_classes, get_model)
 from oscar.core.compat import get_user_model
@@ -15,35 +11,11 @@ PageTitleMixin, RegisterUserMixin = get_classes(
 EmailAuthenticationForm, EmailUserCreationForm, OrderSearchForm = get_classes(
     'customer.forms', ['EmailAuthenticationForm', 'EmailUserCreationForm',
                        'OrderSearchForm'])
-PasswordChangeForm = get_class('customer.forms', 'PasswordChangeForm')
 ConfirmPasswordForm = get_class('customer.forms', 'ConfirmPasswordForm')
 Order = get_model('order', 'Order')
 
 User = get_user_model()
 
-
-class ChangePasswordView(PageTitleMixin, generic.FormView):
-    form_class = PasswordChangeForm
-    template_name = 'customer/profile/change_password_form.html'
-    page_title = _('Change Password')
-    active_tab = 'profile'
-    success_url = reverse_lazy('customer:profile-view')
-
-    def get_form_kwargs(self):
-        kwargs = super(ChangePasswordView, self).get_form_kwargs()
-        kwargs['user'] = self.request.user
-        return kwargs
-
-    def form_valid(self, form):
-        form.save()
-        messages.success(self.request, _("Password updated"))
-
-        ctx = {
-            'user': self.request.user,
-            'site': get_current_site(self.request),
-            'reset_url': get_password_reset_url(self.request.user),
-        }
-        return redirect(self.get_success_url())
 
 # =============
 # Order history
