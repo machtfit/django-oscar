@@ -3,7 +3,6 @@ import random
 
 from django import forms
 from django.conf import settings
-from django.contrib.auth import forms as auth_forms
 from django.contrib.auth.forms import AuthenticationForm
 from django.core.exceptions import ValidationError
 from django.utils.http import is_safe_url
@@ -33,12 +32,6 @@ def generate_username():
     except User.DoesNotExist:
         return uname
 
-
-class PasswordChangeForm(auth_forms.PasswordChangeForm):
-    def __init__(self, *args, **kwargs):
-        super(PasswordChangeForm, self).__init__(*args, **kwargs)
-        # Enforce password validations for the new password
-        self.fields['new_password1'].validators += password_validators
 
 
 class EmailAuthenticationForm(AuthenticationForm):
