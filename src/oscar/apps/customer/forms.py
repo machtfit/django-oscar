@@ -2,16 +2,13 @@ import string
 import random
 
 from django import forms
-from django.conf import settings
 from django.core.exceptions import ValidationError
-from django.utils.http import is_safe_url
 from django.utils.translation import ugettext_lazy as _
 from django.utils.translation import pgettext_lazy
 
 from oscar.core.loading import get_profile_class
 from oscar.core.compat import get_user_model, existing_user_fields
 from oscar.apps.customer.utils import normalise_email
-from oscar.core.validators import password_validators
 
 
 User = get_user_model()
@@ -30,59 +27,6 @@ def generate_username():
         return generate_username()
     except User.DoesNotExist:
         return uname
-
-
-class EmailUserCreationForm(forms.ModelForm):
-    email = forms.EmailField(label=_('Email address'))
-    password1 = forms.CharField(
-        label=_('Password'), widget=forms.PasswordInput,
-        validators=password_validators)
-    password2 = forms.CharField(
-        label=_('Confirm password'), widget=forms.PasswordInput)
-    redirect_url = forms.CharField(
-        widget=forms.HiddenInput, required=False)
-
-    class Meta:
-        model = User
-        fields = ('email',)
-
-    def __init__(self, host=None, *args, **kwargs):
-        self.host = host
-        super(EmailUserCreationForm, self).__init__(*args, **kwargs)
-
-    def clean_email(self):
-        """
-        Checks for existing users with the supplied email address.
-        """
-        email = normalise_email(self.cleaned_data['email'])
-        if User._default_manager.filter(email__iexact=email).exists():
-            raise forms.ValidationError(
-                _("A user with that email address already exists"))
-        return email
-
-    def clean_password2(self):
-        password1 = self.cleaned_data.get('password1', '')
-        password2 = self.cleaned_data.get('password2', '')
-        if password1 != password2:
-            raise forms.ValidationError(
-                _("The two password fields didn't match."))
-        return password2
-
-    def clean_redirect_url(self):
-        url = self.cleaned_data['redirect_url'].strip()
-        if url and is_safe_url(url, self.host):
-            return url
-        return settings.LOGIN_REDIRECT_URL
-
-    def save(self, commit=True):
-        user = super(EmailUserCreationForm, self).save(commit=False)
-        user.set_password(self.cleaned_data['password1'])
-
-        if 'username' in [f.name for f in User._meta.fields]:
-            user.username = generate_username()
-        if commit:
-            user.save()
-        return user
 
 
 class OrderSearchForm(forms.Form):
