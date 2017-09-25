@@ -34,13 +34,6 @@ def generate_username():
         return uname
 
 
-class SetPasswordForm(auth_forms.SetPasswordForm):
-    def __init__(self, *args, **kwargs):
-        super(SetPasswordForm, self).__init__(*args, **kwargs)
-        # Enforce password validations for the new password
-        self.fields['new_password1'].validators += password_validators
-
-
 class PasswordChangeForm(auth_forms.PasswordChangeForm):
     def __init__(self, *args, **kwargs):
         super(PasswordChangeForm, self).__init__(*args, **kwargs)
