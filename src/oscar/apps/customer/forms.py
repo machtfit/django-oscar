@@ -5,7 +5,6 @@ from django import forms
 from django.conf import settings
 from django.contrib.auth import forms as auth_forms
 from django.contrib.auth.forms import AuthenticationForm
-from django.contrib.sites.models import get_current_site
 from django.core.exceptions import ValidationError
 from django.utils.http import is_safe_url
 from django.utils.translation import ugettext_lazy as _
@@ -13,7 +12,7 @@ from django.utils.translation import pgettext_lazy
 
 from oscar.core.loading import get_profile_class
 from oscar.core.compat import get_user_model, existing_user_fields
-from oscar.apps.customer.utils import get_password_reset_url, normalise_email
+from oscar.apps.customer.utils import normalise_email
 from oscar.core.validators import password_validators
 
 
@@ -33,40 +32,6 @@ def generate_username():
         return generate_username()
     except User.DoesNotExist:
         return uname
-
-
-class PasswordResetForm(auth_forms.PasswordResetForm):
-    """
-    This form takes the same structure as its parent from django.contrib.auth
-    """
-    def save(self, domain_override=None, use_https=False, request=None,
-             **kwargs):
-        """
-        Generates a one-use only link for resetting password and sends to the
-        user.
-        """
-        site = get_current_site(request)
-        if domain_override is not None:
-            site.domain = site.name = domain_override
-        email = self.cleaned_data['email']
-        active_users = User._default_manager.filter(
-            email__iexact=email, is_active=True)
-        for user in active_users:
-            reset_url = self.get_reset_url(site, request, user, use_https)
-            ctx = {
-                'user': user,
-                'site': site,
-                'reset_url': reset_url}
-
-    def get_reset_url(self, site, request, user, use_https):
-        # the request argument isn't used currently, but implementors might
-        # need it to determine the correct subdomain
-        reset_url = "%s://%s%s" % (
-            'https' if use_https else 'http',
-            site.domain,
-            get_password_reset_url(user))
-
-        return reset_url
 
 
 class SetPasswordForm(auth_forms.SetPasswordForm):
