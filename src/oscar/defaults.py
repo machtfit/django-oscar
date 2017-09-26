@@ -11,12 +11,6 @@ OSCAR_BASKET_COOKIE_OPEN = 'oscar_open_basket'
 OSCAR_BASKET_COOKIE_SECURE = False
 OSCAR_MAX_BASKET_QUANTITY_THRESHOLD = 10000
 
-# Recently-viewed products
-OSCAR_RECENTLY_VIEWED_COOKIE_LIFETIME = 7 * 24 * 60 * 60
-OSCAR_RECENTLY_VIEWED_COOKIE_NAME = 'oscar_history'
-OSCAR_RECENTLY_VIEWED_COOKIE_SECURE = False
-OSCAR_RECENTLY_VIEWED_PRODUCTS = 20
-
 # Currency
 OSCAR_DEFAULT_CURRENCY = 'GBP'
 
@@ -65,9 +59,6 @@ OSCAR_EAGER_ALERTS = True
 OSCAR_SLUG_FUNCTION = 'oscar.core.utils.default_slugifier'
 OSCAR_SLUG_MAP = {}
 OSCAR_SLUG_BLACKLIST = []
-
-# Cookies
-OSCAR_COOKIES_DELETE_ON_LOGOUT = ['oscar_recently_viewed_products', ]
 
 # Menu structure of the dashboard navigation
 OSCAR_DASHBOARD_NAVIGATION = [

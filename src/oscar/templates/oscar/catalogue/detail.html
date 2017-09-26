@@ -1,6 +1,5 @@
 {% extends "layout.html" %}
 
-{% load history_tags %}
 {% load currency_filters %}
 {% load staticfiles %}
 {% load product_tags %}
@@ -28,15 +27,6 @@
         </li>
         {% endfor %}
         <li class="active">{{ product.title }}</li>
-
-        {% get_back_button as backbutton %}
-        {% if backbutton %}
-            <li class="pull-right">
-                <a href="{{ backbutton.url }}">
-                    <i class="icon-arrow-left"></i> {{ backbutton.title }}
-                </a>
-            </li>
-        {% endif %}
     {% endwith %}
 </ul>
 {% endblock %}
@@ -135,8 +125,6 @@
             </ul>
         {% endif %}
     {% endwith %}
-
-    {% recently_viewed_products %}
 
 </article><!-- End of product page -->
 {% endblock content %}
