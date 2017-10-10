@@ -3,7 +3,6 @@ import logging
 
 from django.conf import settings
 from django.contrib.staticfiles.finders import find
-from django.core.cache import cache
 from django.core.exceptions import ImproperlyConfigured
 from django.core.urlresolvers import reverse
 from django.db import models
@@ -209,12 +208,6 @@ class AbstractProduct(models.Model):
                              max_length=255, blank=True)
     slug = models.SlugField(_('Slug'), max_length=255, unique=False)
     description = models.TextField(_('Description'), blank=True)
-
-    recommended_products = models.ManyToManyField(
-        'catalogue.Product', through='ProductRecommendation', blank=True,
-        verbose_name=_("Recommended products"),
-        help_text=_("These are products that are recommended to accompany the "
-                    "main product."))
 
     date_created = models.DateTimeField(_("Date created"), auto_now_add=True)
 
@@ -470,29 +463,6 @@ class AbstractProduct(models.Model):
                 'original': self.get_missing_image(),
                 'caption': '',
                 'is_missing': True}
-
-
-class AbstractProductRecommendation(models.Model):
-    """
-    'Through' model for product recommendations
-    """
-    primary = models.ForeignKey(
-        'catalogue.Product', related_name='primary_recommendations',
-        verbose_name=_("Primary product"))
-    recommendation = models.ForeignKey(
-        'catalogue.Product', verbose_name=_("Recommended product"))
-    ranking = models.PositiveSmallIntegerField(
-        _('Ranking'), default=0,
-        help_text=_('Determines order of the products. A product with a higher'
-                    ' value will appear before one with a lower ranking.'))
-
-    class Meta:
-        abstract = True
-        app_label = 'catalogue'
-        ordering = ['primary', '-ranking']
-        unique_together = ('primary', 'recommendation')
-        verbose_name = _('Product recommendation')
-        verbose_name_plural = _('Product recomendations')
 
 
 class MissingProductImage(object):
