@@ -1,7 +1,7 @@
 import re
 from django import forms
 from django.forms.utils import flatatt
-from django.utils import formats, six
+from django.utils import formats
 from django.utils.six.moves import map
 from django.utils.encoding import force_text
 from django.utils.html import format_html
@@ -229,49 +229,3 @@ class AdvancedSelect(forms.Select):
                            option_value,
                            selected_html,
                            force_text(option_label))
-
-
-class RemoteSelect(forms.Widget):
-    """
-    Somewhat reusable widget that allows AJAX lookups in combination with
-    select2.
-    Requires setting the URL of a lookup view either as class attribute or when
-    constructing
-    """
-    is_multiple = False
-    css = 'select2 input-xlarge'
-    lookup_url = None
-    placeholder = ''
-
-    def __init__(self, *args, **kwargs):
-        if 'lookup_url' in kwargs:
-            self.lookup_url = kwargs.pop('lookup_url')
-        if 'placeholder' in kwargs:
-            self.placeholder = kwargs.pop('placeholder')
-        if self.lookup_url is None:
-            raise ValueError(
-                "RemoteSelect requires a lookup ULR")
-        super(RemoteSelect, self).__init__(*args, **kwargs)
-
-    def format_value(self, value):
-        return six.text_type(value or '')
-
-    def value_from_datadict(self, data, files, name):
-        value = data.get(name, None)
-        if value is None:
-            return value
-        else:
-            return six.text_type(value)
-
-    def render(self, name, value, attrs=None, choices=()):
-        attrs = self.build_attrs(attrs, **{
-            'type': 'hidden',
-            'class': self.css,
-            'name': name,
-            'data-ajax-url': self.lookup_url,
-            'data-multiple': 'multiple' if self.is_multiple else '',
-            'placeholder': self.placeholder,
-            'value': self.format_value(value),
-            'data-required': 'required' if self.is_required else '',
-        })
-        return mark_safe(u'<input %s>' % flatatt(attrs))
