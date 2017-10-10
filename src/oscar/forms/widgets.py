@@ -9,15 +9,6 @@ from django.utils.html import format_html
 from django.utils.safestring import mark_safe
 
 
-class WYSIWYGTextArea(forms.Textarea):
-
-    def __init__(self, *args, **kwargs):
-        kwargs.setdefault('attrs', {})
-        kwargs['attrs'].setdefault('class', '')
-        kwargs['attrs']['class'] += ' wysiwyg'
-        super(WYSIWYGTextArea, self).__init__(*args, **kwargs)
-
-
 def datetime_format_to_js_date_format(format):
     """
     Convert a Python datetime format to a date format suitable for use with
