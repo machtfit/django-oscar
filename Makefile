@@ -1,18 +1,8 @@
 # These targets are not files
-.PHONY: install sandbox geoip demo docs coverage lint travis messages compiledmessages css clean preflight make_sandbox make_demo
+.PHONY: install messages compiledmessages css clean
 
 install:
 	pip install -e . -r requirements.txt
-
-build_sandbox:
-	# Remove media
-	-rm -rf sites/sandbox/public/media/images
-	-rm -rf sites/sandbox/public/media/cache
-	-rm -rf sites/sandbox/public/static
-	-rm -f sites/sandbox/db.sqlite
-	sites/sandbox/manage.py migrate
-
-sandbox: install build_sandbox
 
 messages:
 	# Create the .po files used for i18n
