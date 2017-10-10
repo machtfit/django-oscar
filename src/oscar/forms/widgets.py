@@ -2,7 +2,6 @@ import re
 from django import forms
 from django.forms.utils import flatatt
 from django.utils import formats, six
-from django.utils.six.moves import filter
 from django.utils.six.moves import map
 from django.utils.encoding import force_text
 from django.utils.html import format_html
@@ -276,21 +275,3 @@ class RemoteSelect(forms.Widget):
             'data-required': 'required' if self.is_required else '',
         })
         return mark_safe(u'<input %s>' % flatatt(attrs))
-
-
-class MultipleRemoteSelect(RemoteSelect):
-    is_multiple = True
-    css = 'select2 input-xxlarge'
-
-    def format_value(self, value):
-        if value:
-            return ','.join(map(six.text_type, filter(bool, value)))
-        else:
-            return ''
-
-    def value_from_datadict(self, data, files, name):
-        value = data.get(name, None)
-        if value is None:
-            return []
-        else:
-            return list(filter(bool, value.split(',')))
