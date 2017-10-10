@@ -24,10 +24,3 @@ if not is_model_registered('payment', 'SourceType'):
         pass
 
     __all__.append('SourceType')
-
-
-if not is_model_registered('payment', 'Bankcard'):
-    class Bankcard(abstract_models.AbstractBankcard):
-        pass
-
-    __all__.append('Bankcard')
