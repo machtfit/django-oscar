@@ -14,8 +14,6 @@ class Shop(Application):
     dashboard_app = get_class('dashboard.app', 'application')
     offer_app = get_class('offer.app', 'application')
 
-    password_reset_form = get_class('customer.forms', 'PasswordResetForm')
-    set_password_form = get_class('customer.forms', 'SetPasswordForm')
 
     def get_urls(self):
         urls = [
