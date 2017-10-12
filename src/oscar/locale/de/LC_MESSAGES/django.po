@@ -22,7 +22,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django-oscar\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-10 13:51+0200\n"
+"POT-Creation-Date: 2017-10-12 12:21+0200\n"
 "PO-Revision-Date: 2015-03-06 21:39+0000\n"
 "Last-Translator: Marc Wienhold <marc.wienhold@gmail.com>\n"
 "Language-Team: German (http://www.transifex.com/projects/p/django-oscar/"
@@ -305,7 +305,6 @@ msgid "Date merged"
 msgstr "Datum der Zusammenführung"
 
 #: apps/basket/abstract_models.py:52
-#: templates/oscar/customer/order/order_list.html:40
 msgid "Date submitted"
 msgstr "Sendedatum"
 
@@ -505,7 +504,6 @@ msgstr "Gutschein „%s“ wurde aus Ihrem Warenkorb entfernt"
 #: apps/offer/models.py:684 apps/order/abstract_models.py:735
 #: apps/order/abstract_models.py:899 apps/payment/abstract_models.py:205
 #: apps/payment/abstract_models.py:245
-#: templates/oscar/customer/profile/profile.html:9
 #: templates/oscar/dashboard/offers/offer_detail.html:64
 #: templates/oscar/dashboard/offers/summary.html:10
 #: templates/oscar/dashboard/orders/order_detail.html:35
@@ -534,7 +532,7 @@ msgid "Category"
 msgstr "Kategorie"
 
 #: apps/catalogue/abstract_models.py:136 apps/catalogue/abstract_models.py:227
-#: apps/catalogue/abstract_models.py:439 defaults.py:91
+#: apps/catalogue/abstract_models.py:439 defaults.py:79
 msgid "Categories"
 msgstr "Kategorie"
 
@@ -563,7 +561,7 @@ msgid "Product structure"
 msgstr "Produktstruktur"
 
 #: apps/catalogue/abstract_models.py:193 apps/dashboard/orders/forms.py:68
-#: apps/order/abstract_models.py:419 templates/oscar/catalogue/detail.html:97
+#: apps/order/abstract_models.py:419 templates/oscar/catalogue/detail.html:87
 #: templates/oscar/dashboard/orders/line_detail.html:53
 #: templates/oscar/dashboard/orders/order_detail.html:112
 msgid "UPC"
@@ -615,7 +613,7 @@ msgid "This flag indicates if this product can be used in an offer or not"
 msgstr ""
 "Gibt an, ob dieses Produkt in einem Angebot verwendet werden kann oder nicht"
 
-#: apps/catalogue/abstract_models.py:247 defaults.py:87
+#: apps/catalogue/abstract_models.py:247 defaults.py:75
 msgid "Products"
 msgstr "Produkte"
 
@@ -676,12 +674,12 @@ msgstr "Produktbild"
 msgid "Product images"
 msgstr "Produktbilder"
 
-#: apps/catalogue/config.py:8 defaults.py:83
+#: apps/catalogue/config.py:8 defaults.py:71
 msgid "Catalogue"
 msgstr "Katalog"
 
 #: apps/checkout/config.py:8
-#: templates/oscar/basket/partials/basket_quick.html:39
+#: templates/oscar/basket/partials/basket_quick.html:38
 #: templates/oscar/checkout/checkout.html:9
 msgid "Checkout"
 msgstr "Zur Kasse"
@@ -809,137 +807,7 @@ msgstr "Benutzer"
 msgid "Customer"
 msgstr "Kunde"
 
-#: apps/customer/forms.py:92 apps/customer/forms.py:127
-#: templates/oscar/customer/profile/profile.html:13
-#: templates/oscar/dashboard/orders/order_detail.html:41
-#: templates/oscar/dashboard/orders/order_detail.html:47
-msgid "Email address"
-msgstr "E-Mail-Adresse"
-
-#: apps/customer/forms.py:112 apps/customer/forms.py:129
-msgid "Password"
-msgstr "Passwort"
-
-#: apps/customer/forms.py:122
-msgid "The entered password is not valid!"
-msgstr "Das eingegebene Passwort ist ungültig!"
-
-#: apps/customer/forms.py:132
-msgid "Confirm password"
-msgstr "Passwort bestätigen"
-
-#: apps/customer/forms.py:151
-msgid "A user with that email address already exists"
-msgstr "Ein Benutzer mit dieser E-Mail-Adresse existiert bereits"
-
-#: apps/customer/forms.py:159
-msgid "The two password fields didn't match."
-msgstr "Die beiden Passwörter stimmen nicht überein."
-
-#: apps/customer/forms.py:181 apps/dashboard/orders/forms.py:20
-msgctxt "start date"
-msgid "From"
-msgstr "Von"
-
-#: apps/customer/forms.py:183 apps/dashboard/orders/forms.py:22
-msgctxt "end date"
-msgid "To"
-msgstr "Zu"
-
-#: apps/customer/forms.py:184 apps/dashboard/orders/forms.py:65
-#: apps/dashboard/orders/views.py:330 apps/order/abstract_models.py:27
-#: templates/oscar/customer/order/order_list.html:37
-#: templates/oscar/dashboard/offers/offer_detail.html:107
-#: templates/oscar/dashboard/orders/order_list.html:93
-msgid "Order number"
-msgstr "Bestellnummer"
-
-#: apps/customer/forms.py:190
-msgid "At least one field is required."
-msgstr "Mindestens ein Eingabefeld ist erforderlich."
-
-#: apps/customer/forms.py:199 apps/dashboard/orders/forms.py:28
-#: apps/dashboard/orders/forms.py:51 apps/dashboard/orders/views.py:147
-msgid "All orders"
-msgstr "Alle Bestellungen"
-
-#: apps/customer/forms.py:209
-#, python-format
-msgid ""
-"Orders placed between %(date_from)s and %(date_to)s and order number "
-"containing %(order_number)s"
-msgstr ""
-"Zwischen %(date_from)s und %(date_to)s aufgegebene Bestellungen mit einer "
-"Bestellnummer, die %(order_number)s enthält"
-
-#: apps/customer/forms.py:213 apps/dashboard/orders/forms.py:39
-#, python-format
-msgid "Orders placed between %(date_from)s and %(date_to)s"
-msgstr "Bestellungen getätigt zwischen %(date_from)s und %(date_to)s"
-
-#: apps/customer/forms.py:217
-#, python-format
-msgid ""
-"Orders placed since %(date_from)s and order number containing "
-"%(order_number)s"
-msgstr ""
-"Seit %(date_from)s aufgegebene Bestellungen mit einer Bestellnummer, die "
-"%(order_number)s enthält"
-
-#: apps/customer/forms.py:220
-#, python-format
-msgid "Orders placed since %(date_from)s"
-msgstr "Seit %(date_from)s aufgegebene Bestellungen"
-
-#: apps/customer/forms.py:223
-#, python-format
-msgid ""
-"Orders placed until %(date_to)s and order number containing %(order_number)s"
-msgstr ""
-"Bis %(date_to)s aufgegebene Bestellungen mit einer Bestellnummer, die "
-"%(order_number)s enthält"
-
-#: apps/customer/forms.py:226
-#, python-format
-msgid "Orders placed until %(date_to)s"
-msgstr "Bis %(date_to)s aufgegebene Bestellungen"
-
-#: apps/customer/forms.py:228
-#, python-format
-msgid "Orders with order number containing %(order_number)s"
-msgstr "Bestellungen mit einer Bestellnummer, die %(order_number)s enthält"
-
-#: apps/customer/forms.py:274 apps/customer/forms.py:338
-msgid "A user with this email address already exists"
-msgstr "Ein Benutzer mit dieser E-Mail-Adresse existiert bereits"
-
-#: apps/customer/views.py:160
-msgid "Welcome back"
-msgstr "Willkommen zurück"
-
-#: apps/customer/views.py:208
-msgid "Thanks for registering!"
-msgstr "Danke für Ihre Registrierung!"
-
-#: apps/customer/views.py:239 templates/oscar/customer/baseaccountpage.html:30
-#: templates/oscar/customer/partials/nav_account.html:20
-msgid "Profile"
-msgstr "Profil"
-
-#: apps/customer/views.py:290
-msgid "Change Password"
-msgstr "Passwort ändern"
-
-#: apps/customer/views.py:301
-msgid "Password updated"
-msgstr "Passwort geändert"
-
-#: apps/customer/views.py:323 templates/oscar/customer/baseaccountpage.html:33
-#: templates/oscar/customer/partials/nav_account.html:23
-msgid "Order History"
-msgstr "Meine Bestellungen"
-
-#: apps/dashboard/config.py:8 defaults.py:78
+#: apps/dashboard/config.py:8 defaults.py:66
 #: templates/oscar/dashboard/layout.html:25
 #: templates/oscar/dashboard/layout.html:84
 #: templates/oscar/dashboard/offers/offer_delete.html:13
@@ -1083,6 +951,26 @@ msgstr "Angebot wiedereingesetzt"
 msgid "Orders dashboard"
 msgstr "Bestellungen-Dashboard"
 
+#: apps/dashboard/orders/forms.py:20
+msgctxt "start date"
+msgid "From"
+msgstr "Von"
+
+#: apps/dashboard/orders/forms.py:22
+msgctxt "end date"
+msgid "To"
+msgstr "Zu"
+
+#: apps/dashboard/orders/forms.py:28 apps/dashboard/orders/forms.py:51
+#: apps/dashboard/orders/views.py:147
+msgid "All orders"
+msgstr "Alle Bestellungen"
+
+#: apps/dashboard/orders/forms.py:39
+#, python-format
+msgid "Orders placed between %(date_from)s and %(date_to)s"
+msgstr "Bestellungen getätigt zwischen %(date_from)s und %(date_to)s"
+
 #: apps/dashboard/orders/forms.py:45
 #, python-format
 msgid "Orders placed since %s"
@@ -1092,6 +980,13 @@ msgstr "Bestellungen getätigt nach %s"
 #, python-format
 msgid "Orders placed until %s"
 msgstr "Bestellungen getätigt bis %s"
+
+#: apps/dashboard/orders/forms.py:65 apps/dashboard/orders/views.py:330
+#: apps/order/abstract_models.py:27
+#: templates/oscar/dashboard/offers/offer_detail.html:107
+#: templates/oscar/dashboard/orders/order_list.html:93
+msgid "Order number"
+msgstr "Bestellnummer"
 
 #: apps/dashboard/orders/forms.py:66
 msgid "Customer name"
@@ -1426,7 +1321,7 @@ msgstr ""
 "die Dauer der Sitzung zur Verfügung"
 
 #: apps/offer/models.py:86 apps/offer/models.py:421 apps/offer/models.py:514
-#: apps/payment/abstract_models.py:37 defaults.py:157
+#: apps/payment/abstract_models.py:37 defaults.py:145
 #: templates/oscar/dashboard/orders/order_detail.html:559
 #: templates/oscar/dashboard/orders/order_detail.html:609
 msgid "Type"
@@ -1826,7 +1721,7 @@ msgstr "In Bearbeitung"
 msgid "Order"
 msgstr "Bestellung"
 
-#: apps/order/abstract_models.py:282 defaults.py:105
+#: apps/order/abstract_models.py:282 defaults.py:93
 #: templates/oscar/dashboard/orders/line_detail.html:17
 #: templates/oscar/dashboard/orders/order_detail.html:18
 #: templates/oscar/dashboard/orders/order_list.html:9
@@ -1884,8 +1779,7 @@ msgid "Price (inc. tax)"
 msgstr "Preis (inkl. Steuer)"
 
 #: apps/order/abstract_models.py:431 apps/order/abstract_models.py:705
-#: apps/partner/abstract_models.py:111
-#: templates/oscar/catalogue/detail.html:107
+#: apps/partner/abstract_models.py:111 templates/oscar/catalogue/detail.html:97
 msgid "Price (excl. tax)"
 msgstr "Preis (exkl. Steuer)"
 
@@ -2431,27 +2325,27 @@ msgstr "Dieses Feld ist erforderlich"
 msgid "Please choose a less common password"
 msgstr "Bitte wählen Sie ein ungewöhnlicheres Passwort"
 
-#: defaults.py:95
+#: defaults.py:83
 msgid "Low stock alerts"
 msgstr "Wenige Exemplare auf Lager"
 
-#: defaults.py:101
+#: defaults.py:89
 msgid "Fulfilment"
 msgstr "Auftragsabwicklung"
 
-#: defaults.py:109 templates/oscar/dashboard/orders/statistics.html:21
+#: defaults.py:97 templates/oscar/dashboard/orders/statistics.html:21
 msgid "Statistics"
 msgstr "Statistiken"
 
-#: defaults.py:115 defaults.py:119
+#: defaults.py:103 defaults.py:107
 msgid "Customers"
 msgstr "Kunden"
 
-#: defaults.py:123
+#: defaults.py:111
 msgid "Stock alert requests"
 msgstr "Produktbenachrichtigungen"
 
-#: defaults.py:129 defaults.py:133
+#: defaults.py:117 defaults.py:121
 #: templates/oscar/dashboard/offers/offer_delete.html:7
 #: templates/oscar/dashboard/offers/offer_delete.html:17
 #: templates/oscar/dashboard/offers/offer_detail.html:18
@@ -2463,31 +2357,31 @@ msgstr "Produktbenachrichtigungen"
 msgid "Offers"
 msgstr "Angebote"
 
-#: defaults.py:139
+#: defaults.py:127
 msgid "Content"
 msgstr "Inhalt"
 
-#: defaults.py:143
+#: defaults.py:131
 msgid "Email templates"
 msgstr "E-Mail-Vorlagen"
 
-#: defaults.py:163
+#: defaults.py:151
 msgid "Price range"
 msgstr "Preisspanne"
 
-#: defaults.py:168
+#: defaults.py:156
 msgid "0 to 20"
 msgstr "0 bis 20"
 
-#: defaults.py:169
+#: defaults.py:157
 msgid "20 to 40"
 msgstr "20 bis 40"
 
-#: defaults.py:170
+#: defaults.py:158
 msgid "40 to 60"
 msgstr "40 bis 60"
 
-#: defaults.py:171
+#: defaults.py:159
 msgid "60+"
 msgstr "60+"
 
@@ -2500,11 +2394,8 @@ msgid "Version:"
 msgstr "Version:"
 
 #: templates/oscar/basket/basket.html:12
-#: templates/oscar/catalogue/detail.html:22
+#: templates/oscar/catalogue/detail.html:21
 #: templates/oscar/customer/baseaccountpage.html:14
-#: templates/oscar/customer/login_registration.html:11
-#: templates/oscar/customer/order/order_list.html:9
-#: templates/oscar/customer/registration.html:12
 #: templates/oscar/registration/password_reset_complete.html:9
 #: templates/oscar/registration/password_reset_confirm.html:9
 #: templates/oscar/registration/password_reset_done.html:9
@@ -2571,7 +2462,7 @@ msgstr ""
 "Ihr Warenkorbwert ist nun <strong>%(total)s</strong>"
 
 #: templates/oscar/basket/messages/new_total.html:22
-#: templates/oscar/basket/partials/basket_quick.html:38
+#: templates/oscar/basket/partials/basket_quick.html:37
 #: templates/oscar/partials/mini_basket.html:13
 msgid "View basket"
 msgstr "Warenkorb anzeigen"
@@ -2679,7 +2570,6 @@ msgstr "Gutschein hinzufügen"
 #: templates/oscar/checkout/shipping_address.html:79
 #: templates/oscar/checkout/user_address_delete.html:30
 #: templates/oscar/checkout/user_address_form.html:25
-#: templates/oscar/customer/registration.html:30
 #: templates/oscar/dashboard/offers/offer_delete.html:37
 #: templates/oscar/dashboard/orders/shippingaddress_form.html:37
 #: templates/oscar/dashboard/partials/form.html:10
@@ -2690,7 +2580,6 @@ msgstr "oder"
 #: templates/oscar/basket/partials/basket_content.html:125
 #: templates/oscar/checkout/user_address_delete.html:30
 #: templates/oscar/checkout/user_address_form.html:25
-#: templates/oscar/customer/registration.html:30
 #: templates/oscar/dashboard/offers/offer_delete.html:38
 #: templates/oscar/dashboard/offers/step_form.html:84
 #: templates/oscar/dashboard/orders/shippingaddress_form.html:37
@@ -2710,7 +2599,7 @@ msgid "Proceed to checkout"
 msgstr "Weiter zur Kasse"
 
 #: templates/oscar/basket/partials/basket_content.html:156
-#: templates/oscar/basket/partials/basket_quick.html:42
+#: templates/oscar/basket/partials/basket_quick.html:41
 msgid "Your basket is empty."
 msgstr "Ihr Warenkorb ist leer."
 
@@ -2731,12 +2620,12 @@ msgstr "Artikel"
 msgid "Move to basket"
 msgstr "In Warenkorb legen"
 
-#: templates/oscar/basket/partials/basket_quick.html:25
+#: templates/oscar/basket/partials/basket_quick.html:24
 msgid "Qty"
 msgstr "Menge"
 
-#: templates/oscar/basket/partials/basket_quick.html:33
-#: templates/oscar/basket/partials/basket_quick.html:35
+#: templates/oscar/basket/partials/basket_quick.html:32
+#: templates/oscar/basket/partials/basket_quick.html:34
 msgid "Total:"
 msgstr "Gesamt:"
 
@@ -2766,7 +2655,7 @@ msgid "Basket total"
 msgstr "Summe"
 
 #: templates/oscar/basket/partials/basket_totals.html:94
-#: templates/oscar/catalogue/detail.html:114
+#: templates/oscar/catalogue/detail.html:104
 msgid "Tax"
 msgstr "Steuer"
 
@@ -2790,32 +2679,32 @@ msgstr "Bestellsumme"
 msgid "Taxes will be added during checkout."
 msgstr "Steuern werden während dem Bezahlvorgang hinzugefügt."
 
-#: templates/oscar/catalogue/detail.html:67
+#: templates/oscar/catalogue/detail.html:57
 msgid "Edit this product"
 msgstr "Produkt bearbeiten"
 
-#: templates/oscar/catalogue/detail.html:84
+#: templates/oscar/catalogue/detail.html:74
 msgid "Product Description"
 msgstr "Produktbeschreibung"
 
-#: templates/oscar/catalogue/detail.html:92
+#: templates/oscar/catalogue/detail.html:82
 msgid "Product Information"
 msgstr "Produktinformation"
 
-#: templates/oscar/catalogue/detail.html:101
+#: templates/oscar/catalogue/detail.html:91
 #: templates/oscar/dashboard/orders/line_detail.html:50
 msgid "Product Type"
 msgstr "Produkttyp"
 
-#: templates/oscar/catalogue/detail.html:111
+#: templates/oscar/catalogue/detail.html:101
 msgid "Price (incl. tax)"
 msgstr "Preis (inkl. Steuer)"
 
-#: templates/oscar/catalogue/detail.html:118
+#: templates/oscar/catalogue/detail.html:108
 msgid "Availability"
 msgstr "Verfügbarkeit"
 
-#: templates/oscar/catalogue/detail.html:128
+#: templates/oscar/catalogue/detail.html:118
 msgid "Recommended items"
 msgstr "Empfohlene Produkte"
 
@@ -3127,7 +3016,6 @@ msgstr "Speichern"
 
 #: templates/oscar/customer/baseaccountpage.html:6
 #: templates/oscar/customer/baseaccountpage.html:17
-#: templates/oscar/customer/order/order_list.html:12
 #: templates/oscar/dashboard/partials/nav_accounts.html:36
 #: templates/oscar/dashboard/partials/nav_accounts.html:40
 #: templates/oscar/partials/nav_accounts.html:39
@@ -3135,84 +3023,15 @@ msgstr "Speichern"
 msgid "Account"
 msgstr "Benutzerkonto"
 
-#: templates/oscar/customer/history/recently_viewed_products.html:7
-msgid "Products you recently viewed"
-msgstr "Produkte, die Sie kürzlich angesehen haben"
+#: templates/oscar/customer/baseaccountpage.html:30
+#: templates/oscar/customer/partials/nav_account.html:20
+msgid "Profile"
+msgstr "Profil"
 
-#: templates/oscar/customer/login_registration.html:5
-#: templates/oscar/customer/login_registration.html:13
-#: templates/oscar/dashboard/partials/nav_accounts.html:48
-#: templates/oscar/partials/nav_accounts.html:51
-msgid "Login or register"
-msgstr "Einloggen oder registrieren"
-
-#: templates/oscar/customer/login_registration.html:24
-#: templates/oscar/customer/login_registration.html:28
-msgid "Log In"
-msgstr "Einloggen"
-
-#: templates/oscar/customer/login_registration.html:27
-msgid "I've forgotten my password"
-msgstr "Ich habe mein Passwort vergessen"
-
-#: templates/oscar/customer/login_registration.html:28
-msgid "Logging in..."
-msgstr "Login gestartet..."
-
-#: templates/oscar/customer/login_registration.html:33
-#: templates/oscar/customer/login_registration.html:36
-#: templates/oscar/customer/registration.html:6
-#: templates/oscar/customer/registration.html:14
-#: templates/oscar/customer/registration.html:19
-#: templates/oscar/customer/registration.html:28
-msgid "Register"
-msgstr "Registrieren"
-
-#: templates/oscar/customer/login_registration.html:36
-#: templates/oscar/customer/registration.html:28
-msgid "Registering..."
-msgstr "Registrieren..."
-
-#: templates/oscar/customer/order/order_list.html:14
-msgid "Order history"
+#: templates/oscar/customer/baseaccountpage.html:33
+#: templates/oscar/customer/partials/nav_account.html:23
+msgid "Order History"
 msgstr "Meine Bestellungen"
-
-#: templates/oscar/customer/order/order_list.html:22
-#: templates/oscar/dashboard/orders/statistics.html:29
-msgid "Filter"
-msgstr "Filter"
-
-#: templates/oscar/customer/order/order_list.html:26
-#: templates/oscar/dashboard/orders/statistics.html:34
-msgid "Filtering..."
-msgstr "Filtere..."
-
-#: templates/oscar/customer/order/order_list.html:26
-msgid "Filter results"
-msgstr "Ergebnisse filtern"
-
-#: templates/oscar/customer/order/order_list.html:27
-#: templates/oscar/dashboard/offers/offer_list.html:42
-#: templates/oscar/dashboard/orders/statistics.html:35
-msgid "Reset"
-msgstr "Zurücksetzen"
-
-#: templates/oscar/customer/order/order_list.html:38
-msgid "Num items"
-msgstr "Anzahl Artikel"
-
-#: templates/oscar/customer/order/order_list.html:39
-#: templates/oscar/dashboard/orders/order_list.html:94
-msgid "Total inc tax"
-msgstr "Gesamt (inkl. Steuer)"
-
-#: templates/oscar/customer/order/order_list.html:54
-msgid "No orders match your search."
-msgstr "Keine Bestellung entspricht Ihrer Suche."
-
-#: templates/oscar/customer/order/order_list.html:56
-msgid "You haven't placed any orders."
-msgstr "Sie haben noch keine Bestellung aufgegeben."
 
 #: templates/oscar/customer/partials/nav_account.html:26
 msgid "Address Book"
@@ -3229,18 +3048,6 @@ msgstr "Produktbenachrichtigungen"
 #: templates/oscar/customer/partials/nav_account.html:35
 msgid "Notifications"
 msgstr "Benachrichtigungen"
-
-#: templates/oscar/customer/profile/profile.html:25
-msgid "Date registered"
-msgstr "Registrierungsdatum"
-
-#: templates/oscar/customer/profile/profile.html:31
-msgid "Change password"
-msgstr "Passwort ändern"
-
-#: templates/oscar/customer/profile/profile.html:32
-msgid "Edit profile"
-msgstr "Profil bearbeiten"
 
 #: templates/oscar/dashboard/offers/benefit_form.html:14
 msgid "Build a new incentive"
@@ -3401,6 +3208,11 @@ msgstr "Suche..."
 #: templates/oscar/search/results.html:18
 msgid "Search"
 msgstr "Suche"
+
+#: templates/oscar/dashboard/offers/offer_list.html:42
+#: templates/oscar/dashboard/orders/statistics.html:35
+msgid "Reset"
+msgstr "Zurücksetzen"
 
 #: templates/oscar/dashboard/offers/offer_list.html:52
 msgid "Is available?"
@@ -3566,6 +3378,11 @@ msgstr "Kundeninformation"
 #: templates/oscar/dashboard/orders/order_detail.html:37
 msgid "Customer checked out as a guest."
 msgstr "Kunde hat Vorgang als Gast beendet."
+
+#: templates/oscar/dashboard/orders/order_detail.html:41
+#: templates/oscar/dashboard/orders/order_detail.html:47
+msgid "Email address"
+msgstr "E-Mail-Adresse"
 
 #: templates/oscar/dashboard/orders/order_detail.html:54
 msgid "Customer has deleted their account."
@@ -3809,6 +3626,10 @@ msgstr "Ausgewählte Bestellungen als CSV herunterladen"
 msgid "Download"
 msgstr "Download"
 
+#: templates/oscar/dashboard/orders/order_list.html:94
+msgid "Total inc tax"
+msgstr "Gesamt (inkl. Steuer)"
+
 #: templates/oscar/dashboard/orders/order_list.html:118
 msgid "Deleted"
 msgstr "Gelöscht"
@@ -3860,6 +3681,14 @@ msgstr "Adresse aktualisieren"
 msgid "Order statistics"
 msgstr "Bestellstatistiken"
 
+#: templates/oscar/dashboard/orders/statistics.html:29
+msgid "Filter"
+msgstr "Filter"
+
+#: templates/oscar/dashboard/orders/statistics.html:34
+msgid "Filtering..."
+msgstr "Filtere..."
+
 #: templates/oscar/dashboard/orders/statistics.html:34
 msgid "Filter result"
 msgstr "Ergebnisse filtern"
@@ -3904,6 +3733,11 @@ msgstr "Los"
 #: templates/oscar/partials/nav_accounts.html:49
 msgid "Logout"
 msgstr "Ausloggen"
+
+#: templates/oscar/dashboard/partials/nav_accounts.html:48
+#: templates/oscar/partials/nav_accounts.html:51
+msgid "Login or register"
+msgstr "Einloggen oder registrieren"
 
 #: templates/oscar/dashboard/partials/nav_primary.html:24
 #: templates/oscar/dashboard/partials/nav_primary.html:28
@@ -4116,10 +3950,6 @@ msgstr ""
 "Meinten Sie <a href=\"%(search_url)s?q=%(suggestion)s\">\"%(suggestion)s\"</"
 "a>?"
 
-#: templatetags/history_tags.py:62
-msgid "Back to search results"
-msgstr "Zurück zu den Suchergebnissen"
-
 #: views/decorators.py:43
 msgid "You must log in to access this page"
 msgstr "Sie müssen eingeloggt sein, um diese Seite angezeigt zu bekommen"
@@ -4141,6 +3971,114 @@ msgstr "Dies ist keine gültige Vorwahl für %s."
 #: views/generic.py:208
 msgid "This is not a valid local or international phone format."
 msgstr "Dies ist keine gültige lokale oder internationale Telefonnummer."
+
+#~ msgid "Password"
+#~ msgstr "Passwort"
+
+#~ msgid "The entered password is not valid!"
+#~ msgstr "Das eingegebene Passwort ist ungültig!"
+
+#~ msgid "Confirm password"
+#~ msgstr "Passwort bestätigen"
+
+#~ msgid "A user with that email address already exists"
+#~ msgstr "Ein Benutzer mit dieser E-Mail-Adresse existiert bereits"
+
+#~ msgid "The two password fields didn't match."
+#~ msgstr "Die beiden Passwörter stimmen nicht überein."
+
+#~ msgid "At least one field is required."
+#~ msgstr "Mindestens ein Eingabefeld ist erforderlich."
+
+#~ msgid ""
+#~ "Orders placed between %(date_from)s and %(date_to)s and order number "
+#~ "containing %(order_number)s"
+#~ msgstr ""
+#~ "Zwischen %(date_from)s und %(date_to)s aufgegebene Bestellungen mit einer "
+#~ "Bestellnummer, die %(order_number)s enthält"
+
+#~ msgid ""
+#~ "Orders placed since %(date_from)s and order number containing "
+#~ "%(order_number)s"
+#~ msgstr ""
+#~ "Seit %(date_from)s aufgegebene Bestellungen mit einer Bestellnummer, die "
+#~ "%(order_number)s enthält"
+
+#~ msgid "Orders placed since %(date_from)s"
+#~ msgstr "Seit %(date_from)s aufgegebene Bestellungen"
+
+#~ msgid ""
+#~ "Orders placed until %(date_to)s and order number containing "
+#~ "%(order_number)s"
+#~ msgstr ""
+#~ "Bis %(date_to)s aufgegebene Bestellungen mit einer Bestellnummer, die "
+#~ "%(order_number)s enthält"
+
+#~ msgid "Orders placed until %(date_to)s"
+#~ msgstr "Bis %(date_to)s aufgegebene Bestellungen"
+
+#~ msgid "Orders with order number containing %(order_number)s"
+#~ msgstr "Bestellungen mit einer Bestellnummer, die %(order_number)s enthält"
+
+#~ msgid "A user with this email address already exists"
+#~ msgstr "Ein Benutzer mit dieser E-Mail-Adresse existiert bereits"
+
+#~ msgid "Welcome back"
+#~ msgstr "Willkommen zurück"
+
+#~ msgid "Thanks for registering!"
+#~ msgstr "Danke für Ihre Registrierung!"
+
+#~ msgid "Change Password"
+#~ msgstr "Passwort ändern"
+
+#~ msgid "Password updated"
+#~ msgstr "Passwort geändert"
+
+#~ msgid "Products you recently viewed"
+#~ msgstr "Produkte, die Sie kürzlich angesehen haben"
+
+#~ msgid "Log In"
+#~ msgstr "Einloggen"
+
+#~ msgid "I've forgotten my password"
+#~ msgstr "Ich habe mein Passwort vergessen"
+
+#~ msgid "Logging in..."
+#~ msgstr "Login gestartet..."
+
+#~ msgid "Register"
+#~ msgstr "Registrieren"
+
+#~ msgid "Registering..."
+#~ msgstr "Registrieren..."
+
+#~ msgid "Order history"
+#~ msgstr "Meine Bestellungen"
+
+#~ msgid "Filter results"
+#~ msgstr "Ergebnisse filtern"
+
+#~ msgid "Num items"
+#~ msgstr "Anzahl Artikel"
+
+#~ msgid "No orders match your search."
+#~ msgstr "Keine Bestellung entspricht Ihrer Suche."
+
+#~ msgid "You haven't placed any orders."
+#~ msgstr "Sie haben noch keine Bestellung aufgegeben."
+
+#~ msgid "Date registered"
+#~ msgstr "Registrierungsdatum"
+
+#~ msgid "Change password"
+#~ msgstr "Passwort ändern"
+
+#~ msgid "Edit profile"
+#~ msgstr "Profil bearbeiten"
+
+#~ msgid "Back to search results"
+#~ msgstr "Zurück zu den Suchergebnissen"
 
 #~ msgid "All products"
 #~ msgstr "Alle Produkte"
