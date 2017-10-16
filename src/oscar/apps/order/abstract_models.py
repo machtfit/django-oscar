@@ -5,7 +5,6 @@ import hashlib
 from django.conf import settings
 from django.db import models
 from django.db.models import Sum
-from django.utils import timezone
 from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext_lazy as _, pgettext_lazy
 from django.utils.datastructures import SortedDict
@@ -322,49 +321,6 @@ class AbstractOrder(models.Model):
         # useful when importing orders from another system).
         self.set_date_placed_default()
         super(AbstractOrder, self).save(*args, **kwargs)
-
-
-@python_2_unicode_compatible
-class AbstractOrderNote(models.Model):
-    """
-    A note against an order.
-
-    This are often used for audit purposes too.  IE, whenever an admin
-    makes a change to an order, we create a note to record what happened.
-    """
-    order = models.ForeignKey('order.Order', related_name="notes",
-                              verbose_name=_("Order"))
-
-    # These are sometimes programatically generated so don't need a
-    # user everytime
-    user = models.ForeignKey(AUTH_USER_MODEL, null=True,
-                             verbose_name=_("User"))
-
-    # We allow notes to be classified although this isn't always needed
-    INFO, WARNING, ERROR, SYSTEM = 'Info', 'Warning', 'Error', 'System'
-    note_type = models.CharField(_("Note Type"), max_length=128, blank=True)
-
-    message = models.TextField(_("Message"))
-    date_created = models.DateTimeField(_("Date Created"), auto_now_add=True)
-    date_updated = models.DateTimeField(_("Date Updated"), auto_now=True)
-
-    # Notes can only be edited for 5 minutes after being created
-    editable_lifetime = 300
-
-    class Meta:
-        abstract = True
-        app_label = 'order'
-        verbose_name = _("Order Note")
-        verbose_name_plural = _("Order Notes")
-
-    def __str__(self):
-        return u"'%s' (%s)" % (self.message[0:50], self.user)
-
-    def is_editable(self):
-        if self.note_type == self.SYSTEM:
-            return False
-        delta = timezone.now() - self.date_updated
-        return delta.seconds < self.editable_lifetime
 
 
 @python_2_unicode_compatible

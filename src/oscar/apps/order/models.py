@@ -13,13 +13,6 @@ if not is_model_registered('order', 'Order'):
     __all__.append('Order')
 
 
-if not is_model_registered('order', 'OrderNote'):
-    class OrderNote(AbstractOrderNote):
-        pass
-
-    __all__.append('OrderNote')
-
-
 if not is_model_registered('order', 'ShippingAddress'):
     class ShippingAddress(AbstractShippingAddress):
         pass
