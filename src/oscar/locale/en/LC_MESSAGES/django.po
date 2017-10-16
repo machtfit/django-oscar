@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-12 12:21+0200\n"
+"POT-Creation-Date: 2017-10-16 10:45+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -530,7 +530,7 @@ msgid "Product structure"
 msgstr ""
 
 #: apps/catalogue/abstract_models.py:193 apps/dashboard/orders/forms.py:68
-#: apps/order/abstract_models.py:419 templates/oscar/catalogue/detail.html:87
+#: apps/order/abstract_models.py:419
 #: templates/oscar/dashboard/orders/line_detail.html:53
 #: templates/oscar/dashboard/orders/order_detail.html:112
 msgid "UPC"
@@ -1679,7 +1679,7 @@ msgid "Price (inc. tax)"
 msgstr ""
 
 #: apps/order/abstract_models.py:431 apps/order/abstract_models.py:705
-#: apps/partner/abstract_models.py:111 templates/oscar/catalogue/detail.html:97
+#: apps/partner/abstract_models.py:111
 msgid "Price (excl. tax)"
 msgstr ""
 
@@ -2293,13 +2293,10 @@ msgid "Version:"
 msgstr ""
 
 #: templates/oscar/basket/basket.html:12
-#: templates/oscar/catalogue/detail.html:21
-#: templates/oscar/customer/baseaccountpage.html:14
 #: templates/oscar/registration/password_reset_complete.html:9
 #: templates/oscar/registration/password_reset_confirm.html:9
 #: templates/oscar/registration/password_reset_done.html:9
 #: templates/oscar/registration/password_reset_form.html:9
-#: templates/oscar/search/results.html:15
 msgid "Home"
 msgstr ""
 
@@ -2434,7 +2431,6 @@ msgid "I have a voucher code..."
 msgstr ""
 
 #: templates/oscar/basket/partials/basket_content.html:124
-#: templates/oscar/catalogue/partials/add_to_basket_form_compact.html:12
 msgid "Adding..."
 msgstr ""
 
@@ -2531,7 +2527,6 @@ msgid "Basket total"
 msgstr ""
 
 #: templates/oscar/basket/partials/basket_totals.html:94
-#: templates/oscar/catalogue/detail.html:104
 msgid "Tax"
 msgstr ""
 
@@ -2553,44 +2548,6 @@ msgstr ""
 
 #: templates/oscar/basket/partials/basket_totals.html:146
 msgid "Taxes will be added during checkout."
-msgstr ""
-
-#: templates/oscar/catalogue/detail.html:57
-msgid "Edit this product"
-msgstr ""
-
-#: templates/oscar/catalogue/detail.html:74
-msgid "Product Description"
-msgstr ""
-
-#: templates/oscar/catalogue/detail.html:82
-msgid "Product Information"
-msgstr ""
-
-#: templates/oscar/catalogue/detail.html:91
-#: templates/oscar/dashboard/orders/line_detail.html:50
-msgid "Product Type"
-msgstr ""
-
-#: templates/oscar/catalogue/detail.html:101
-msgid "Price (incl. tax)"
-msgstr ""
-
-#: templates/oscar/catalogue/detail.html:108
-msgid "Availability"
-msgstr ""
-
-#: templates/oscar/catalogue/detail.html:118
-msgid "Recommended items"
-msgstr ""
-
-#: templates/oscar/catalogue/partials/add_to_basket_form_compact.html:12
-#: templates/oscar/catalogue/partials/add_to_basket_form_compact.html:15
-msgid "Add to basket"
-msgstr ""
-
-#: templates/oscar/catalogue/partials/stock_record.html:9
-msgid "Free"
 msgstr ""
 
 #: templates/oscar/checkout/checkout.html:34
@@ -2871,41 +2828,6 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
-#: templates/oscar/customer/baseaccountpage.html:6
-#: templates/oscar/customer/baseaccountpage.html:17
-#: templates/oscar/dashboard/partials/nav_accounts.html:36
-#: templates/oscar/dashboard/partials/nav_accounts.html:40
-#: templates/oscar/partials/nav_accounts.html:39
-#: templates/oscar/partials/nav_accounts.html:43
-msgid "Account"
-msgstr ""
-
-#: templates/oscar/customer/baseaccountpage.html:30
-#: templates/oscar/customer/partials/nav_account.html:20
-msgid "Profile"
-msgstr ""
-
-#: templates/oscar/customer/baseaccountpage.html:33
-#: templates/oscar/customer/partials/nav_account.html:23
-msgid "Order History"
-msgstr ""
-
-#: templates/oscar/customer/partials/nav_account.html:26
-msgid "Address Book"
-msgstr ""
-
-#: templates/oscar/customer/partials/nav_account.html:29
-msgid "Email History"
-msgstr ""
-
-#: templates/oscar/customer/partials/nav_account.html:32
-msgid "Product Alerts"
-msgstr ""
-
-#: templates/oscar/customer/partials/nav_account.html:35
-msgid "Notifications"
-msgstr ""
-
 #: templates/oscar/dashboard/offers/benefit_form.html:14
 msgid "Build a new incentive"
 msgstr ""
@@ -3057,7 +2979,6 @@ msgstr ""
 #: templates/oscar/dashboard/orders/order_list.html:51
 #: templates/oscar/dashboard/orders/order_list.html:67
 #: templates/oscar/partials/search.html:7
-#: templates/oscar/search/results.html:18
 msgid "Search"
 msgstr ""
 
@@ -3154,6 +3075,10 @@ msgstr ""
 
 #: templates/oscar/dashboard/orders/line_detail.html:36
 msgid "Product details"
+msgstr ""
+
+#: templates/oscar/dashboard/orders/line_detail.html:50
+msgid "Product Type"
 msgstr ""
 
 #: templates/oscar/dashboard/orders/line_detail.html:62
@@ -3573,6 +3498,13 @@ msgstr ""
 msgid "Go"
 msgstr ""
 
+#: templates/oscar/dashboard/partials/nav_accounts.html:36
+#: templates/oscar/dashboard/partials/nav_accounts.html:40
+#: templates/oscar/partials/nav_accounts.html:39
+#: templates/oscar/partials/nav_accounts.html:43
+msgid "Account"
+msgstr ""
+
 #: templates/oscar/dashboard/partials/nav_accounts.html:46
 #: templates/oscar/partials/nav_accounts.html:49
 msgid "Logout"
@@ -3599,20 +3531,13 @@ msgstr ""
 msgid "Browse store"
 msgstr ""
 
-#: templates/oscar/partials/ellipses_pagination.html:9
+#: templates/oscar/partials/mini_basket.html:5
+msgid "Basket total:"
+msgstr ""
+
 #: templates/oscar/partials/pagination.html:8
 #: templates/oscar/search/partials/pagination.html:8
 msgid "previous"
-msgstr ""
-
-#: templates/oscar/partials/ellipses_pagination.html:21
-#: templates/oscar/partials/pagination.html:16
-#: templates/oscar/search/partials/pagination.html:16
-msgid "next"
-msgstr ""
-
-#: templates/oscar/partials/mini_basket.html:5
-msgid "Basket total:"
 msgstr ""
 
 #: templates/oscar/partials/pagination.html:11
@@ -3622,6 +3547,11 @@ msgid ""
 "\n"
 "                Page %(page_num)s of %(total_pages)s\n"
 "            "
+msgstr ""
+
+#: templates/oscar/partials/pagination.html:16
+#: templates/oscar/search/partials/pagination.html:16
+msgid "next"
 msgstr ""
 
 #: templates/oscar/registration/password_reset_complete.html:4
@@ -3714,53 +3644,6 @@ msgstr ""
 
 #: templates/oscar/registration/password_reset_form.html:24
 msgid "Send reset email"
-msgstr ""
-
-#: templates/oscar/search/results.html:26
-msgid "Refine your search"
-msgstr ""
-
-#: templates/oscar/search/results.html:38
-#, python-format
-msgid ""
-"\n"
-"        Products matching \"%(q)s\"\n"
-"    "
-msgstr ""
-
-#: templates/oscar/search/results.html:54
-#, python-format
-msgid ""
-"\n"
-"                    Found <strong>%(num_results)s</strong> results, showing "
-"<strong>%(start)s</strong> to <strong>%(end)s</strong>.\n"
-"                "
-msgstr ""
-
-#: templates/oscar/search/results.html:58
-#, python-format
-msgid ""
-"\n"
-"                    Found <strong>1</strong> result.\n"
-"                "
-msgid_plural ""
-"\n"
-"                    Found <strong>%(num_results)s</strong> results. \n"
-"                "
-msgstr[0] ""
-msgstr[1] ""
-
-#: templates/oscar/search/results.html:69
-msgid "Found <strong>0</strong> results."
-msgstr ""
-
-#: templates/oscar/search/results.html:72
-#, python-format
-msgid ""
-"\n"
-"                        Did you mean <a href=\"%(search_url)s?q="
-"%(suggestion)s\">\"%(suggestion)s\"</a>?\n"
-"                    "
 msgstr ""
 
 #: views/decorators.py:43
