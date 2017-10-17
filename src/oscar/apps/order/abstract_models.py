@@ -17,6 +17,7 @@ from oscar.models.fields import AutoSlugField
 from . import exceptions
 
 
+
 @python_2_unicode_compatible
 class AbstractOrder(models.Model):
     """
@@ -296,20 +297,23 @@ class AbstractOrder(models.Model):
 
     @property
     def basket_discounts(self):
+        OrderDiscount = get_model('order', 'OrderDiscount')
         # This includes both offer- and voucher- discounts.  For orders we
         # don't need to treat them differently like we do for baskets.
         return self.discounts.filter(
-            category=AbstractOrderDiscount.BASKET)
+            category=OrderDiscount.BASKET)
 
     @property
     def shipping_discounts(self):
+        OrderDiscount = get_model('order', 'OrderDiscount')
         return self.discounts.filter(
-            category=AbstractOrderDiscount.SHIPPING)
+            category=OrderDiscount.SHIPPING)
 
     @property
     def post_order_actions(self):
+        OrderDiscount = get_model('order', 'OrderDiscount')
         return self.discounts.filter(
-            category=AbstractOrderDiscount.DEFERRED)
+            category=OrderDiscount.DEFERRED)
 
     def set_date_placed_default(self):
         if self.date_placed is None:
@@ -866,106 +870,3 @@ class AbstractShippingEventType(models.Model):
 
     def __str__(self):
         return self.name
-
-
-# DISCOUNTS
-
-
-@python_2_unicode_compatible
-class AbstractOrderDiscount(models.Model):
-    """
-    A discount against an order.
-
-    Normally only used for display purposes so an order can be listed with
-    discounts displayed separately even though in reality, the discounts are
-    applied at the line level.
-
-    This has evolved to be a slightly misleading class name as this really
-    track benefit applications which aren't necessarily discounts.
-    """
-    order = models.ForeignKey(
-        'order.Order', related_name="discounts", verbose_name=_("Order"))
-
-    # We need to distinguish between basket discounts, shipping discounts and
-    # 'deferred' discounts.
-    BASKET, SHIPPING, DEFERRED = "Basket", "Shipping", "Deferred"
-    CATEGORY_CHOICES = (
-        (BASKET, _(BASKET)),
-        (SHIPPING, _(SHIPPING)),
-        (DEFERRED, _(DEFERRED)),
-    )
-    category = models.CharField(
-        _("Discount category"), default=BASKET, max_length=64,
-        choices=CATEGORY_CHOICES)
-
-    offer_id = models.PositiveIntegerField(
-        _("Offer ID"), blank=True, null=True)
-    offer_name = models.CharField(
-        _("Offer name"), max_length=128, db_index=True, blank=True)
-    voucher_id = models.PositiveIntegerField(
-        _("Voucher ID"), blank=True, null=True)
-    voucher_code = models.CharField(
-        _("Code"), max_length=128, db_index=True, blank=True)
-    frequency = models.PositiveIntegerField(_("Frequency"), null=True)
-    amount = models.DecimalField(
-        _("Amount"), decimal_places=2, max_digits=12, default=0)
-
-    # Post-order offer applications can return a message to indicate what
-    # action was taken after the order was placed.
-    message = models.TextField(blank=True)
-
-    @property
-    def is_basket_discount(self):
-        return self.category == self.BASKET
-
-    @property
-    def is_shipping_discount(self):
-        return self.category == self.SHIPPING
-
-    @property
-    def is_post_order_action(self):
-        return self.category == self.DEFERRED
-
-    class Meta:
-        abstract = True
-        app_label = 'order'
-        verbose_name = _("Order Discount")
-        verbose_name_plural = _("Order Discounts")
-
-    def save(self, **kwargs):
-        if self.offer_id and not self.offer_name:
-            offer = self.offer
-            if offer:
-                self.offer_name = offer.name
-
-        if self.voucher_id and not self.voucher_code:
-            voucher = self.voucher
-            if voucher:
-                self.voucher_code = voucher.code
-
-        super(AbstractOrderDiscount, self).save(**kwargs)
-
-    def __str__(self):
-        return _("Discount of %(amount)r from order %(order)s") % {
-            'amount': self.amount, 'order': self.order}
-
-    @property
-    def offer(self):
-        Offer = get_model('offer', 'ConditionalOffer')
-        try:
-            return Offer.objects.select_related('benefit').get(id=self.offer_id)
-        except Offer.DoesNotExist:
-            return None
-
-    @property
-    def voucher(self):
-        Voucher = get_model('voucher', 'Voucher')
-        try:
-            return Voucher.objects.get(id=self.voucher_id)
-        except Voucher.DoesNotExist:
-            return None
-
-    def description(self):
-        if self.voucher_code:
-            return self.voucher_code
-        return self.offer_name or u""
