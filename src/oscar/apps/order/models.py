@@ -6,13 +6,6 @@ from oscar.apps.address.abstract_models import (AbstractShippingAddress,
 __all__ = ['PaymentEventQuantity', 'ShippingEventQuantity']
 
 
-if not is_model_registered('order', 'Order'):
-    class Order(AbstractOrder):
-        pass
-
-    __all__.append('Order')
-
-
 if not is_model_registered('order', 'ShippingAddress'):
     class ShippingAddress(AbstractShippingAddress):
         pass
