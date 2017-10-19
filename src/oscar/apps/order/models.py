@@ -25,10 +25,3 @@ if not is_model_registered('order', 'Line'):
         pass
 
     __all__.append('Line')
-
-
-if not is_model_registered('order', 'LinePrice'):
-    class LinePrice(AbstractLinePrice):
-        pass
-
-    __all__.append('LinePrice')
