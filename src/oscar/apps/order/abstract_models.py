@@ -362,30 +362,3 @@ class AbstractLinePrice(models.Model):
             'number': self.line,
             'qty': self.quantity,
             'price': self.price_incl_tax}
-
-
-# PAYMENT EVENTS
-
-
-@python_2_unicode_compatible
-class AbstractPaymentEventType(models.Model):
-    """
-    Payment event types are things like 'Paid', 'Failed', 'Refunded'.
-
-    These are effectively the transaction types.
-    """
-    name = models.CharField(_("Name"), max_length=128, unique=True)
-    code = AutoSlugField(_("Code"), max_length=128, unique=True,
-                         populate_from='name')
-
-    class Meta:
-        abstract = True
-        app_label = 'order'
-        verbose_name = _("Payment Event Type")
-        verbose_name_plural = _("Payment Event Types")
-        ordering = ('name', )
-
-    def __str__(self):
-        return self.name
-
-
