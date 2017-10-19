@@ -458,41 +458,6 @@ class PaymentEventQuantity(models.Model):
 
 
 @python_2_unicode_compatible
-class AbstractShippingEvent(models.Model):
-    """
-    An event is something which happens to a group of lines such as
-    1 item being dispatched.
-    """
-    order = models.ForeignKey(
-        'order.Order', related_name='shipping_events', verbose_name=_("Order"))
-    lines = models.ManyToManyField(
-        'order.Line', related_name='shipping_events',
-        through='ShippingEventQuantity', verbose_name=_("Lines"))
-    event_type = models.ForeignKey(
-        'order.ShippingEventType', verbose_name=_("Event Type"))
-    notes = models.TextField(
-        _("Event notes"), blank=True,
-        help_text=_("This could be the dispatch reference, or a "
-                    "tracking number"))
-    date_created = models.DateTimeField(_("Date Created"), auto_now_add=True)
-
-    class Meta:
-        abstract = True
-        app_label = 'order'
-        verbose_name = _("Shipping Event")
-        verbose_name_plural = _("Shipping Events")
-        ordering = ['-date_created']
-
-    def __str__(self):
-        return _("Order #%(number)s, type %(type)s") % {
-            'number': self.order.number,
-            'type': self.event_type}
-
-    def num_affected_lines(self):
-        return self.lines.count()
-
-
-@python_2_unicode_compatible
 class ShippingEventQuantity(models.Model):
     """
     A "through" model linking lines to shipping events.
