@@ -434,21 +434,3 @@ class AbstractPaymentEvent(models.Model):
     def num_affected_lines(self):
         return self.lines.all().count()
 
-
-class PaymentEventQuantity(models.Model):
-    """
-    A "through" model linking lines to payment events
-    """
-    event = models.ForeignKey(
-        'order.PaymentEvent', related_name='line_quantities',
-        verbose_name=_("Event"))
-    line = models.ForeignKey(
-        'order.Line', related_name="payment_event_quantities",
-        verbose_name=_("Line"))
-    quantity = models.PositiveIntegerField(_("Quantity"))
-
-    class Meta:
-        app_label = 'order'
-        verbose_name = _("Payment Event Quantity")
-        verbose_name_plural = _("Payment Event Quantities")
-        unique_together = ('event', 'line')
