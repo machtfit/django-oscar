@@ -495,25 +495,3 @@ class ShippingEventQuantity(models.Model):
             'qty': self.quantity}
 
 
-@python_2_unicode_compatible
-class AbstractShippingEventType(models.Model):
-    """
-    A type of shipping/fulfillment event
-
-    Eg: 'Shipped', 'Cancelled', 'Returned'
-    """
-    # Name is the friendly description of an event
-    name = models.CharField(_("Name"), max_length=255, unique=True)
-    # Code is used in forms
-    code = AutoSlugField(_("Code"), max_length=128, unique=True,
-                         populate_from='name')
-
-    class Meta:
-        abstract = True
-        app_label = 'order'
-        verbose_name = _("Shipping Event Type")
-        verbose_name_plural = _("Shipping Event Types")
-        ordering = ('name', )
-
-    def __str__(self):
-        return self.name
