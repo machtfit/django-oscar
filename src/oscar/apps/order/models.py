@@ -34,13 +34,6 @@ if not is_model_registered('order', 'LinePrice'):
     __all__.append('LinePrice')
 
 
-if not is_model_registered('order', 'PaymentEvent'):
-    class PaymentEvent(AbstractPaymentEvent):
-        pass
-
-    __all__.append('PaymentEvent')
-
-
 if not is_model_registered('order', 'PaymentEventType'):
     class PaymentEventType(AbstractPaymentEventType):
         pass
