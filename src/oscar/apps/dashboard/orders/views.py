@@ -1,4 +1,3 @@
-import datetime
 from decimal import Decimal as D, InvalidOperation
 
 from django.contrib import messages
@@ -23,7 +22,6 @@ Line = get_model('order', 'Line')
 ShippingEventType = get_model('order', 'ShippingEventType')
 PaymentEventType = get_model('order', 'PaymentEventType')
 EventHandler = get_class('order.processing', 'EventHandler')
-OrderStatsForm = get_class('dashboard.orders.forms', 'OrderStatsForm')
 OrderNoteForm = get_class('dashboard.orders.forms', 'OrderNoteForm')
 ShippingAddressForm = get_class(
     'dashboard.orders.forms', 'ShippingAddressForm')
@@ -54,50 +52,6 @@ def get_order_for_user_or_404(user, number):
         return queryset_orders_for_user(user).get(number=number)
     except ObjectDoesNotExist:
         raise Http404()
-
-
-class OrderStatsView(FormView):
-    """
-    Dashboard view for order statistics.
-    Supports the permission-based dashboard.
-    """
-    template_name = 'dashboard/orders/statistics.html'
-    form_class = OrderStatsForm
-
-    def get(self, request, *args, **kwargs):
-        return self.post(request, *args, **kwargs)
-
-    def form_valid(self, form):
-        ctx = self.get_context_data(form=form,
-                                    filters=form.get_filters())
-        return self.render_to_response(ctx)
-
-    def get_form_kwargs(self):
-        kwargs = super(OrderStatsView, self).get_form_kwargs()
-        kwargs['data'] = self.request.GET
-        return kwargs
-
-    def get_context_data(self, **kwargs):
-        ctx = super(OrderStatsView, self).get_context_data(**kwargs)
-        filters = kwargs.get('filters', {})
-        ctx.update(self.get_stats(filters))
-        ctx['title'] = kwargs['form'].get_filter_description()
-        return ctx
-
-    def get_stats(self, filters):
-        orders = queryset_orders_for_user(self.request.user).filter(**filters)
-        stats = {
-            'total_orders': orders.count(),
-            'total_lines': Line.objects.filter(order__in=orders).count(),
-            'total_revenue': orders.aggregate(
-                Sum('total_incl_tax'))['total_incl_tax__sum'] or D('0.00'),
-            'order_status_breakdown': orders.order_by('status').values(
-                'status').annotate(freq=Count('id'))
-        }
-        return stats
-
-
-
 
 
 class OrderDetailView(DetailView):
