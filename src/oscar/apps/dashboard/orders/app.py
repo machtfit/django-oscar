@@ -8,7 +8,6 @@ class OrdersDashboardApplication(Application):
     name = None
     default_permissions = ['is_staff', ]
     permissions_map = {
-        'order-list': (['is_staff'], ['partner.dashboard_access']),
         'order-stats': (['is_staff'], ['partner.dashboard_access']),
         'order-detail': (['is_staff'], ['partner.dashboard_access']),
         'order-detail-note': (['is_staff'], ['partner.dashboard_access']),
@@ -16,7 +15,6 @@ class OrdersDashboardApplication(Application):
         'order-shipping-address': (['is_staff'], ['partner.dashboard_access']),
     }
 
-    order_list_view = get_class('dashboard.orders.views', 'OrderListView')
     order_detail_view = get_class('dashboard.orders.views', 'OrderDetailView')
     shipping_address_view = get_class('dashboard.orders.views',
                                       'ShippingAddressUpdateView')
@@ -25,7 +23,6 @@ class OrdersDashboardApplication(Application):
 
     def get_urls(self):
         urls = [
-            url(r'^$', self.order_list_view.as_view(), name='order-list'),
             url(r'^statistics/$', self.order_stats_view.as_view(),
                 name='order-stats'),
             url(r'^(?P<number>[-\w]+)/$',
