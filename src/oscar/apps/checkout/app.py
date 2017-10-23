@@ -17,7 +17,6 @@ class CheckoutApplication(Application):
     user_address_delete_view = get_class('checkout.views',
                                          'UserAddressDeleteView')
     payment_details_view = get_class('checkout.views', 'PaymentDetailsView')
-    thankyou_view = get_class('checkout.views', 'ThankYouView')
 
     def get_urls(self):
         urls = [
@@ -45,8 +44,6 @@ class CheckoutApplication(Application):
             url(r'preview/$',
                 self.payment_details_view.as_view(preview=True),
                 name='preview'),
-            url(r'thank-you/$', self.thankyou_view.as_view(),
-                name='thank-you'),
         ]
         return self.post_process_urls(urls)
 
