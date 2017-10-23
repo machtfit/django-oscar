@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-16 10:45+0200\n"
+"POT-Creation-Date: 2017-10-23 11:17+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -84,7 +84,6 @@ msgstr ""
 
 #: apps/address/abstract_models.py:243 apps/address/config.py:8
 #: templates/oscar/checkout/checkout.html:37
-#: templates/oscar/checkout/thank_you.html:39
 #: templates/oscar/dashboard/orders/order_detail.html:444
 msgid "Address"
 msgstr ""
@@ -145,7 +144,6 @@ msgstr ""
 
 #: apps/address/abstract_models.py:453
 #: templates/oscar/checkout/checkout.html:55
-#: templates/oscar/checkout/thank_you.html:58
 #: templates/oscar/dashboard/orders/order_detail.html:459
 msgid "Instructions"
 msgstr ""
@@ -209,7 +207,6 @@ msgid "This address is already in your address book"
 msgstr ""
 
 #: apps/address/abstract_models.py:557
-#: templates/oscar/checkout/thank_you.html:99
 #: templates/oscar/dashboard/orders/order_detail.html:472
 #: templates/oscar/dashboard/orders/order_list.html:99
 msgid "Billing address"
@@ -295,7 +292,6 @@ msgstr ""
 #: templates/oscar/basket/basket.html:22
 #: templates/oscar/basket/partials/basket_totals.html:8
 #: templates/oscar/basket/partials/basket_totals.html:98
-#: templates/oscar/checkout/thank_you.html:174
 #: templates/oscar/dashboard/partials/nav_primary.html:21
 #: templates/oscar/partials/nav_primary.html:20
 msgid "Basket"
@@ -334,7 +330,6 @@ msgstr ""
 #: apps/order/abstract_models.py:867
 #: templates/oscar/basket/partials/basket_content.html:30
 #: templates/oscar/checkout/checkout.html:93
-#: templates/oscar/checkout/thank_you.html:119
 #: templates/oscar/dashboard/orders/line_detail.html:56
 #: templates/oscar/dashboard/orders/line_detail.html:103
 #: templates/oscar/dashboard/orders/line_detail.html:128
@@ -708,10 +703,6 @@ msgstr ""
 
 #: apps/checkout/views.py:193
 msgid "Address deleted"
-msgstr ""
-
-#: apps/checkout/views.py:363
-msgid "No order found"
 msgstr ""
 
 #: apps/customer/abstract_models.py:44
@@ -1593,8 +1584,7 @@ msgstr ""
 msgid "Shipping Address"
 msgstr ""
 
-#: apps/order/abstract_models.py:75 templates/oscar/checkout/thank_you.html:67
-#: templates/oscar/checkout/thank_you.html:222
+#: apps/order/abstract_models.py:75
 msgid "Shipping method"
 msgstr ""
 
@@ -2120,8 +2110,6 @@ msgstr ""
 
 #: apps/payment/config.py:8 templates/oscar/checkout/checkout.html:67
 #: templates/oscar/checkout/checkout.html:73
-#: templates/oscar/checkout/thank_you.html:76
-#: templates/oscar/checkout/thank_you.html:79
 #: templates/oscar/dashboard/orders/order_detail.html:90
 msgid "Payment"
 msgstr ""
@@ -2180,8 +2168,6 @@ msgid "American Express cards use a 4 digit security code"
 msgstr ""
 
 #: apps/shipping/config.py:8 templates/oscar/checkout/checkout.html:28
-#: templates/oscar/checkout/thank_you.html:36
-#: templates/oscar/checkout/thank_you.html:219
 #: templates/oscar/dashboard/orders/order_detail.html:89
 #: templates/oscar/dashboard/orders/order_detail.html:423
 msgid "Shipping"
@@ -2398,7 +2384,6 @@ msgstr ""
 
 #: templates/oscar/basket/partials/basket_content.html:32
 #: templates/oscar/checkout/checkout.html:94
-#: templates/oscar/checkout/thank_you.html:120
 msgid "Total"
 msgstr ""
 
@@ -2462,7 +2447,6 @@ msgstr ""
 
 #: templates/oscar/basket/partials/basket_content.html:135
 #: templates/oscar/checkout/checkout.html:134
-#: templates/oscar/checkout/thank_you.html:168
 msgid "Totals"
 msgstr ""
 
@@ -2476,7 +2460,6 @@ msgid "Your basket is empty."
 msgstr ""
 
 #: templates/oscar/basket/partials/basket_content.html:157
-#: templates/oscar/checkout/thank_you.html:317
 msgid "Continue shopping"
 msgstr ""
 
@@ -2502,13 +2485,10 @@ msgid "Total:"
 msgstr ""
 
 #: templates/oscar/basket/partials/basket_totals.html:15
-#: templates/oscar/checkout/thank_you.html:180
 msgid "Basket total (before discounts)"
 msgstr ""
 
 #: templates/oscar/basket/partials/basket_totals.html:27
-#: templates/oscar/checkout/thank_you.html:185
-#: templates/oscar/checkout/thank_you.html:232
 #: templates/oscar/dashboard/orders/order_detail.html:157
 #: templates/oscar/dashboard/orders/order_detail.html:175
 #: templates/oscar/dashboard/orders/order_detail.html:213
@@ -2516,12 +2496,10 @@ msgid "Discount"
 msgstr ""
 
 #: templates/oscar/basket/partials/basket_totals.html:61
-#: templates/oscar/checkout/thank_you.html:195
 msgid "Basket total (after discounts)"
 msgstr ""
 
 #: templates/oscar/basket/partials/basket_totals.html:73
-#: templates/oscar/checkout/thank_you.html:200
 #: templates/oscar/dashboard/orders/order_detail.html:193
 msgid "Basket total"
 msgstr ""
@@ -2531,7 +2509,6 @@ msgid "Tax"
 msgstr ""
 
 #: templates/oscar/basket/partials/basket_totals.html:113
-#: templates/oscar/checkout/thank_you.html:273
 msgid "Post order actions"
 msgstr ""
 
@@ -2540,7 +2517,6 @@ msgid "These will be applied once your order is placed."
 msgstr ""
 
 #: templates/oscar/basket/partials/basket_totals.html:133
-#: templates/oscar/checkout/thank_you.html:289
 #: templates/oscar/dashboard/offers/offer_detail.html:109
 #: templates/oscar/dashboard/orders/order_detail.html:240
 msgid "Order total"
@@ -2556,18 +2532,15 @@ msgid "Change"
 msgstr ""
 
 #: templates/oscar/checkout/checkout.html:45
-#: templates/oscar/checkout/thank_you.html:48
 msgid "Contact"
 msgstr ""
 
 #: templates/oscar/checkout/checkout.html:47
-#: templates/oscar/checkout/thank_you.html:50
 #: templates/oscar/dashboard/orders/order_detail.html:455
 msgid "Phone"
 msgstr ""
 
 #: templates/oscar/checkout/checkout.html:49
-#: templates/oscar/checkout/thank_you.html:52
 msgid "Email"
 msgstr ""
 
@@ -2580,7 +2553,6 @@ msgid "Edit order contents"
 msgstr ""
 
 #: templates/oscar/checkout/checkout.html:88
-#: templates/oscar/checkout/thank_you.html:113
 #: templates/oscar/dashboard/orders/order_detail.html:88
 msgid "Order contents"
 msgstr ""
@@ -2713,100 +2685,6 @@ msgstr ""
 
 #: templates/oscar/checkout/shipping_address.html:79
 msgid "return to basket"
-msgstr ""
-
-#: templates/oscar/checkout/thank_you.html:8
-#: templates/oscar/checkout/thank_you.html:18
-#, python-format
-msgid ""
-"\n"
-"        Order %(number)s: confirmation\n"
-"    "
-msgstr ""
-
-#: templates/oscar/checkout/thank_you.html:25
-#, python-format
-msgid ""
-"\n"
-"        Your order has been placed and a confirmation email has been sent - "
-"your order number is\n"
-"        <strong>%(number)s</strong>.\n"
-"        "
-msgstr ""
-
-#: templates/oscar/checkout/thank_you.html:29
-msgid ""
-"Please make a note of this reference or print this page and quote it in any "
-"communication with us regarding your order."
-msgstr ""
-
-#: templates/oscar/checkout/thank_you.html:62
-msgid "No shipping address required."
-msgstr ""
-
-#: templates/oscar/checkout/thank_you.html:83
-#, python-format
-msgid ""
-"\n"
-"                                Allocation of %(amount)s from type %(type)s "
-"(reference: %(reference)s)\n"
-"                            "
-msgstr ""
-
-#: templates/oscar/checkout/thank_you.html:87
-#, python-format
-msgid ""
-"\n"
-"                                Allocation of %(amount)s from type %(type)s\n"
-"                            "
-msgstr ""
-
-#: templates/oscar/checkout/thank_you.html:94
-msgid "No payment was required for this order."
-msgstr ""
-
-#: templates/oscar/checkout/thank_you.html:118
-msgid "Items purchased"
-msgstr ""
-
-#: templates/oscar/checkout/thank_you.html:141
-#, python-format
-msgid ""
-"\n"
-"                            Estimated dispatch: <strong>%(date)s</strong>\n"
-"                        "
-msgstr ""
-
-#: templates/oscar/checkout/thank_you.html:227
-msgid "Shipping charge (before discounts)"
-msgstr ""
-
-#: templates/oscar/checkout/thank_you.html:237
-msgid "Shipping charge (after discounts)"
-msgstr ""
-
-#: templates/oscar/checkout/thank_you.html:242
-msgid "Shipping charge"
-msgstr ""
-
-#: templates/oscar/checkout/thank_you.html:259
-msgid "Order tax"
-msgstr ""
-
-#: templates/oscar/checkout/thank_you.html:302
-msgid "Tracking your order"
-msgstr ""
-
-#: templates/oscar/checkout/thank_you.html:304
-msgid "You can track the status of your order"
-msgstr ""
-
-#: templates/oscar/checkout/thank_you.html:305
-msgid "View order status"
-msgstr ""
-
-#: templates/oscar/checkout/thank_you.html:314
-msgid "Print this page"
 msgstr ""
 
 #: templates/oscar/checkout/user_address_delete.html:5
