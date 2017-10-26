@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-23 11:17+0200\n"
+"POT-Creation-Date: 2017-10-26 17:29+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -122,7 +122,7 @@ msgstr ""
 msgid "Official name"
 msgstr ""
 
-#: apps/address/abstract_models.py:400 apps/catalogue/abstract_models.py:549
+#: apps/address/abstract_models.py:400 apps/catalogue/abstract_models.py:519
 msgid "Display order"
 msgstr ""
 
@@ -166,7 +166,6 @@ msgstr ""
 
 #: apps/address/abstract_models.py:487 apps/customer/abstract_models.py:66
 #: apps/order/abstract_models.py:42 apps/order/abstract_models.py:341
-#: apps/payment/abstract_models.py:241
 #: templates/oscar/dashboard/orders/order_detail.html:608
 msgid "User"
 msgstr ""
@@ -190,7 +189,7 @@ msgstr ""
 #: apps/address/abstract_models.py:506 apps/basket/abstract_models.py:595
 #: apps/offer/models.py:158 apps/offer/models.py:712
 #: apps/order/abstract_models.py:348 apps/order/abstract_models.py:835
-#: apps/partner/abstract_models.py:243 apps/payment/abstract_models.py:42
+#: apps/partner/abstract_models.py:243 apps/payment/abstract_models.py:39
 msgid "Date Created"
 msgstr ""
 
@@ -257,7 +256,7 @@ msgstr ""
 #: apps/basket/abstract_models.py:42 apps/dashboard/orders/forms.py:74
 #: apps/offer/models.py:91 apps/offer/models.py:1163
 #: apps/order/abstract_models.py:81 apps/order/abstract_models.py:460
-#: apps/partner/abstract_models.py:241 apps/payment/abstract_models.py:41
+#: apps/partner/abstract_models.py:241 apps/payment/abstract_models.py:38
 #: templates/oscar/dashboard/orders/line_detail.html:66
 #: templates/oscar/dashboard/orders/order_detail.html:66
 #: templates/oscar/dashboard/orders/order_detail.html:113
@@ -272,8 +271,8 @@ msgstr ""
 msgid "Vouchers"
 msgstr ""
 
-#: apps/basket/abstract_models.py:50 apps/catalogue/abstract_models.py:219
-#: apps/catalogue/abstract_models.py:552 apps/order/abstract_models.py:780
+#: apps/basket/abstract_models.py:50 apps/catalogue/abstract_models.py:212
+#: apps/catalogue/abstract_models.py:522 apps/order/abstract_models.py:780
 #: apps/partner/abstract_models.py:144
 msgid "Date created"
 msgstr ""
@@ -317,8 +316,8 @@ msgstr ""
 msgid "Line Reference"
 msgstr ""
 
-#: apps/basket/abstract_models.py:575 apps/catalogue/abstract_models.py:150
-#: apps/catalogue/abstract_models.py:246 apps/catalogue/abstract_models.py:542
+#: apps/basket/abstract_models.py:575 apps/catalogue/abstract_models.py:149
+#: apps/catalogue/abstract_models.py:239 apps/catalogue/abstract_models.py:512
 #: apps/order/abstract_models.py:414 apps/partner/abstract_models.py:90
 #: templates/oscar/dashboard/orders/order_detail.html:111
 msgid "Product"
@@ -339,7 +338,7 @@ msgid "Quantity"
 msgstr ""
 
 #: apps/basket/abstract_models.py:587 apps/order/abstract_models.py:54
-#: apps/partner/abstract_models.py:103 apps/payment/abstract_models.py:76
+#: apps/partner/abstract_models.py:103 apps/payment/abstract_models.py:73
 msgid "Currency"
 msgstr ""
 
@@ -393,7 +392,7 @@ msgstr ""
 
 #: apps/basket/forms.py:124 apps/order/abstract_models.py:736
 #: apps/order/abstract_models.py:901 apps/order/abstract_models.py:952
-#: apps/partner/abstract_models.py:21 apps/payment/abstract_models.py:207
+#: apps/partner/abstract_models.py:21 apps/payment/abstract_models.py:204
 msgid "Code"
 msgstr ""
 
@@ -464,10 +463,9 @@ msgstr ""
 msgid "Voucher '%s' removed from basket"
 msgstr ""
 
-#: apps/catalogue/abstract_models.py:34 apps/offer/models.py:58
+#: apps/catalogue/abstract_models.py:33 apps/offer/models.py:58
 #: apps/offer/models.py:684 apps/order/abstract_models.py:735
-#: apps/order/abstract_models.py:899 apps/payment/abstract_models.py:205
-#: apps/payment/abstract_models.py:245
+#: apps/order/abstract_models.py:899 apps/payment/abstract_models.py:202
 #: templates/oscar/dashboard/offers/offer_detail.html:64
 #: templates/oscar/dashboard/offers/summary.html:10
 #: templates/oscar/dashboard/orders/order_detail.html:35
@@ -475,158 +473,124 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
-#: apps/catalogue/abstract_models.py:35 apps/catalogue/abstract_models.py:211
+#: apps/catalogue/abstract_models.py:34 apps/catalogue/abstract_models.py:210
 #: apps/offer/models.py:62
 #: templates/oscar/dashboard/offers/offer_detail.html:69
 #: templates/oscar/dashboard/offers/summary.html:12
 msgid "Description"
 msgstr ""
 
-#: apps/catalogue/abstract_models.py:36
+#: apps/catalogue/abstract_models.py:35
 msgid "Image"
 msgstr ""
 
-#: apps/catalogue/abstract_models.py:38 apps/catalogue/abstract_models.py:210
+#: apps/catalogue/abstract_models.py:37 apps/catalogue/abstract_models.py:209
 #: apps/offer/models.py:61 apps/offer/models.py:686
 msgid "Slug"
 msgstr ""
 
-#: apps/catalogue/abstract_models.py:135 apps/catalogue/abstract_models.py:152
+#: apps/catalogue/abstract_models.py:134 apps/catalogue/abstract_models.py:151
 msgid "Category"
 msgstr ""
 
-#: apps/catalogue/abstract_models.py:136 apps/catalogue/abstract_models.py:227
-#: apps/catalogue/abstract_models.py:439 defaults.py:79
+#: apps/catalogue/abstract_models.py:135 apps/catalogue/abstract_models.py:220
+#: apps/catalogue/abstract_models.py:432 defaults.py:79
 msgid "Categories"
 msgstr ""
 
-#: apps/catalogue/abstract_models.py:159
+#: apps/catalogue/abstract_models.py:158
 msgid "Product category"
 msgstr ""
 
-#: apps/catalogue/abstract_models.py:160
+#: apps/catalogue/abstract_models.py:159
 msgid "Product categories"
 msgstr ""
 
-#: apps/catalogue/abstract_models.py:184
+#: apps/catalogue/abstract_models.py:183
 msgid "Stand-alone product"
 msgstr ""
 
-#: apps/catalogue/abstract_models.py:185 apps/catalogue/abstract_models.py:200
+#: apps/catalogue/abstract_models.py:184 apps/catalogue/abstract_models.py:199
 msgid "Parent product"
 msgstr ""
 
-#: apps/catalogue/abstract_models.py:186
+#: apps/catalogue/abstract_models.py:185
 msgid "Child product"
 msgstr ""
 
-#: apps/catalogue/abstract_models.py:189
+#: apps/catalogue/abstract_models.py:188
 msgid "Product structure"
 msgstr ""
 
-#: apps/catalogue/abstract_models.py:193 apps/dashboard/orders/forms.py:68
+#: apps/catalogue/abstract_models.py:192 apps/dashboard/orders/forms.py:68
 #: apps/order/abstract_models.py:419
 #: templates/oscar/dashboard/orders/line_detail.html:53
 #: templates/oscar/dashboard/orders/order_detail.html:112
 msgid "UPC"
 msgstr ""
 
-#: apps/catalogue/abstract_models.py:194
+#: apps/catalogue/abstract_models.py:193
 msgid ""
 "Universal Product Code (UPC) is an identifier for a product which is not "
 "specific to a particular  supplier. Eg an ISBN for a book."
 msgstr ""
 
-#: apps/catalogue/abstract_models.py:201
+#: apps/catalogue/abstract_models.py:200
 msgid ""
 "Only choose a parent product if you're creating a child product.  For "
 "example if this is a size 4 of a particular t-shirt.  Leave blank if this is "
 "a stand-alone product (i.e. there is only one version of this product)."
 msgstr ""
 
-#: apps/catalogue/abstract_models.py:208 apps/catalogue/abstract_models.py:419
+#: apps/catalogue/abstract_models.py:207 apps/catalogue/abstract_models.py:412
 #: apps/order/abstract_models.py:416
 #: templates/oscar/dashboard/orders/line_detail.html:40
 msgctxt "Product title"
 msgid "Title"
 msgstr ""
 
-#: apps/catalogue/abstract_models.py:215
-msgid "Recommended products"
-msgstr ""
-
-#: apps/catalogue/abstract_models.py:216
-msgid "These are products that are recommended to accompany the main product."
-msgstr ""
-
-#: apps/catalogue/abstract_models.py:223 apps/partner/abstract_models.py:145
+#: apps/catalogue/abstract_models.py:216 apps/partner/abstract_models.py:145
 msgid "Date updated"
 msgstr ""
 
-#: apps/catalogue/abstract_models.py:235
+#: apps/catalogue/abstract_models.py:228
 msgid "Is discountable?"
 msgstr ""
 
-#: apps/catalogue/abstract_models.py:236
+#: apps/catalogue/abstract_models.py:229
 msgid "This flag indicates if this product can be used in an offer or not"
 msgstr ""
 
-#: apps/catalogue/abstract_models.py:247 defaults.py:75
+#: apps/catalogue/abstract_models.py:240 defaults.py:75
 msgid "Products"
 msgstr ""
 
-#: apps/catalogue/abstract_models.py:287
+#: apps/catalogue/abstract_models.py:280
 msgid "The specified parent product is a child product."
 msgstr ""
 
-#: apps/catalogue/abstract_models.py:290
+#: apps/catalogue/abstract_models.py:283
 msgid "One can't add a child product to a product with stock records."
 msgstr ""
 
-#: apps/catalogue/abstract_models.py:481
-msgid "Primary product"
-msgstr ""
-
-#: apps/catalogue/abstract_models.py:483
-msgid "Recommended product"
-msgstr ""
-
-#: apps/catalogue/abstract_models.py:485
-msgid "Ranking"
-msgstr ""
-
-#: apps/catalogue/abstract_models.py:486
-msgid ""
-"Determines order of the products. A product with a higher value will appear "
-"before one with a lower ranking."
-msgstr ""
-
-#: apps/catalogue/abstract_models.py:494
-msgid "Product recommendation"
-msgstr ""
-
-#: apps/catalogue/abstract_models.py:495
-msgid "Product recomendations"
-msgstr ""
-
-#: apps/catalogue/abstract_models.py:544
+#: apps/catalogue/abstract_models.py:514
 msgid "Original"
 msgstr ""
 
-#: apps/catalogue/abstract_models.py:545
+#: apps/catalogue/abstract_models.py:515
 msgid "Caption"
 msgstr ""
 
-#: apps/catalogue/abstract_models.py:550
+#: apps/catalogue/abstract_models.py:520
 msgid ""
 "An image with a display order of zero will be the primary image for a product"
 msgstr ""
 
-#: apps/catalogue/abstract_models.py:561
+#: apps/catalogue/abstract_models.py:531
 msgid "Product image"
 msgstr ""
 
-#: apps/catalogue/abstract_models.py:562
+#: apps/catalogue/abstract_models.py:532
 msgid "Product images"
 msgstr ""
 
@@ -1228,7 +1192,7 @@ msgid ""
 msgstr ""
 
 #: apps/offer/models.py:86 apps/offer/models.py:421 apps/offer/models.py:514
-#: apps/payment/abstract_models.py:37 defaults.py:145
+#: apps/payment/abstract_models.py:34 defaults.py:145
 #: templates/oscar/dashboard/orders/order_detail.html:559
 #: templates/oscar/dashboard/orders/order_detail.html:609
 msgid "Type"
@@ -1606,7 +1570,7 @@ msgstr ""
 #: apps/order/abstract_models.py:281 apps/order/abstract_models.py:336
 #: apps/order/abstract_models.py:376 apps/order/abstract_models.py:762
 #: apps/order/abstract_models.py:825 apps/order/abstract_models.py:931
-#: apps/order/config.py:8 apps/payment/abstract_models.py:71
+#: apps/order/config.py:8 apps/payment/abstract_models.py:68
 #: templates/oscar/dashboard/orders/shippingaddress_form.html:5
 msgid "Order"
 msgstr ""
@@ -1767,15 +1731,15 @@ msgid "Payment Event Types"
 msgstr ""
 
 #: apps/order/abstract_models.py:764 apps/order/abstract_models.py:955
-#: apps/payment/abstract_models.py:39
+#: apps/payment/abstract_models.py:36
 #: templates/oscar/dashboard/orders/order_detail.html:388
 #: templates/oscar/dashboard/orders/order_detail.html:524
 #: templates/oscar/dashboard/orders/order_detail.html:564
 msgid "Amount"
 msgstr ""
 
-#: apps/order/abstract_models.py:768 apps/payment/abstract_models.py:40
-#: apps/payment/abstract_models.py:91
+#: apps/order/abstract_models.py:768 apps/payment/abstract_models.py:37
+#: apps/payment/abstract_models.py:88
 #: templates/oscar/dashboard/orders/line_detail.html:129
 #: templates/oscar/dashboard/orders/order_detail.html:343
 #: templates/oscar/dashboard/orders/order_detail.html:390
@@ -2017,154 +1981,72 @@ msgstr ""
 msgid "In stock (%d available)"
 msgstr ""
 
-#: apps/payment/abstract_models.py:31 apps/payment/abstract_models.py:107
+#: apps/payment/abstract_models.py:28 apps/payment/abstract_models.py:104
 #: templates/oscar/dashboard/orders/order_detail.html:489
 #: templates/oscar/dashboard/orders/order_detail.html:523
 msgid "Source"
 msgstr ""
 
-#: apps/payment/abstract_models.py:45
+#: apps/payment/abstract_models.py:42
 #, python-format
 msgid "%(type)s of %(amount).2f"
 msgstr ""
 
-#: apps/payment/abstract_models.py:53
+#: apps/payment/abstract_models.py:50
 msgid "Transaction"
 msgstr ""
 
-#: apps/payment/abstract_models.py:54
+#: apps/payment/abstract_models.py:51
 #: templates/oscar/dashboard/orders/order_detail.html:518
 msgid "Transactions"
 msgstr ""
 
-#: apps/payment/abstract_models.py:73 apps/payment/abstract_models.py:213
+#: apps/payment/abstract_models.py:70 apps/payment/abstract_models.py:210
 msgid "Source Type"
 msgstr ""
 
-#: apps/payment/abstract_models.py:80
+#: apps/payment/abstract_models.py:77
 msgid "Amount Allocated"
 msgstr ""
 
-#: apps/payment/abstract_models.py:83
+#: apps/payment/abstract_models.py:80
 msgid "Amount Debited"
 msgstr ""
 
-#: apps/payment/abstract_models.py:86
+#: apps/payment/abstract_models.py:83
 msgid "Amount Refunded"
 msgstr ""
 
-#: apps/payment/abstract_models.py:94
+#: apps/payment/abstract_models.py:91
 msgid "Label"
 msgstr ""
 
-#: apps/payment/abstract_models.py:108
+#: apps/payment/abstract_models.py:105
 msgid "Sources"
 msgstr ""
 
-#: apps/payment/abstract_models.py:111
+#: apps/payment/abstract_models.py:108
 #, python-format
 msgid "Allocation of %(amount)s from type %(type)s"
 msgstr ""
 
-#: apps/payment/abstract_models.py:115
+#: apps/payment/abstract_models.py:112
 #, python-format
 msgid " (reference: %s)"
 msgstr ""
 
-#: apps/payment/abstract_models.py:208
+#: apps/payment/abstract_models.py:205
 msgid "This is used within forms to identify this source type"
 msgstr ""
 
-#: apps/payment/abstract_models.py:214
+#: apps/payment/abstract_models.py:211
 msgid "Source Types"
-msgstr ""
-
-#: apps/payment/abstract_models.py:242
-msgid "Card Type"
-msgstr ""
-
-#: apps/payment/abstract_models.py:249
-msgid "Number"
-msgstr ""
-
-#: apps/payment/abstract_models.py:253
-msgid "Expiry Date"
-msgstr ""
-
-#: apps/payment/abstract_models.py:257
-msgid "Partner Reference"
-msgstr ""
-
-#: apps/payment/abstract_models.py:265
-#, python-format
-msgid "%(card_type)s %(number)s (Expires: %(expiry)s)"
-msgstr ""
-
-#: apps/payment/abstract_models.py:286
-msgid "Bankcard"
-msgstr ""
-
-#: apps/payment/abstract_models.py:287
-msgid "Bankcards"
 msgstr ""
 
 #: apps/payment/config.py:8 templates/oscar/checkout/checkout.html:67
 #: templates/oscar/checkout/checkout.html:73
 #: templates/oscar/dashboard/orders/order_detail.html:90
 msgid "Payment"
-msgstr ""
-
-#: apps/payment/forms.py:28
-msgid "Card number"
-msgstr ""
-
-#: apps/payment/forms.py:50
-msgid "Please enter a valid credit card number."
-msgstr ""
-
-#: apps/payment/forms.py:56
-#, python-format
-msgid "%s cards are not accepted."
-msgstr ""
-
-#: apps/payment/forms.py:78
-msgid "Enter a valid month."
-msgstr ""
-
-#: apps/payment/forms.py:79
-msgid "Enter a valid year."
-msgstr ""
-
-#: apps/payment/forms.py:119
-msgid "Valid to"
-msgstr ""
-
-#: apps/payment/forms.py:137
-msgid "The expiration date you entered is in the past."
-msgstr ""
-
-#: apps/payment/forms.py:161
-msgid "Valid from"
-msgstr ""
-
-#: apps/payment/forms.py:183
-msgid "The starting date you entered is in the future."
-msgstr ""
-
-#: apps/payment/forms.py:205
-msgid "CCV number"
-msgstr ""
-
-#: apps/payment/forms.py:207
-msgid "Please enter a 3 or 4 digit number"
-msgstr ""
-
-#: apps/payment/forms.py:208
-msgid "This is the 3 or 4 digit security number on the back of your bankcard"
-msgstr ""
-
-#: apps/payment/forms.py:243
-msgid "American Express cards use a 4 digit security code"
 msgstr ""
 
 #: apps/shipping/config.py:8 templates/oscar/checkout/checkout.html:28
