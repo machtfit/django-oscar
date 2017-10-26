@@ -5,11 +5,8 @@ from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext_lazy as _
 
 from oscar.core.utils import get_default_currency
-from oscar.core.compat import AUTH_USER_MODEL
 from oscar.templatetags.currency_filters import currency
 from oscar.models.fields import AutoSlugField
-
-from . import bankcards
 
 
 @python_2_unicode_compatible
@@ -215,98 +212,3 @@ class AbstractSourceType(models.Model):
 
     def __str__(self):
         return self.name
-
-
-@python_2_unicode_compatible
-class AbstractBankcard(models.Model):
-    """
-    Model representing a user's bankcard.  This is used for two purposes:
-
-        1.  The bankcard form will return an instance of this model that can be
-            used with payment gateways.  In this scenario, the instance will
-            have additional attributes (start_date, issue_number, ccv) that
-            payment gateways need but that we don't save.
-
-        2.  To keep a record of a user's bankcards and allow them to be
-            re-used.  This is normally done using the 'partner reference'.
-
-    .. warning::
-
-        Some of the fields of this model (name, expiry_date) are considered
-        "cardholder data" under PCI DSS v2. Hence, if you use this model and
-        store those fields then the requirements for PCI compliance will be
-        more stringent.
-    """
-    user = models.ForeignKey(AUTH_USER_MODEL, related_name='bankcards',
-                             verbose_name=_("User"))
-    card_type = models.CharField(_("Card Type"), max_length=128)
-
-    # Often you don't actually need the name on the bankcard
-    name = models.CharField(_("Name"), max_length=255, blank=True)
-
-    # We store an obfuscated version of the card number, just showing the last
-    # 4 digits.
-    number = models.CharField(_("Number"), max_length=32)
-
-    # We store a date even though only the month is visible.  Bankcards are
-    # valid until the last day of the month.
-    expiry_date = models.DateField(_("Expiry Date"))
-
-    # For payment partners who are storing the full card details for us
-    partner_reference = models.CharField(
-        _("Partner Reference"), max_length=255, blank=True)
-
-    # Temporary data not persisted to the DB
-    start_date = None
-    issue_number = None
-    ccv = None
-
-    def __str__(self):
-        return _(u"%(card_type)s %(number)s (Expires: %(expiry)s)") % {
-            'card_type': self.card_type,
-            'number': self.number,
-            'expiry': self.expiry_month()}
-
-    def __init__(self, *args, **kwargs):
-        # Pop off the temporary data
-        self.start_date = kwargs.pop('start_date', None)
-        self.issue_number = kwargs.pop('issue_number', None)
-        self.ccv = kwargs.pop('ccv', None)
-        super(AbstractBankcard, self).__init__(*args, **kwargs)
-
-        # Initialise the card-type
-        if self.id is None:
-            self.card_type = bankcards.bankcard_type(self.number)
-            if self.card_type is None:
-                self.card_type = 'Unknown card type'
-
-    class Meta:
-        abstract = True
-        app_label = 'payment'
-        verbose_name = _("Bankcard")
-        verbose_name_plural = _("Bankcards")
-
-    def save(self, *args, **kwargs):
-        if not self.number.startswith('X'):
-            self.prepare_for_save()
-        super(AbstractBankcard, self).save(*args, **kwargs)
-
-    def prepare_for_save(self):
-        # This is the first time this card instance is being saved.  We
-        # remove all sensitive data
-        self.number = u"XXXX-XXXX-XXXX-%s" % self.number[-4:]
-        self.start_date = self.issue_number = self.ccv = None
-
-    @property
-    def cvv(self):
-        return self.ccv
-
-    @property
-    def obfuscated_number(self):
-        return u'XXXX-XXXX-XXXX-%s' % self.number[-4:]
-
-    def start_month(self, format='%m/%y'):
-        return self.start_date.strftime(format)
-
-    def expiry_month(self, format='%m/%y'):
-        return self.expiry_date.strftime(format)
