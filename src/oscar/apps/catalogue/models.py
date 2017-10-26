@@ -31,13 +31,6 @@ if not is_model_registered('catalogue', 'Product'):
     __all__.append('Product')
 
 
-if not is_model_registered('catalogue', 'ProductRecommendation'):
-    class ProductRecommendation(AbstractProductRecommendation):
-        pass
-
-    __all__.append('ProductRecommendation')
-
-
 if not is_model_registered('catalogue', 'ProductImage'):
     class ProductImage(AbstractProductImage):
         pass
