@@ -8,7 +8,6 @@ class DashboardApplication(Application):
     name = 'dashboard'
 
     index_view = get_class('dashboard.views', 'IndexView')
-    orders_app = get_class('dashboard.orders.app', 'application')
     users_app = get_class('dashboard.users.app', 'application')
     catalogue_app = get_class('dashboard.catalogue.app', 'application')
     offers_app = get_class('dashboard.offers.app', 'application')
@@ -16,7 +15,6 @@ class DashboardApplication(Application):
     def get_urls(self):
         urls = [
             url(r'^catalogue/', include(self.catalogue_app.urls)),
-            url(r'^orders/', include(self.orders_app.urls)),
             url(r'^users/', include(self.users_app.urls)),
             url(r'^offers/', include(self.offers_app.urls)),
         ]
