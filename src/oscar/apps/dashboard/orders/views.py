@@ -18,10 +18,8 @@ Line = get_model('order', 'Line')
 ShippingEventType = get_model('order', 'ShippingEventType')
 PaymentEventType = get_model('order', 'PaymentEventType')
 EventHandler = get_class('order.processing', 'EventHandler')
-OrderNoteForm = get_class('dashboard.orders.forms', 'OrderNoteForm')
 ShippingAddressForm = get_class(
     'dashboard.orders.forms', 'ShippingAddressForm')
-OrderStatusForm = get_class('dashboard.orders.forms', 'OrderStatusForm')
 
 
 def queryset_orders_for_user(user):
@@ -48,29 +46,6 @@ def get_order_for_user_or_404(user, number):
         return queryset_orders_for_user(user).get(number=number)
     except ObjectDoesNotExist:
         raise Http404()
-
-
-class LineDetailView(DetailView):
-    """
-    Dashboard view to show a single line of an order.
-    Supports the permission-based dashboard.
-    """
-    model = Line
-    context_object_name = 'line'
-    template_name = 'dashboard/orders/line_detail.html'
-
-    def get_object(self, queryset=None):
-        order = get_order_for_user_or_404(self.request.user,
-                                          self.kwargs['number'])
-        try:
-            return order.lines.get(pk=self.kwargs['line_id'])
-        except self.model.DoesNotExist:
-            raise Http404()
-
-    def get_context_data(self, **kwargs):
-        ctx = super(LineDetailView, self).get_context_data(**kwargs)
-        ctx['order'] = self.object.order
-        return ctx
 
 
 def get_changes_between_models(model1, model2, excludes=None):
