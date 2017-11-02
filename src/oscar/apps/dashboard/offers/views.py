@@ -6,10 +6,8 @@ from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404
 from django.utils.translation import ugettext_lazy as _
-from django.utils import timezone
 
 from oscar.core.loading import get_classes, get_model
-from oscar.views import sort_queryset
 
 ConditionalOffer = get_model('offer', 'ConditionalOffer')
 Condition = get_model('offer', 'Condition')
@@ -21,49 +19,6 @@ MetaDataForm, ConditionForm, BenefitForm, RestrictionsForm, OfferSearchForm \
     = get_classes('dashboard.offers.forms',
                   ['MetaDataForm', 'ConditionForm', 'BenefitForm',
                    'RestrictionsForm', 'OfferSearchForm'])
-
-
-class OfferListView(ListView):
-    model = ConditionalOffer
-    context_object_name = 'offers'
-    template_name = 'dashboard/offers/offer_list.html'
-    form_class = OfferSearchForm
-
-    def get_queryset(self):
-        qs = self.model._default_manager.exclude(
-            offer_type=ConditionalOffer.VOUCHER)
-        qs = sort_queryset(qs, self.request,
-                           ['name', 'start_datetime', 'end_datetime',
-                            'num_applications', 'total_discount'])
-
-        self.description = _("All offers")
-
-        # We track whether the queryset is filtered to determine whether we
-        # show the search form 'reset' button.
-        self.is_filtered = False
-        self.form = self.form_class(self.request.GET)
-        if not self.form.is_valid():
-            return qs
-
-        data = self.form.cleaned_data
-
-        if data['name']:
-            qs = qs.filter(name__icontains=data['name'])
-            self.description = _("Offers matching '%s'") % data['name']
-            self.is_filtered = True
-        if data['is_active']:
-            self.is_filtered = True
-            now = timezone.now()
-            qs = qs.filter(start_datetime__lte=now, end_datetime__gte=now)
-
-        return qs
-
-    def get_context_data(self, **kwargs):
-        ctx = super(OfferListView, self).get_context_data(**kwargs)
-        ctx['queryset_description'] = self.description
-        ctx['form'] = self.form
-        ctx['is_filtered'] = self.is_filtered
-        return ctx
 
 
 class OfferDeleteView(DeleteView):
