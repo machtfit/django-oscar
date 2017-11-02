@@ -1,5 +1,3 @@
-import json
-
 from django.views.generic import ListView, FormView, DeleteView
 from django.core.urlresolvers import reverse
 from django.contrib import messages
@@ -19,16 +17,6 @@ MetaDataForm, ConditionForm, BenefitForm, RestrictionsForm, OfferSearchForm \
     = get_classes('dashboard.offers.forms',
                   ['MetaDataForm', 'ConditionForm', 'BenefitForm',
                    'RestrictionsForm', 'OfferSearchForm'])
-
-
-class OfferDeleteView(DeleteView):
-    model = ConditionalOffer
-    template_name = 'dashboard/offers/offer_delete.html'
-    context_object_name = 'offer'
-
-    def get_success_url(self):
-        messages.success(self.request, _("Offer deleted!"))
-        return reverse('dashboard:offer-list')
 
 
 class OfferDetailView(ListView):
