@@ -11,7 +11,6 @@ class Shop(Application):
     customer_app = get_class('customer.app', 'application')
     basket_app = get_class('basket.app', 'application')
     checkout_app = get_class('checkout.app', 'application')
-    dashboard_app = get_class('dashboard.app', 'application')
     offer_app = get_class('offer.app', 'application')
 
 
@@ -21,7 +20,6 @@ class Shop(Application):
             url(r'^basket/', include(self.basket_app.urls)),
             url(r'^checkout/', include(self.checkout_app.urls)),
             url(r'^accounts/', include(self.customer_app.urls)),
-            url(r'^dashboard/', include(self.dashboard_app.urls)),
             url(r'^offers/', include(self.offer_app.urls))]
         return urls
 
