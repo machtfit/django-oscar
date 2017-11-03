@@ -31,12 +31,5 @@ if not is_model_registered('catalogue', 'Product'):
     __all__.append('Product')
 
 
-if not is_model_registered('catalogue', 'ProductImage'):
-    class ProductImage(AbstractProductImage):
-        pass
-
-    __all__.append('ProductImage')
-
-
 if django.VERSION < (1, 7):
     from . import receivers  # noqa
