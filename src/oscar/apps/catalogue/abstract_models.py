@@ -142,27 +142,6 @@ class AbstractCategory(MP_Node):
 
 
 @python_2_unicode_compatible
-class AbstractProductCategory(models.Model):
-    """
-    Joining model between products and categories. Exists to allow customising.
-    """
-    product = models.ForeignKey('catalogue.Product', verbose_name=_("Product"))
-    category = models.ForeignKey('catalogue.Category',
-                                 verbose_name=_("Category"))
-
-    class Meta:
-        abstract = True
-        app_label = 'catalogue'
-        ordering = ['product', 'category']
-        unique_together = ('product', 'category')
-        verbose_name = _('Product category')
-        verbose_name_plural = _('Product categories')
-
-    def __str__(self):
-        return u"<productcategory for product '%s'>" % self.product
-
-
-@python_2_unicode_compatible
 class AbstractProduct(models.Model):
     """
     The base product object

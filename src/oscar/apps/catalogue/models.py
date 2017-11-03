@@ -17,13 +17,6 @@ if not is_model_registered('catalogue', 'Category'):
     __all__.append('Category')
 
 
-if not is_model_registered('catalogue', 'ProductCategory'):
-    class ProductCategory(AbstractProductCategory):
-        pass
-
-    __all__.append('ProductCategory')
-
-
 if not is_model_registered('catalogue', 'Product'):
     class Product(AbstractProduct):
         pass
