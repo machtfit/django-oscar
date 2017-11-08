@@ -22,7 +22,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django-oscar\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-30 10:18+0100\n"
+"POT-Creation-Date: 2017-11-08 15:04+0100\n"
 "PO-Revision-Date: 2015-03-06 21:39+0000\n"
 "Last-Translator: Marc Wienhold <marc.wienhold@gmail.com>\n"
 "Language-Team: German (http://www.transifex.com/projects/p/django-oscar/"
@@ -100,7 +100,6 @@ msgstr "Suchtext – nur für Adresssuche"
 
 #: apps/address/abstract_models.py:243 apps/address/config.py:8
 #: templates/oscar/checkout/checkout.html:37
-#: templates/oscar/dashboard/orders/order_detail.html:444
 msgid "Address"
 msgstr "Adresse"
 
@@ -161,7 +160,6 @@ msgstr "Falls wir Sie wegen Ihrer Bestellung anrufen müssen"
 
 #: apps/address/abstract_models.py:453
 #: templates/oscar/checkout/checkout.html:55
-#: templates/oscar/dashboard/orders/order_detail.html:459
 msgid "Instructions"
 msgstr "Hinweise"
 
@@ -174,8 +172,6 @@ msgstr ""
 #: apps/address/abstract_models.py:461
 #: templates/oscar/checkout/shipping_address.html:5
 #: templates/oscar/checkout/shipping_address.html:12
-#: templates/oscar/dashboard/orders/order_list.html:98
-#: templates/oscar/dashboard/orders/shippingaddress_form.html:5
 msgid "Shipping address"
 msgstr "Lieferanschrift"
 
@@ -184,7 +180,6 @@ msgid "Shipping addresses"
 msgstr "Lieferanschriften"
 
 #: apps/address/abstract_models.py:487 apps/customer/abstract_models.py:66
-#: templates/oscar/dashboard/orders/order_detail.html:608
 msgid "User"
 msgstr "Benutzer"
 
@@ -223,8 +218,6 @@ msgid "This address is already in your address book"
 msgstr "Diese Adresse ist bereits in Ihrem Adressbuch"
 
 #: apps/address/abstract_models.py:557
-#: templates/oscar/dashboard/orders/order_detail.html:472
-#: templates/oscar/dashboard/orders/order_list.html:99
 msgid "Billing address"
 msgstr "Rechnungsanschrift"
 
@@ -234,7 +227,6 @@ msgstr "Rechnungsanschriften"
 
 #: apps/address/abstract_models.py:577 apps/partner/abstract_models.py:92
 #: apps/partner/config.py:8
-#: templates/oscar/dashboard/orders/line_detail.html:69
 msgid "Partner"
 msgstr "Partner"
 
@@ -270,15 +262,9 @@ msgstr "Eingefroren – Warenkorb kann nicht geändert werden"
 msgid "Submitted - has been ordered at the checkout"
 msgstr "Abgeschickt – wurde an der Kasse bestellt"
 
-#: apps/basket/abstract_models.py:42 apps/dashboard/orders/forms.py:74
-#: apps/offer/models.py:91 apps/offer/models.py:1163
-#: apps/partner/abstract_models.py:241 apps/payment/abstract_models.py:38
-#: templates/oscar/dashboard/orders/line_detail.html:66
-#: templates/oscar/dashboard/orders/order_detail.html:66
-#: templates/oscar/dashboard/orders/order_detail.html:113
-#: templates/oscar/dashboard/orders/order_detail.html:526
-#: templates/oscar/dashboard/orders/order_list.html:96
-#: templates/oscar/dashboard/orders/statistics.html:59
+#: apps/basket/abstract_models.py:42 apps/offer/models.py:91
+#: apps/offer/models.py:1163 apps/partner/abstract_models.py:241
+#: apps/payment/abstract_models.py:38
 msgid "Status"
 msgstr "Status"
 
@@ -335,7 +321,6 @@ msgstr "Zeilenbezug"
 #: apps/basket/abstract_models.py:575 apps/catalogue/abstract_models.py:149
 #: apps/catalogue/abstract_models.py:239 apps/catalogue/abstract_models.py:512
 #: apps/partner/abstract_models.py:90
-#: templates/oscar/dashboard/orders/order_detail.html:111
 msgid "Product"
 msgstr "Produkt"
 
@@ -343,11 +328,6 @@ msgstr "Produkt"
 #: apps/basket/forms.py:250
 #: templates/oscar/basket/partials/basket_content.html:30
 #: templates/oscar/checkout/checkout.html:93
-#: templates/oscar/dashboard/orders/line_detail.html:56
-#: templates/oscar/dashboard/orders/line_detail.html:103
-#: templates/oscar/dashboard/orders/line_detail.html:128
-#: templates/oscar/dashboard/orders/line_detail.html:159
-#: templates/oscar/dashboard/orders/order_detail.html:110
 msgid "Quantity"
 msgstr "Menge"
 
@@ -490,8 +470,6 @@ msgstr "Gutschein „%s“ wurde aus Ihrem Warenkorb entfernt"
 #: apps/offer/models.py:684 apps/payment/abstract_models.py:202
 #: templates/oscar/dashboard/offers/offer_detail.html:64
 #: templates/oscar/dashboard/offers/summary.html:10
-#: templates/oscar/dashboard/orders/order_detail.html:35
-#: templates/oscar/dashboard/orders/order_detail.html:46
 msgid "Name"
 msgstr "Name"
 
@@ -544,9 +522,7 @@ msgstr "Kinderprodukt"
 msgid "Product structure"
 msgstr "Produktstruktur"
 
-#: apps/catalogue/abstract_models.py:192 apps/dashboard/orders/forms.py:68
-#: templates/oscar/dashboard/orders/line_detail.html:53
-#: templates/oscar/dashboard/orders/order_detail.html:112
+#: apps/catalogue/abstract_models.py:192
 msgid "UPC"
 msgstr "UPC"
 
@@ -569,7 +545,6 @@ msgstr ""
 "Einzelprodukt ist (z.B. es gibt nur eine Version dieses Produkts)."
 
 #: apps/catalogue/abstract_models.py:207 apps/catalogue/abstract_models.py:412
-#: templates/oscar/dashboard/orders/line_detail.html:40
 msgctxt "Product title"
 msgid "Title"
 msgstr "Titel"
@@ -745,7 +720,6 @@ msgid "Users"
 msgstr "Benutzer"
 
 #: apps/customer/config.py:8
-#: templates/oscar/dashboard/orders/order_list.html:97
 msgid "Customer"
 msgstr "Kunde"
 
@@ -756,11 +730,6 @@ msgstr "Kunde"
 #: templates/oscar/dashboard/offers/offer_detail.html:14
 #: templates/oscar/dashboard/offers/offer_list.html:14
 #: templates/oscar/dashboard/offers/step_form.html:21
-#: templates/oscar/dashboard/orders/line_detail.html:13
-#: templates/oscar/dashboard/orders/order_detail.html:14
-#: templates/oscar/dashboard/orders/order_list.html:15
-#: templates/oscar/dashboard/orders/shippingaddress_form.html:11
-#: templates/oscar/dashboard/orders/statistics.html:14
 #: templates/oscar/dashboard/partials/nav_accounts.html:44
 #: templates/oscar/partials/nav_accounts.html:47
 msgid "Cockpit"
@@ -817,7 +786,6 @@ msgstr ""
 
 #: apps/dashboard/offers/forms.py:164
 #: templates/oscar/dashboard/offers/offer_list.html:47
-#: templates/oscar/dashboard/orders/order_detail.html:561
 msgid "Offer name"
 msgstr "Angebotsbezeichnung"
 
@@ -889,342 +857,6 @@ msgstr ""
 msgid "Offer reinstated"
 msgstr "Angebot wiedereingesetzt"
 
-#: apps/dashboard/orders/config.py:8
-msgid "Orders dashboard"
-msgstr "Bestellungen-Dashboard"
-
-#: apps/dashboard/orders/forms.py:20
-msgctxt "start date"
-msgid "From"
-msgstr "Von"
-
-#: apps/dashboard/orders/forms.py:22
-msgctxt "end date"
-msgid "To"
-msgstr "Zu"
-
-#: apps/dashboard/orders/forms.py:28 apps/dashboard/orders/forms.py:51
-#: apps/dashboard/orders/views.py:147
-msgid "All orders"
-msgstr "Alle Bestellungen"
-
-#: apps/dashboard/orders/forms.py:39
-#, python-format
-msgid "Orders placed between %(date_from)s and %(date_to)s"
-msgstr "Bestellungen getätigt zwischen %(date_from)s und %(date_to)s"
-
-#: apps/dashboard/orders/forms.py:45
-#, python-format
-msgid "Orders placed since %s"
-msgstr "Bestellungen getätigt nach %s"
-
-#: apps/dashboard/orders/forms.py:48
-#, python-format
-msgid "Orders placed until %s"
-msgstr "Bestellungen getätigt bis %s"
-
-#: apps/dashboard/orders/forms.py:65 apps/dashboard/orders/views.py:330
-#: templates/oscar/dashboard/offers/offer_detail.html:107
-#: templates/oscar/dashboard/orders/order_list.html:93
-msgid "Order number"
-msgstr "Bestellnummer"
-
-#: apps/dashboard/orders/forms.py:66
-msgid "Customer name"
-msgstr "Kundenname"
-
-#: apps/dashboard/orders/forms.py:67
-msgid "Product name"
-msgstr "Produktbezeichnung"
-
-#: apps/dashboard/orders/forms.py:69 apps/partner/abstract_models.py:99
-#: templates/oscar/dashboard/orders/line_detail.html:72
-msgid "Partner SKU"
-msgstr "Partner SKU"
-
-#: apps/dashboard/orders/forms.py:77
-msgid "Date from"
-msgstr "Datum vom "
-
-#: apps/dashboard/orders/forms.py:78
-msgid "Date to"
-msgstr "Datum bis"
-
-#: apps/dashboard/orders/forms.py:80
-msgid "Voucher code"
-msgstr "Gutscheincode"
-
-#: apps/dashboard/orders/forms.py:83
-msgid "Payment method"
-msgstr "Zahlungsmethode"
-
-#: apps/dashboard/orders/forms.py:86
-msgid "HTML"
-msgstr "HTML"
-
-#: apps/dashboard/orders/forms.py:87
-msgid "CSV"
-msgstr "CSV"
-
-#: apps/dashboard/orders/forms.py:91
-msgid "Get results as"
-msgstr "Ergebnisformat"
-
-#: apps/dashboard/orders/forms.py:144
-msgid "New order status"
-msgstr "Neuer Bestellstatus"
-
-#: apps/dashboard/orders/views.py:116
-#, python-format
-msgid ""
-"%(main_filter)s %(name_filter)s %(title_filter)s%(upc_filter)s "
-"%(sku_filter)s %(date_filter)s%(voucher_filter)s %(payment_filter)s"
-"%(status_filter)s"
-msgstr ""
-"%(main_filter)s %(name_filter)s %(title_filter)s%(upc_filter)s "
-"%(sku_filter)s %(date_filter)s%(voucher_filter)s %(payment_filter)s"
-"%(status_filter)s"
-
-#: apps/dashboard/orders/views.py:161
-msgid "Orders without an order status"
-msgstr "Bestellungen ohne Bestellstatus"
-
-#: apps/dashboard/orders/views.py:163
-#, python-format
-msgid "Orders with status '%s'"
-msgstr "Bestellungen mit Status „%s“"
-
-#: apps/dashboard/orders/views.py:168
-#, python-format
-msgid "Orders with number starting with \"%(order_number)s\""
-msgstr "Bestellungen deren Bestellnummer mit „%(order_number)s“ beginnt"
-
-#: apps/dashboard/orders/views.py:172
-#, python-format
-msgid " with customer name matching '%(name)s'"
-msgstr " deren Kundenname mit „%(name)s“ übereinstimmt"
-
-#: apps/dashboard/orders/views.py:177
-#, python-format
-msgid " including an item with title matching '%(product_title)s'"
-msgstr "mit einem Artikel der mit „%(product_title)s“ übereinstimmt"
-
-#: apps/dashboard/orders/views.py:181
-#, python-format
-msgid " including an item with UPC '%(upc)s'"
-msgstr "mit einem Artikelt mit UPC „%(upc)s“"
-
-#: apps/dashboard/orders/views.py:185
-#, python-format
-msgid " including an item with ID '%(partner_sku)s'"
-msgstr "mit einem Artikel mit ID „%(partner_sku)s“"
-
-#: apps/dashboard/orders/views.py:190
-#, python-format
-msgid " placed between %(start_date)s and %(end_date)s"
-msgstr "zwischen %(start_date)s und %(end_date)s getätigt wurden"
-
-#: apps/dashboard/orders/views.py:194
-#, python-format
-msgid " placed since %s"
-msgstr "vor %s getätigt wurden"
-
-#: apps/dashboard/orders/views.py:198
-#, python-format
-msgid " placed before %s"
-msgstr "nach %s getätigt wurden"
-
-#: apps/dashboard/orders/views.py:201
-#, python-format
-msgid " using voucher '%(voucher)s'"
-msgstr "Gutschein „%(voucher)s“ benutzt"
-
-#: apps/dashboard/orders/views.py:205
-#, python-format
-msgid " paid for by %(payment_method)s"
-msgstr "mit %(payment_method)s bezahlt"
-
-#: apps/dashboard/orders/views.py:209
-#, python-format
-msgid " with status %(status)s"
-msgstr "mit Status %(status)s"
-
-#: apps/dashboard/orders/views.py:331
-msgid "Order value"
-msgstr "Bestellwert"
-
-#: apps/dashboard/orders/views.py:332
-#: templates/oscar/dashboard/orders/order_detail.html:64
-#: templates/oscar/dashboard/orders/order_list.html:100
-msgid "Date of purchase"
-msgstr "Kaufdatum"
-
-#: apps/dashboard/orders/views.py:333
-#: templates/oscar/dashboard/orders/order_list.html:95
-msgid "Number of items"
-msgstr "Anzahl der Artikel"
-
-#: apps/dashboard/orders/views.py:334
-msgid "Order status"
-msgstr "Bestellstatus"
-
-#: apps/dashboard/orders/views.py:335
-msgid "Customer email address"
-msgstr "E-Mail-Adresse des Kunden"
-
-#: apps/dashboard/orders/views.py:336
-msgid "Deliver to name"
-msgstr "Name des Empfängers"
-
-#: apps/dashboard/orders/views.py:337
-msgid "Bill to name"
-msgstr "Name des Käufers"
-
-#: apps/dashboard/orders/views.py:373 apps/dashboard/orders/views.py:596
-#, python-format
-msgid "The new status '%s' is not valid"
-msgstr "Der gewählte Status „%s“ ist ungültig"
-
-#: apps/dashboard/orders/views.py:376
-#, python-format
-msgid "The new status '%s' is not valid for this order"
-msgstr "Der gewählte Status „%s“ für diese Bestellung ist ungültig"
-
-#: apps/dashboard/orders/views.py:384 apps/dashboard/orders/views.py:567
-#, python-format
-msgid "Unable to change order status due to payment error: %s"
-msgstr ""
-"Der Bestellstatus kann nicht geändert werden, da ein Zahlungsfehler "
-"aufgetreten ist: %s"
-
-#: apps/dashboard/orders/views.py:387 apps/dashboard/orders/views.py:559
-#, python-format
-msgid "Order status changed from '%(old_status)s' to '%(new_status)s'"
-msgstr "Bestellstatus von „%(old_status)s“ zu „%(new_status)s“ geändert"
-
-#: apps/dashboard/orders/views.py:433
-msgid "No valid action submitted"
-msgstr "Keine gültige Aktion ausgewählt"
-
-#: apps/dashboard/orders/views.py:437 apps/dashboard/orders/views.py:442
-#: views/generic.py:72
-msgid "Invalid action"
-msgstr "Ungültige Aktion"
-
-#: apps/dashboard/orders/views.py:448
-msgid "You must select some lines to act on"
-msgstr "Sie müssen Zeilen zum Bearbeiten auswählen"
-
-#: apps/dashboard/orders/views.py:451
-msgid "Invalid lines requested"
-msgstr "Ungültige Zeilenabfrage"
-
-#: apps/dashboard/orders/views.py:462
-#, python-format
-msgid "The entered quantity for line #%s is not valid"
-msgstr "Die ausgewählte Menge für Zeile #%s ist ungültig"
-
-#: apps/dashboard/orders/views.py:466
-#, python-format
-msgid ""
-"The entered quantity for line #%(line_id)s should not be higher than "
-"%(quantity)s"
-msgstr ""
-"Die ausgewählte Menge für Zeile #%(line_id)s sollte nicht höher sein, als "
-"%(quantity)s"
-
-#: apps/dashboard/orders/views.py:534
-msgid "Note saved"
-msgstr "Notiz gespeichert"
-
-#: apps/dashboard/orders/views.py:544
-msgid "Note cannot be deleted"
-msgstr "Notiz kann nicht gelöscht werden"
-
-#: apps/dashboard/orders/views.py:546
-msgid "Note deleted"
-msgstr "Notiz gelöscht"
-
-#: apps/dashboard/orders/views.py:553 views/generic.py:39
-msgid "Invalid form submission"
-msgstr "Ungültiges Formular"
-
-#: apps/dashboard/orders/views.py:573
-msgid "Unable to change order status as the requested new status is not valid"
-msgstr ""
-"Der Bestellstatus kann nicht geändert werden, da der angefragte Status "
-"ungültig ist"
-
-#: apps/dashboard/orders/views.py:587 apps/dashboard/orders/views.py:663
-msgid "Please choose a valid amount"
-msgstr "Bitte wählen Sie einen gültigen Betrag"
-
-#: apps/dashboard/orders/views.py:602
-#, python-format
-msgid "'%(status)s' is not a valid new status for line %(line_id)d"
-msgstr "„%(status)s“ ist kein gültiger Status für Zeile %(line_id)d"
-
-#: apps/dashboard/orders/views.py:611
-#, python-format
-msgid ""
-"Status of line #%(line_id)d changed from '%(old_status)s' to '%(new_status)s'"
-msgstr ""
-"Der Status der Zeile #%(line_id)d wurde von „%(old_status)s“ zu "
-"„%(new_status)s“ geändert"
-
-#: apps/dashboard/orders/views.py:628 apps/dashboard/orders/views.py:676
-#, python-format
-msgid "The event type '%s' is not valid"
-msgstr "Der Vorgangstyp „%s“ ist ungültig"
-
-#: apps/dashboard/orders/views.py:639 apps/dashboard/orders/views.py:642
-#, python-format
-msgid "Unable to create shipping event: %s"
-msgstr "Anlegen des Versandvorgang nicht möglich: %s"
-
-#: apps/dashboard/orders/views.py:644
-#, python-format
-msgid "Unable to create shipping event due to payment error: %s"
-msgstr ""
-"Anlegen des Versandvorgangs nicht möglich, da Zahlungsfehler aufgetreten "
-"sind: %s"
-
-#: apps/dashboard/orders/views.py:647
-msgid "Shipping event created"
-msgstr "Versandvorgang angelegt"
-
-#: apps/dashboard/orders/views.py:682
-#, python-format
-msgid "Unable to create payment event due to payment error: %s"
-msgstr "Anlegen des Zahlungsereignisses nicht möglich, da Zahlungsfehler: %s"
-
-#: apps/dashboard/orders/views.py:686
-#, python-format
-msgid "Unable to create payment event: %s"
-msgstr "Anlegen des Zahlungsereignisses nicht möglich: %s"
-
-#: apps/dashboard/orders/views.py:688
-msgid "Payment event created"
-msgstr "Zahlvorgang erstellt"
-
-#: apps/dashboard/orders/views.py:741
-#, python-format
-msgid "%(field)s changed from '%(old_value)s' to '%(new_value)s'"
-msgstr "%(field)s geändert von „%(old_value)s“ zu „%(new_value)s“"
-
-#: apps/dashboard/orders/views.py:774
-#, python-format
-msgid ""
-"Delivery address updated:\n"
-"%s"
-msgstr ""
-"Lieferanschrift geändert:\n"
-"%s"
-
-#: apps/dashboard/orders/views.py:780
-msgid "Delivery address updated"
-msgstr "Lieferanschrift aktualisiert"
-
 #: apps/offer/config.py:8
 msgid "Offer"
 msgstr "Angebot"
@@ -1262,8 +894,6 @@ msgstr ""
 
 #: apps/offer/models.py:86 apps/offer/models.py:421 apps/offer/models.py:514
 #: apps/payment/abstract_models.py:34 defaults.py:145
-#: templates/oscar/dashboard/orders/order_detail.html:559
-#: templates/oscar/dashboard/orders/order_detail.html:609
 msgid "Type"
 msgstr "Typ"
 
@@ -1604,7 +1234,6 @@ msgid "Range Product Uploaded Files"
 msgstr "Upload-Dateien Sortimentprodukt"
 
 #: apps/order/config.py:8 apps/payment/abstract_models.py:68
-#: templates/oscar/dashboard/orders/shippingaddress_form.html:5
 msgid "Order"
 msgstr "Bestellung"
 
@@ -1634,6 +1263,10 @@ msgstr "Abwicklungspartner"
 #: apps/partner/abstract_models.py:71
 msgid "Fulfillment partners"
 msgstr "Abwicklungspartner"
+
+#: apps/partner/abstract_models.py:99
+msgid "Partner SKU"
+msgstr "Partner SKU"
 
 #: apps/partner/abstract_models.py:111
 msgid "Price (excl. tax)"
@@ -1736,24 +1369,14 @@ msgid "In stock (%d available)"
 msgstr "Auf Lager (%d verfügbar)"
 
 #: apps/payment/abstract_models.py:28 apps/payment/abstract_models.py:104
-#: templates/oscar/dashboard/orders/order_detail.html:489
-#: templates/oscar/dashboard/orders/order_detail.html:523
 msgid "Source"
 msgstr "Quelle"
 
 #: apps/payment/abstract_models.py:36
-#: templates/oscar/dashboard/orders/order_detail.html:388
-#: templates/oscar/dashboard/orders/order_detail.html:524
-#: templates/oscar/dashboard/orders/order_detail.html:564
 msgid "Amount"
 msgstr "Betrag"
 
 #: apps/payment/abstract_models.py:37 apps/payment/abstract_models.py:88
-#: templates/oscar/dashboard/orders/line_detail.html:129
-#: templates/oscar/dashboard/orders/order_detail.html:343
-#: templates/oscar/dashboard/orders/order_detail.html:390
-#: templates/oscar/dashboard/orders/order_detail.html:493
-#: templates/oscar/dashboard/orders/order_detail.html:525
 msgid "Reference"
 msgstr "Referenz"
 
@@ -1767,7 +1390,6 @@ msgid "Transaction"
 msgstr "Transaktion"
 
 #: apps/payment/abstract_models.py:51
-#: templates/oscar/dashboard/orders/order_detail.html:518
 msgid "Transactions"
 msgstr "Transaktionen"
 
@@ -1815,13 +1437,10 @@ msgstr "Quelltypen"
 
 #: apps/payment/config.py:8 templates/oscar/checkout/checkout.html:67
 #: templates/oscar/checkout/checkout.html:73
-#: templates/oscar/dashboard/orders/order_detail.html:90
 msgid "Payment"
 msgstr "Zahlung"
 
 #: apps/shipping/config.py:8 templates/oscar/checkout/checkout.html:28
-#: templates/oscar/dashboard/orders/order_detail.html:89
-#: templates/oscar/dashboard/orders/order_detail.html:423
 msgid "Shipping"
 msgstr "Versand"
 
@@ -1870,17 +1489,11 @@ msgstr "Wenige Exemplare auf Lager"
 msgid "Fulfilment"
 msgstr "Auftragsabwicklung"
 
-#: defaults.py:93 templates/oscar/dashboard/orders/line_detail.html:17
-#: templates/oscar/dashboard/orders/order_detail.html:18
-#: templates/oscar/dashboard/orders/order_list.html:9
-#: templates/oscar/dashboard/orders/order_list.html:18
-#: templates/oscar/dashboard/orders/order_list.html:24
-#: templates/oscar/dashboard/orders/shippingaddress_form.html:15
-#: templates/oscar/dashboard/orders/statistics.html:18
+#: defaults.py:93
 msgid "Orders"
 msgstr "Bestellungen"
 
-#: defaults.py:97 templates/oscar/dashboard/orders/statistics.html:21
+#: defaults.py:97
 msgid "Statistics"
 msgstr "Statistiken"
 
@@ -2073,12 +1686,10 @@ msgid "Total"
 msgstr "Gesamt"
 
 #: templates/oscar/basket/partials/basket_content.html:65
-#: templates/oscar/dashboard/orders/shippingaddress_form.html:36
 msgid "Updating..."
 msgstr "Aktualisiere..."
 
 #: templates/oscar/basket/partials/basket_content.html:65
-#: templates/oscar/dashboard/orders/order_detail.html:450
 msgid "Update"
 msgstr "Aktualisieren"
 
@@ -2113,7 +1724,6 @@ msgstr "Gutschein hinzufügen"
 #: templates/oscar/checkout/user_address_delete.html:30
 #: templates/oscar/checkout/user_address_form.html:25
 #: templates/oscar/dashboard/offers/offer_delete.html:37
-#: templates/oscar/dashboard/orders/shippingaddress_form.html:37
 #: templates/oscar/dashboard/partials/form.html:10
 #: templates/oscar/partials/form.html:11
 msgid "or"
@@ -2124,7 +1734,6 @@ msgstr "oder"
 #: templates/oscar/checkout/user_address_form.html:25
 #: templates/oscar/dashboard/offers/offer_delete.html:38
 #: templates/oscar/dashboard/offers/step_form.html:84
-#: templates/oscar/dashboard/orders/shippingaddress_form.html:37
 #: templates/oscar/dashboard/partials/form.html:10
 #: templates/oscar/partials/form.html:11
 msgid "cancel"
@@ -2174,9 +1783,6 @@ msgid "Basket total (before discounts)"
 msgstr "Summe (ohne Rabatte)"
 
 #: templates/oscar/basket/partials/basket_totals.html:27
-#: templates/oscar/dashboard/orders/order_detail.html:157
-#: templates/oscar/dashboard/orders/order_detail.html:175
-#: templates/oscar/dashboard/orders/order_detail.html:213
 msgid "Discount"
 msgstr "Rabatt"
 
@@ -2185,7 +1791,6 @@ msgid "Basket total (after discounts)"
 msgstr "Summe (mit Rabatte)"
 
 #: templates/oscar/basket/partials/basket_totals.html:73
-#: templates/oscar/dashboard/orders/order_detail.html:193
 msgid "Basket total"
 msgstr "Summe"
 
@@ -2203,7 +1808,6 @@ msgstr "Diese werden nach Abschluss der Bestellung angewendet."
 
 #: templates/oscar/basket/partials/basket_totals.html:133
 #: templates/oscar/dashboard/offers/offer_detail.html:109
-#: templates/oscar/dashboard/orders/order_detail.html:240
 msgid "Order total"
 msgstr "Bestellsumme"
 
@@ -2221,7 +1825,6 @@ msgid "Contact"
 msgstr "Kontakt"
 
 #: templates/oscar/checkout/checkout.html:47
-#: templates/oscar/dashboard/orders/order_detail.html:455
 msgid "Phone"
 msgstr "Telefon"
 
@@ -2238,7 +1841,6 @@ msgid "Edit order contents"
 msgstr "Bestellung bearbeiten"
 
 #: templates/oscar/checkout/checkout.html:88
-#: templates/oscar/dashboard/orders/order_detail.html:88
 msgid "Order contents"
 msgstr "Bestellung"
 
@@ -2317,9 +1919,6 @@ msgstr "Bestellübersicht"
 #: templates/oscar/checkout/preview.html:35
 #: templates/oscar/checkout/user_address_delete.html:29
 #: templates/oscar/dashboard/offers/step_form.html:78
-#: templates/oscar/dashboard/orders/order_list.html:85
-#: templates/oscar/dashboard/orders/partials/bulk_edit_form.html:6
-#: templates/oscar/dashboard/orders/partials/bulk_edit_form.html:27
 #: templates/oscar/partials/nav_accounts.html:29
 msgid "Submitting..."
 msgstr "Abschicken..."
@@ -2362,7 +1961,6 @@ msgstr "Adresse ändern"
 #: templates/oscar/checkout/shipping_address.html:52
 #: templates/oscar/dashboard/offers/offer_delete.html:37
 #: templates/oscar/dashboard/offers/offer_list.html:94
-#: templates/oscar/dashboard/orders/order_detail.html:626
 msgid "Delete"
 msgstr "Löschen"
 
@@ -2511,7 +2109,6 @@ msgstr "Angebotsdetails"
 #: templates/oscar/dashboard/offers/summary.html:18
 #: templates/oscar/dashboard/offers/summary.html:25
 #: templates/oscar/dashboard/offers/summary.html:31
-#: templates/oscar/dashboard/orders/order_detail.html:621
 msgid "Edit"
 msgstr "Bearbeiten"
 
@@ -2522,6 +2119,10 @@ msgstr "Als CSV exportieren"
 #: templates/oscar/dashboard/offers/offer_detail.html:103
 msgid "Orders that used this offer"
 msgstr "Bestellungen, die dieses Angebot nutzten"
+
+#: templates/oscar/dashboard/offers/offer_detail.html:107
+msgid "Order number"
+msgstr "Bestellnummer"
 
 #: templates/oscar/dashboard/offers/offer_detail.html:108
 msgid "Order date"
@@ -2540,20 +2141,15 @@ msgid "Create new offer"
 msgstr "Neues Angebot erstellen"
 
 #: templates/oscar/dashboard/offers/offer_list.html:32
-#: templates/oscar/dashboard/orders/order_list.html:67
 msgid "Searching..."
 msgstr "Suche..."
 
 #: templates/oscar/dashboard/offers/offer_list.html:32
-#: templates/oscar/dashboard/orders/order_list.html:30
-#: templates/oscar/dashboard/orders/order_list.html:51
-#: templates/oscar/dashboard/orders/order_list.html:67
 #: templates/oscar/partials/search.html:7
 msgid "Search"
 msgstr "Suche"
 
 #: templates/oscar/dashboard/offers/offer_list.html:42
-#: templates/oscar/dashboard/orders/statistics.html:35
 msgid "Reset"
 msgstr "Zurücksetzen"
 
@@ -2574,7 +2170,6 @@ msgid "No"
 msgstr "Nein"
 
 #: templates/oscar/dashboard/offers/offer_list.html:88
-#: templates/oscar/dashboard/orders/order_detail.html:119
 msgid "Actions"
 msgstr "Aktionen"
 
@@ -2624,471 +2219,6 @@ msgstr "Änderungen speichern"
 #: templates/oscar/dashboard/offers/summary.html:4
 msgid "Offer summary"
 msgstr "Angebotszusammenfassung"
-
-#: templates/oscar/dashboard/orders/line_detail.html:5
-#, python-format
-msgid ""
-"\n"
-"        Order %(number)s - Line #%(id)s\n"
-"    "
-msgstr ""
-"\n"
-"        Bestellung %(number)s – Zeile #%(id)s\n"
-"    "
-
-#: templates/oscar/dashboard/orders/line_detail.html:24
-#, python-format
-msgid "Line #%(id)s"
-msgstr "Posten #%(id)s"
-
-#: templates/oscar/dashboard/orders/line_detail.html:29
-#, python-format
-msgid "Order #%(number)s - Line #%(id)s"
-msgstr "Bestellung %(number)s – Posten #%(id)s"
-
-#: templates/oscar/dashboard/orders/line_detail.html:36
-msgid "Product details"
-msgstr "Produktdetails"
-
-#: templates/oscar/dashboard/orders/line_detail.html:50
-msgid "Product Type"
-msgstr "Produkttyp"
-
-#: templates/oscar/dashboard/orders/line_detail.html:62
-msgid "Partner details"
-msgstr "Partnerdetails"
-
-#: templates/oscar/dashboard/orders/line_detail.html:78
-msgid "Shipping details"
-msgstr "Versanddetails"
-
-#: templates/oscar/dashboard/orders/line_detail.html:82
-msgid "Partner reference number"
-msgstr "Partnerreferenznummer"
-
-#: templates/oscar/dashboard/orders/line_detail.html:85
-msgid "Partner notes"
-msgstr "Partnernotizen"
-
-#: templates/oscar/dashboard/orders/line_detail.html:88
-msgid "Estimate dispatch date"
-msgstr "Voraussichtliches Versanddatum"
-
-#: templates/oscar/dashboard/orders/line_detail.html:97
-msgid "Shipping status"
-msgstr "Versandstatus"
-
-#: templates/oscar/dashboard/orders/line_detail.html:102
-msgid "State"
-msgstr "Status"
-
-#: templates/oscar/dashboard/orders/line_detail.html:114
-#: templates/oscar/dashboard/orders/line_detail.html:145
-msgid "No shipping events have occurred."
-msgstr "Keine Versandvorgänge ausgeführt."
-
-#: templates/oscar/dashboard/orders/line_detail.html:122
-msgid "Shipping events"
-msgstr "Versandvorgänge"
-
-#: templates/oscar/dashboard/orders/line_detail.html:127
-#: templates/oscar/dashboard/orders/line_detail.html:158
-#: templates/oscar/dashboard/orders/order_detail.html:341
-#: templates/oscar/dashboard/orders/order_detail.html:387
-msgid "Event"
-msgstr "Ereignis"
-
-#: templates/oscar/dashboard/orders/line_detail.html:130
-#: templates/oscar/dashboard/orders/line_detail.html:160
-#: templates/oscar/dashboard/orders/order_detail.html:340
-#: templates/oscar/dashboard/orders/order_detail.html:386
-#: templates/oscar/dashboard/orders/order_detail.html:527
-#: templates/oscar/dashboard/orders/order_detail.html:607
-msgid "Date"
-msgstr "Datum"
-
-#: templates/oscar/dashboard/orders/line_detail.html:153
-msgid "Payment events"
-msgstr "Zahlvorgänge"
-
-#: templates/oscar/dashboard/orders/line_detail.html:174
-msgid "No payment events have occurred."
-msgstr "Es wurden keine Zahlvorgänge durchgeführt."
-
-#: templates/oscar/dashboard/orders/order_detail.html:8
-#, python-format
-msgid "Order %(number)s"
-msgstr "Bestellung %(number)s"
-
-#: templates/oscar/dashboard/orders/order_detail.html:26
-#, python-format
-msgid "Order #%(number)s"
-msgstr "Bestellung Nr. %(number)s"
-
-#: templates/oscar/dashboard/orders/order_detail.html:32
-msgid "Customer Information"
-msgstr "Kundeninformation"
-
-#: templates/oscar/dashboard/orders/order_detail.html:37
-msgid "Customer checked out as a guest."
-msgstr "Kunde hat Vorgang als Gast beendet."
-
-#: templates/oscar/dashboard/orders/order_detail.html:41
-#: templates/oscar/dashboard/orders/order_detail.html:47
-msgid "Email address"
-msgstr "E-Mail-Adresse"
-
-#: templates/oscar/dashboard/orders/order_detail.html:54
-msgid "Customer has deleted their account."
-msgstr "Kunde hat sein Konto gelöscht."
-
-#: templates/oscar/dashboard/orders/order_detail.html:61
-msgid "Order information"
-msgstr "Bestellinformationen"
-
-#: templates/oscar/dashboard/orders/order_detail.html:63
-msgid "Order Total"
-msgstr "Bestellsumme"
-
-#: templates/oscar/dashboard/orders/order_detail.html:65
-msgid "Time of purchase"
-msgstr "Kaufdatum"
-
-#: templates/oscar/dashboard/orders/order_detail.html:81
-msgid "Order Details"
-msgstr "Bestelldetails"
-
-#: templates/oscar/dashboard/orders/order_detail.html:91
-#: templates/oscar/dashboard/orders/order_detail.html:553
-msgid "Discounts"
-msgstr "Rabatte"
-
-#: templates/oscar/dashboard/orders/order_detail.html:92
-#: templates/oscar/dashboard/orders/order_detail.html:601
-msgid "Notes"
-msgstr "Hinweise"
-
-#: templates/oscar/dashboard/orders/order_detail.html:99
-msgid "Items ordered"
-msgstr "Bestellte Artikel"
-
-#: templates/oscar/dashboard/orders/order_detail.html:109
-msgid "Line ID"
-msgstr "Zeilen-ID"
-
-#: templates/oscar/dashboard/orders/order_detail.html:114
-msgid "Supplier"
-msgstr "Lieferant"
-
-#: templates/oscar/dashboard/orders/order_detail.html:115
-msgid "Supplier SKU"
-msgstr "Lieferanten-SKU-Nummer"
-
-#: templates/oscar/dashboard/orders/order_detail.html:116
-msgid "Est. dispatch date"
-msgstr "Vorraus. Versanddatum"
-
-#: templates/oscar/dashboard/orders/order_detail.html:117
-msgid "Price excl tax (before discounts)"
-msgstr "Preis ohne Steuern (ohne Rabatte)"
-
-#: templates/oscar/dashboard/orders/order_detail.html:118
-msgid "Price inc tax (before discounts)"
-msgstr "Preise inkl. Steuer (ohne Rabatte)"
-
-#: templates/oscar/dashboard/orders/order_detail.html:150
-#: templates/oscar/dashboard/orders/order_list.html:125
-msgid "View"
-msgstr "Ansicht"
-
-#: templates/oscar/dashboard/orders/order_detail.html:166
-msgid "Basket total (excl. discounts)"
-msgstr "Summe (ohne Rabatte)"
-
-#: templates/oscar/dashboard/orders/order_detail.html:185
-msgid "Basket total (inc. discounts)"
-msgstr "Summe (mit Rabatte)"
-
-#: templates/oscar/dashboard/orders/order_detail.html:204
-msgid "Shipping total (excl. discounts)"
-msgstr "Versandpreis (ohne Rabatte)"
-
-#: templates/oscar/dashboard/orders/order_detail.html:223
-msgid "Shipping total (inc. discounts)"
-msgstr "Versandpreis (mit Rabatte)"
-
-#: templates/oscar/dashboard/orders/order_detail.html:231
-msgid "Shipping total"
-msgstr "Versandpreis"
-
-#: templates/oscar/dashboard/orders/order_detail.html:257
-msgid "With selected lines"
-msgstr "Mit ausgewählten Posten"
-
-#: templates/oscar/dashboard/orders/order_detail.html:262
-msgid "Change line status to"
-msgstr "Zeilenstatus ändern zu"
-
-#: templates/oscar/dashboard/orders/order_detail.html:266
-#: templates/oscar/dashboard/orders/order_list.html:141
-msgid "choose new status"
-msgstr "neuen Status wählen"
-
-#: templates/oscar/dashboard/orders/order_detail.html:277
-msgid "Create shipping event"
-msgstr "Versandvorgang anlegen"
-
-#: templates/oscar/dashboard/orders/order_detail.html:281
-#: templates/oscar/dashboard/orders/order_detail.html:299
-msgid "choose event type"
-msgstr "Vorgangstyp wählen"
-
-#: templates/oscar/dashboard/orders/order_detail.html:288
-msgid "with reference"
-msgstr "mit Referenz"
-
-#: templates/oscar/dashboard/orders/order_detail.html:295
-msgid "Create payment event"
-msgstr "Zahlvorgang erstellen"
-
-#: templates/oscar/dashboard/orders/order_detail.html:306
-msgid "with amount"
-msgstr "mit Betrag"
-
-#: templates/oscar/dashboard/orders/order_detail.html:310
-msgid "Go!"
-msgstr "Los!"
-
-#: templates/oscar/dashboard/orders/order_detail.html:319
-#: templates/oscar/dashboard/orders/order_list.html:135
-msgid "Change order status"
-msgstr "Bestellstatus ändern"
-
-#: templates/oscar/dashboard/orders/order_detail.html:323
-#: templates/oscar/dashboard/orders/order_list.html:149
-msgid "Change status"
-msgstr "Status ändern"
-
-#: templates/oscar/dashboard/orders/order_detail.html:325
-#: templates/oscar/dashboard/orders/order_list.html:151
-msgid "This order can't have its status changed."
-msgstr "Status dieser Bestellung kann nicht geändert werden."
-
-#: templates/oscar/dashboard/orders/order_detail.html:333
-msgid "Shipping Events"
-msgstr "Versandvorgänge"
-
-#: templates/oscar/dashboard/orders/order_detail.html:342
-#: templates/oscar/dashboard/orders/order_detail.html:389
-msgid "Lines"
-msgstr "Zeilen"
-
-#: templates/oscar/dashboard/orders/order_detail.html:355
-#, python-format
-msgid ""
-"\n"
-"                                                                %(title)s "
-"(quantity %(event_qty)s/%(total_qty)s)\n"
-"                                                            "
-msgstr ""
-"\n"
-"                                                                %(title)s "
-"(Anzahl %(event_qty)s/%(total_qty)s)\n"
-"                                                            "
-
-#: templates/oscar/dashboard/orders/order_detail.html:369
-msgid "No shipping events."
-msgstr "Keine Versandvorgänge."
-
-#: templates/oscar/dashboard/orders/order_detail.html:379
-msgid "Payment Events"
-msgstr "Zahlvorgänge"
-
-#: templates/oscar/dashboard/orders/order_detail.html:402
-msgid "Product:"
-msgstr "Produkt:"
-
-#: templates/oscar/dashboard/orders/order_detail.html:402
-msgid "quantity"
-msgstr "Menge"
-
-#: templates/oscar/dashboard/orders/order_detail.html:412
-msgid "No payment events."
-msgstr "Kein Zahlvorgang."
-
-#: templates/oscar/dashboard/orders/order_detail.html:428
-msgid "Method name"
-msgstr "Methoden-Bezeichnung"
-
-#: templates/oscar/dashboard/orders/order_detail.html:432
-msgid "Method code"
-msgstr "Methoden-Code"
-
-#: templates/oscar/dashboard/orders/order_detail.html:436
-msgid "Charge (incl tax)"
-msgstr "Gebühr (inkl. Steuer)"
-
-#: templates/oscar/dashboard/orders/order_detail.html:440
-msgid "Charge (excl tax)"
-msgstr "Gebühr (exkl. Steuer)"
-
-#: templates/oscar/dashboard/orders/order_detail.html:483
-msgid "Payment sources"
-msgstr "Zahlungsmöglichkeiten"
-
-#: templates/oscar/dashboard/orders/order_detail.html:490
-msgid "Allocation"
-msgstr "Zuweisung"
-
-#: templates/oscar/dashboard/orders/order_detail.html:491
-msgid "Amount debited"
-msgstr "Betrag abgebucht"
-
-#: templates/oscar/dashboard/orders/order_detail.html:492
-msgid "Amount refunded"
-msgstr "Betrag zurückerstattet"
-
-#: templates/oscar/dashboard/orders/order_detail.html:510
-msgid "No payment sources found for this order."
-msgstr "Keine Zahlungsmöglichkeiten für diese Bestellung gefunden."
-
-#: templates/oscar/dashboard/orders/order_detail.html:560
-msgid "Voucher"
-msgstr "Gutschein"
-
-#: templates/oscar/dashboard/orders/order_detail.html:562
-#: templates/oscar/dashboard/orders/statistics.html:60
-msgid "Frequency"
-msgstr "Häufigkeit"
-
-#: templates/oscar/dashboard/orders/order_detail.html:563
-#: templates/oscar/dashboard/orders/order_detail.html:610
-msgid "Message"
-msgstr "Nachricht"
-
-#: templates/oscar/dashboard/orders/order_detail.html:590
-msgid "No discounts were applied to this order."
-msgstr "Für diese Bestellung existieren keine Rabatte."
-
-#: templates/oscar/dashboard/orders/order_detail.html:611
-msgid "Admin"
-msgstr "Administrator"
-
-#: templates/oscar/dashboard/orders/order_detail.html:634
-msgid "No notes available."
-msgstr "Keine Hinweise verfügbar."
-
-#: templates/oscar/dashboard/orders/order_detail.html:645
-msgid "Save note"
-msgstr "Anmerkung speichern"
-
-#: templates/oscar/dashboard/orders/order_detail.html:646
-msgid "Notes are only editable for 5 minutes after being saved."
-msgstr "Hinweise können nur für 5 Minuten ab dem Speichern geändert werden."
-
-#: templates/oscar/dashboard/orders/order_list.html:52
-#: templates/oscar/dashboard/orders/order_list.html:58
-msgid "Advanced Search"
-msgstr "Erweiterte Suche"
-
-#: templates/oscar/dashboard/orders/order_list.html:66
-msgid "Close"
-msgstr "Schließen"
-
-#: templates/oscar/dashboard/orders/order_list.html:84
-msgid "Download selected orders as a CSV"
-msgstr "Ausgewählte Bestellungen als CSV herunterladen"
-
-#: templates/oscar/dashboard/orders/order_list.html:85
-msgid "Download"
-msgstr "Download"
-
-#: templates/oscar/dashboard/orders/order_list.html:94
-msgid "Total inc tax"
-msgstr "Gesamt (inkl. Steuer)"
-
-#: templates/oscar/dashboard/orders/order_list.html:118
-msgid "Deleted"
-msgstr "Gelöscht"
-
-#: templates/oscar/dashboard/orders/order_list.html:149
-#: templates/oscar/registration/password_reset_confirm.html:27
-msgid "Changing..."
-msgstr "Ändern..."
-
-#: templates/oscar/dashboard/orders/order_list.html:163
-msgid "No orders found."
-msgstr "Keine Bestellungen gefunden."
-
-#: templates/oscar/dashboard/orders/partials/bulk_edit_form.html:6
-msgid "Print Packaging Slips"
-msgstr "Lieferschein drucken"
-
-#: templates/oscar/dashboard/orders/partials/bulk_edit_form.html:10
-msgid "Mark as"
-msgstr "Markieren als"
-
-#: templates/oscar/dashboard/orders/partials/bulk_edit_form.html:15
-#: templates/oscar/dashboard/orders/partials/bulk_edit_form.html:20
-msgid "Change order status to"
-msgstr "Bestellstatus ändern zu"
-
-#: templates/oscar/dashboard/orders/partials/bulk_edit_form.html:26
-msgid "Cancel"
-msgstr "Abbrechen"
-
-#: templates/oscar/dashboard/orders/partials/bulk_edit_form.html:27
-msgid "Done"
-msgstr "Erledigt"
-
-#: templates/oscar/dashboard/orders/shippingaddress_form.html:22
-msgid "Edit shipping address"
-msgstr "Lieferanschrift bearbeiten"
-
-#: templates/oscar/dashboard/orders/shippingaddress_form.html:27
-#, python-format
-msgid "Edit shipping address for order %(order.number)s"
-msgstr "Lieferanschrift für Bestellung %(order.number)s ändern"
-
-#: templates/oscar/dashboard/orders/shippingaddress_form.html:36
-msgid "Update address"
-msgstr "Adresse aktualisieren"
-
-#: templates/oscar/dashboard/orders/statistics.html:8
-msgid "Order statistics"
-msgstr "Bestellstatistiken"
-
-#: templates/oscar/dashboard/orders/statistics.html:29
-msgid "Filter"
-msgstr "Filter"
-
-#: templates/oscar/dashboard/orders/statistics.html:34
-msgid "Filtering..."
-msgstr "Filtere..."
-
-#: templates/oscar/dashboard/orders/statistics.html:34
-msgid "Filter result"
-msgstr "Ergebnisse filtern"
-
-#: templates/oscar/dashboard/orders/statistics.html:40
-msgid "Summary"
-msgstr "Zusammenfassung"
-
-#: templates/oscar/dashboard/orders/statistics.html:42
-msgid "Total orders"
-msgstr "Gesamtbestellungen"
-
-#: templates/oscar/dashboard/orders/statistics.html:46
-msgid "Total lines"
-msgstr "Gesamtanzahl Posten"
-
-#: templates/oscar/dashboard/orders/statistics.html:50
-msgid "Total revenue"
-msgstr "Gesamtumsatz"
-
-#: templates/oscar/dashboard/orders/statistics.html:57
-msgid "Order status breakdown"
-msgstr "Bestellstatuszusammenfassung"
 
 #: templates/oscar/dashboard/partials/form_fields.html:5
 #: templates/oscar/partials/form_fields.html:5
@@ -3207,6 +2337,10 @@ msgid ""
 msgstr "Bitte geben Sie zur Kontrolle das neue Passwort zweimal ein."
 
 #: templates/oscar/registration/password_reset_confirm.html:27
+msgid "Changing..."
+msgstr "Ändern..."
+
+#: templates/oscar/registration/password_reset_confirm.html:27
 msgid "Change my password"
 msgstr "Mein Passwort ändern"
 
@@ -3276,6 +2410,14 @@ msgstr "E-Mail zum Zurücksetzen senden "
 msgid "You must log in to access this page"
 msgstr "Sie müssen eingeloggt sein, um diese Seite angezeigt zu bekommen"
 
+#: views/generic.py:39
+msgid "Invalid form submission"
+msgstr "Ungültiges Formular"
+
+#: views/generic.py:72
+msgid "Invalid action"
+msgstr "Ungültige Aktion"
+
 #: views/generic.py:81
 #, python-format
 msgid "You need to select some %ss"
@@ -3293,6 +2435,552 @@ msgstr "Dies ist keine gültige Vorwahl für %s."
 #: views/generic.py:208
 msgid "This is not a valid local or international phone format."
 msgstr "Dies ist keine gültige lokale oder internationale Telefonnummer."
+
+#~ msgid "Orders dashboard"
+#~ msgstr "Bestellungen-Dashboard"
+
+#~ msgctxt "start date"
+#~ msgid "From"
+#~ msgstr "Von"
+
+#~ msgctxt "end date"
+#~ msgid "To"
+#~ msgstr "Zu"
+
+#~ msgid "All orders"
+#~ msgstr "Alle Bestellungen"
+
+#~ msgid "Orders placed between %(date_from)s and %(date_to)s"
+#~ msgstr "Bestellungen getätigt zwischen %(date_from)s und %(date_to)s"
+
+#~ msgid "Orders placed since %s"
+#~ msgstr "Bestellungen getätigt nach %s"
+
+#~ msgid "Orders placed until %s"
+#~ msgstr "Bestellungen getätigt bis %s"
+
+#~ msgid "Customer name"
+#~ msgstr "Kundenname"
+
+#~ msgid "Product name"
+#~ msgstr "Produktbezeichnung"
+
+#~ msgid "Date from"
+#~ msgstr "Datum vom "
+
+#~ msgid "Date to"
+#~ msgstr "Datum bis"
+
+#~ msgid "Voucher code"
+#~ msgstr "Gutscheincode"
+
+#~ msgid "Payment method"
+#~ msgstr "Zahlungsmethode"
+
+#~ msgid "HTML"
+#~ msgstr "HTML"
+
+#~ msgid "CSV"
+#~ msgstr "CSV"
+
+#~ msgid "Get results as"
+#~ msgstr "Ergebnisformat"
+
+#~ msgid "New order status"
+#~ msgstr "Neuer Bestellstatus"
+
+#~ msgid ""
+#~ "%(main_filter)s %(name_filter)s %(title_filter)s%(upc_filter)s "
+#~ "%(sku_filter)s %(date_filter)s%(voucher_filter)s %(payment_filter)s"
+#~ "%(status_filter)s"
+#~ msgstr ""
+#~ "%(main_filter)s %(name_filter)s %(title_filter)s%(upc_filter)s "
+#~ "%(sku_filter)s %(date_filter)s%(voucher_filter)s %(payment_filter)s"
+#~ "%(status_filter)s"
+
+#~ msgid "Orders without an order status"
+#~ msgstr "Bestellungen ohne Bestellstatus"
+
+#~ msgid "Orders with status '%s'"
+#~ msgstr "Bestellungen mit Status „%s“"
+
+#~ msgid "Orders with number starting with \"%(order_number)s\""
+#~ msgstr "Bestellungen deren Bestellnummer mit „%(order_number)s“ beginnt"
+
+#~ msgid " with customer name matching '%(name)s'"
+#~ msgstr " deren Kundenname mit „%(name)s“ übereinstimmt"
+
+#~ msgid " including an item with title matching '%(product_title)s'"
+#~ msgstr "mit einem Artikel der mit „%(product_title)s“ übereinstimmt"
+
+#~ msgid " including an item with UPC '%(upc)s'"
+#~ msgstr "mit einem Artikelt mit UPC „%(upc)s“"
+
+#~ msgid " including an item with ID '%(partner_sku)s'"
+#~ msgstr "mit einem Artikel mit ID „%(partner_sku)s“"
+
+#~ msgid " placed between %(start_date)s and %(end_date)s"
+#~ msgstr "zwischen %(start_date)s und %(end_date)s getätigt wurden"
+
+#~ msgid " placed since %s"
+#~ msgstr "vor %s getätigt wurden"
+
+#~ msgid " placed before %s"
+#~ msgstr "nach %s getätigt wurden"
+
+#~ msgid " using voucher '%(voucher)s'"
+#~ msgstr "Gutschein „%(voucher)s“ benutzt"
+
+#~ msgid " paid for by %(payment_method)s"
+#~ msgstr "mit %(payment_method)s bezahlt"
+
+#~ msgid " with status %(status)s"
+#~ msgstr "mit Status %(status)s"
+
+#~ msgid "Order value"
+#~ msgstr "Bestellwert"
+
+#~ msgid "Date of purchase"
+#~ msgstr "Kaufdatum"
+
+#~ msgid "Number of items"
+#~ msgstr "Anzahl der Artikel"
+
+#~ msgid "Order status"
+#~ msgstr "Bestellstatus"
+
+#~ msgid "Customer email address"
+#~ msgstr "E-Mail-Adresse des Kunden"
+
+#~ msgid "Deliver to name"
+#~ msgstr "Name des Empfängers"
+
+#~ msgid "Bill to name"
+#~ msgstr "Name des Käufers"
+
+#~ msgid "The new status '%s' is not valid"
+#~ msgstr "Der gewählte Status „%s“ ist ungültig"
+
+#~ msgid "The new status '%s' is not valid for this order"
+#~ msgstr "Der gewählte Status „%s“ für diese Bestellung ist ungültig"
+
+#~ msgid "Unable to change order status due to payment error: %s"
+#~ msgstr ""
+#~ "Der Bestellstatus kann nicht geändert werden, da ein Zahlungsfehler "
+#~ "aufgetreten ist: %s"
+
+#~ msgid "Order status changed from '%(old_status)s' to '%(new_status)s'"
+#~ msgstr "Bestellstatus von „%(old_status)s“ zu „%(new_status)s“ geändert"
+
+#~ msgid "No valid action submitted"
+#~ msgstr "Keine gültige Aktion ausgewählt"
+
+#~ msgid "You must select some lines to act on"
+#~ msgstr "Sie müssen Zeilen zum Bearbeiten auswählen"
+
+#~ msgid "Invalid lines requested"
+#~ msgstr "Ungültige Zeilenabfrage"
+
+#~ msgid "The entered quantity for line #%s is not valid"
+#~ msgstr "Die ausgewählte Menge für Zeile #%s ist ungültig"
+
+#~ msgid ""
+#~ "The entered quantity for line #%(line_id)s should not be higher than "
+#~ "%(quantity)s"
+#~ msgstr ""
+#~ "Die ausgewählte Menge für Zeile #%(line_id)s sollte nicht höher sein, als "
+#~ "%(quantity)s"
+
+#~ msgid "Note saved"
+#~ msgstr "Notiz gespeichert"
+
+#~ msgid "Note cannot be deleted"
+#~ msgstr "Notiz kann nicht gelöscht werden"
+
+#~ msgid "Note deleted"
+#~ msgstr "Notiz gelöscht"
+
+#~ msgid ""
+#~ "Unable to change order status as the requested new status is not valid"
+#~ msgstr ""
+#~ "Der Bestellstatus kann nicht geändert werden, da der angefragte Status "
+#~ "ungültig ist"
+
+#~ msgid "Please choose a valid amount"
+#~ msgstr "Bitte wählen Sie einen gültigen Betrag"
+
+#~ msgid "'%(status)s' is not a valid new status for line %(line_id)d"
+#~ msgstr "„%(status)s“ ist kein gültiger Status für Zeile %(line_id)d"
+
+#~ msgid ""
+#~ "Status of line #%(line_id)d changed from '%(old_status)s' to "
+#~ "'%(new_status)s'"
+#~ msgstr ""
+#~ "Der Status der Zeile #%(line_id)d wurde von „%(old_status)s“ zu "
+#~ "„%(new_status)s“ geändert"
+
+#~ msgid "The event type '%s' is not valid"
+#~ msgstr "Der Vorgangstyp „%s“ ist ungültig"
+
+#~ msgid "Unable to create shipping event: %s"
+#~ msgstr "Anlegen des Versandvorgang nicht möglich: %s"
+
+#~ msgid "Unable to create shipping event due to payment error: %s"
+#~ msgstr ""
+#~ "Anlegen des Versandvorgangs nicht möglich, da Zahlungsfehler aufgetreten "
+#~ "sind: %s"
+
+#~ msgid "Shipping event created"
+#~ msgstr "Versandvorgang angelegt"
+
+#~ msgid "Unable to create payment event due to payment error: %s"
+#~ msgstr ""
+#~ "Anlegen des Zahlungsereignisses nicht möglich, da Zahlungsfehler: %s"
+
+#~ msgid "Unable to create payment event: %s"
+#~ msgstr "Anlegen des Zahlungsereignisses nicht möglich: %s"
+
+#~ msgid "Payment event created"
+#~ msgstr "Zahlvorgang erstellt"
+
+#~ msgid "%(field)s changed from '%(old_value)s' to '%(new_value)s'"
+#~ msgstr "%(field)s geändert von „%(old_value)s“ zu „%(new_value)s“"
+
+#~ msgid ""
+#~ "Delivery address updated:\n"
+#~ "%s"
+#~ msgstr ""
+#~ "Lieferanschrift geändert:\n"
+#~ "%s"
+
+#~ msgid "Delivery address updated"
+#~ msgstr "Lieferanschrift aktualisiert"
+
+#~ msgid ""
+#~ "\n"
+#~ "        Order %(number)s - Line #%(id)s\n"
+#~ "    "
+#~ msgstr ""
+#~ "\n"
+#~ "        Bestellung %(number)s – Zeile #%(id)s\n"
+#~ "    "
+
+#~ msgid "Line #%(id)s"
+#~ msgstr "Posten #%(id)s"
+
+#~ msgid "Order #%(number)s - Line #%(id)s"
+#~ msgstr "Bestellung %(number)s – Posten #%(id)s"
+
+#~ msgid "Product details"
+#~ msgstr "Produktdetails"
+
+#~ msgid "Product Type"
+#~ msgstr "Produkttyp"
+
+#~ msgid "Partner details"
+#~ msgstr "Partnerdetails"
+
+#~ msgid "Shipping details"
+#~ msgstr "Versanddetails"
+
+#~ msgid "Partner reference number"
+#~ msgstr "Partnerreferenznummer"
+
+#~ msgid "Partner notes"
+#~ msgstr "Partnernotizen"
+
+#~ msgid "Estimate dispatch date"
+#~ msgstr "Voraussichtliches Versanddatum"
+
+#~ msgid "Shipping status"
+#~ msgstr "Versandstatus"
+
+#~ msgid "State"
+#~ msgstr "Status"
+
+#~ msgid "No shipping events have occurred."
+#~ msgstr "Keine Versandvorgänge ausgeführt."
+
+#~ msgid "Shipping events"
+#~ msgstr "Versandvorgänge"
+
+#~ msgid "Event"
+#~ msgstr "Ereignis"
+
+#~ msgid "Date"
+#~ msgstr "Datum"
+
+#~ msgid "Payment events"
+#~ msgstr "Zahlvorgänge"
+
+#~ msgid "No payment events have occurred."
+#~ msgstr "Es wurden keine Zahlvorgänge durchgeführt."
+
+#~ msgid "Order %(number)s"
+#~ msgstr "Bestellung %(number)s"
+
+#~ msgid "Order #%(number)s"
+#~ msgstr "Bestellung Nr. %(number)s"
+
+#~ msgid "Customer Information"
+#~ msgstr "Kundeninformation"
+
+#~ msgid "Customer checked out as a guest."
+#~ msgstr "Kunde hat Vorgang als Gast beendet."
+
+#~ msgid "Email address"
+#~ msgstr "E-Mail-Adresse"
+
+#~ msgid "Customer has deleted their account."
+#~ msgstr "Kunde hat sein Konto gelöscht."
+
+#~ msgid "Order information"
+#~ msgstr "Bestellinformationen"
+
+#~ msgid "Order Total"
+#~ msgstr "Bestellsumme"
+
+#~ msgid "Time of purchase"
+#~ msgstr "Kaufdatum"
+
+#~ msgid "Order Details"
+#~ msgstr "Bestelldetails"
+
+#~ msgid "Discounts"
+#~ msgstr "Rabatte"
+
+#~ msgid "Notes"
+#~ msgstr "Hinweise"
+
+#~ msgid "Items ordered"
+#~ msgstr "Bestellte Artikel"
+
+#~ msgid "Line ID"
+#~ msgstr "Zeilen-ID"
+
+#~ msgid "Supplier"
+#~ msgstr "Lieferant"
+
+#~ msgid "Supplier SKU"
+#~ msgstr "Lieferanten-SKU-Nummer"
+
+#~ msgid "Est. dispatch date"
+#~ msgstr "Vorraus. Versanddatum"
+
+#~ msgid "Price excl tax (before discounts)"
+#~ msgstr "Preis ohne Steuern (ohne Rabatte)"
+
+#~ msgid "Price inc tax (before discounts)"
+#~ msgstr "Preise inkl. Steuer (ohne Rabatte)"
+
+#~ msgid "View"
+#~ msgstr "Ansicht"
+
+#~ msgid "Basket total (excl. discounts)"
+#~ msgstr "Summe (ohne Rabatte)"
+
+#~ msgid "Basket total (inc. discounts)"
+#~ msgstr "Summe (mit Rabatte)"
+
+#~ msgid "Shipping total (excl. discounts)"
+#~ msgstr "Versandpreis (ohne Rabatte)"
+
+#~ msgid "Shipping total (inc. discounts)"
+#~ msgstr "Versandpreis (mit Rabatte)"
+
+#~ msgid "Shipping total"
+#~ msgstr "Versandpreis"
+
+#~ msgid "With selected lines"
+#~ msgstr "Mit ausgewählten Posten"
+
+#~ msgid "Change line status to"
+#~ msgstr "Zeilenstatus ändern zu"
+
+#~ msgid "choose new status"
+#~ msgstr "neuen Status wählen"
+
+#~ msgid "Create shipping event"
+#~ msgstr "Versandvorgang anlegen"
+
+#~ msgid "choose event type"
+#~ msgstr "Vorgangstyp wählen"
+
+#~ msgid "with reference"
+#~ msgstr "mit Referenz"
+
+#~ msgid "Create payment event"
+#~ msgstr "Zahlvorgang erstellen"
+
+#~ msgid "with amount"
+#~ msgstr "mit Betrag"
+
+#~ msgid "Go!"
+#~ msgstr "Los!"
+
+#~ msgid "Change order status"
+#~ msgstr "Bestellstatus ändern"
+
+#~ msgid "Change status"
+#~ msgstr "Status ändern"
+
+#~ msgid "This order can't have its status changed."
+#~ msgstr "Status dieser Bestellung kann nicht geändert werden."
+
+#~ msgid "Shipping Events"
+#~ msgstr "Versandvorgänge"
+
+#~ msgid "Lines"
+#~ msgstr "Zeilen"
+
+#~ msgid ""
+#~ "\n"
+#~ "                                                                %(title)s "
+#~ "(quantity %(event_qty)s/%(total_qty)s)\n"
+#~ "                                                            "
+#~ msgstr ""
+#~ "\n"
+#~ "                                                                %(title)s "
+#~ "(Anzahl %(event_qty)s/%(total_qty)s)\n"
+#~ "                                                            "
+
+#~ msgid "No shipping events."
+#~ msgstr "Keine Versandvorgänge."
+
+#~ msgid "Payment Events"
+#~ msgstr "Zahlvorgänge"
+
+#~ msgid "Product:"
+#~ msgstr "Produkt:"
+
+#~ msgid "quantity"
+#~ msgstr "Menge"
+
+#~ msgid "No payment events."
+#~ msgstr "Kein Zahlvorgang."
+
+#~ msgid "Method name"
+#~ msgstr "Methoden-Bezeichnung"
+
+#~ msgid "Method code"
+#~ msgstr "Methoden-Code"
+
+#~ msgid "Charge (incl tax)"
+#~ msgstr "Gebühr (inkl. Steuer)"
+
+#~ msgid "Charge (excl tax)"
+#~ msgstr "Gebühr (exkl. Steuer)"
+
+#~ msgid "Payment sources"
+#~ msgstr "Zahlungsmöglichkeiten"
+
+#~ msgid "Allocation"
+#~ msgstr "Zuweisung"
+
+#~ msgid "Amount debited"
+#~ msgstr "Betrag abgebucht"
+
+#~ msgid "Amount refunded"
+#~ msgstr "Betrag zurückerstattet"
+
+#~ msgid "No payment sources found for this order."
+#~ msgstr "Keine Zahlungsmöglichkeiten für diese Bestellung gefunden."
+
+#~ msgid "Voucher"
+#~ msgstr "Gutschein"
+
+#~ msgid "Frequency"
+#~ msgstr "Häufigkeit"
+
+#~ msgid "Message"
+#~ msgstr "Nachricht"
+
+#~ msgid "No discounts were applied to this order."
+#~ msgstr "Für diese Bestellung existieren keine Rabatte."
+
+#~ msgid "Admin"
+#~ msgstr "Administrator"
+
+#~ msgid "No notes available."
+#~ msgstr "Keine Hinweise verfügbar."
+
+#~ msgid "Save note"
+#~ msgstr "Anmerkung speichern"
+
+#~ msgid "Notes are only editable for 5 minutes after being saved."
+#~ msgstr "Hinweise können nur für 5 Minuten ab dem Speichern geändert werden."
+
+#~ msgid "Advanced Search"
+#~ msgstr "Erweiterte Suche"
+
+#~ msgid "Close"
+#~ msgstr "Schließen"
+
+#~ msgid "Download selected orders as a CSV"
+#~ msgstr "Ausgewählte Bestellungen als CSV herunterladen"
+
+#~ msgid "Download"
+#~ msgstr "Download"
+
+#~ msgid "Total inc tax"
+#~ msgstr "Gesamt (inkl. Steuer)"
+
+#~ msgid "Deleted"
+#~ msgstr "Gelöscht"
+
+#~ msgid "No orders found."
+#~ msgstr "Keine Bestellungen gefunden."
+
+#~ msgid "Print Packaging Slips"
+#~ msgstr "Lieferschein drucken"
+
+#~ msgid "Mark as"
+#~ msgstr "Markieren als"
+
+#~ msgid "Change order status to"
+#~ msgstr "Bestellstatus ändern zu"
+
+#~ msgid "Cancel"
+#~ msgstr "Abbrechen"
+
+#~ msgid "Done"
+#~ msgstr "Erledigt"
+
+#~ msgid "Edit shipping address"
+#~ msgstr "Lieferanschrift bearbeiten"
+
+#~ msgid "Edit shipping address for order %(order.number)s"
+#~ msgstr "Lieferanschrift für Bestellung %(order.number)s ändern"
+
+#~ msgid "Update address"
+#~ msgstr "Adresse aktualisieren"
+
+#~ msgid "Order statistics"
+#~ msgstr "Bestellstatistiken"
+
+#~ msgid "Filter"
+#~ msgstr "Filter"
+
+#~ msgid "Filtering..."
+#~ msgstr "Filtere..."
+
+#~ msgid "Filter result"
+#~ msgstr "Ergebnisse filtern"
+
+#~ msgid "Summary"
+#~ msgstr "Zusammenfassung"
+
+#~ msgid "Total orders"
+#~ msgstr "Gesamtbestellungen"
+
+#~ msgid "Total lines"
+#~ msgstr "Gesamtanzahl Posten"
+
+#~ msgid "Total revenue"
+#~ msgstr "Gesamtumsatz"
+
+#~ msgid "Order status breakdown"
+#~ msgstr "Bestellstatuszusammenfassung"
 
 #~ msgid "Site"
 #~ msgstr "Webseite"
