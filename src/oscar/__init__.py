@@ -33,7 +33,6 @@ OSCAR_CORE_APPS = [
     'oscar.apps.order',
     'oscar.apps.customer',
     'oscar.apps.dashboard',
-    'oscar.apps.dashboard.orders',
     'oscar.apps.dashboard.offers',
     # 3rd-party apps that oscar depends on
     'treebeard',
