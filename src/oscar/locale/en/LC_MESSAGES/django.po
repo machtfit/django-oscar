@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-08 15:04+0100\n"
+"POT-Creation-Date: 2017-11-09 10:57+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -437,15 +437,11 @@ msgstr ""
 
 #: apps/catalogue/abstract_models.py:33 apps/offer/models.py:58
 #: apps/offer/models.py:684 apps/payment/abstract_models.py:202
-#: templates/oscar/dashboard/offers/offer_detail.html:64
-#: templates/oscar/dashboard/offers/summary.html:10
 msgid "Name"
 msgstr ""
 
 #: apps/catalogue/abstract_models.py:34 apps/catalogue/abstract_models.py:210
 #: apps/offer/models.py:62
-#: templates/oscar/dashboard/offers/offer_detail.html:69
-#: templates/oscar/dashboard/offers/summary.html:12
 msgid "Description"
 msgstr ""
 
@@ -670,128 +666,9 @@ msgstr ""
 #: apps/dashboard/config.py:8 defaults.py:66
 #: templates/oscar/dashboard/layout.html:25
 #: templates/oscar/dashboard/layout.html:84
-#: templates/oscar/dashboard/offers/offer_delete.html:13
-#: templates/oscar/dashboard/offers/offer_detail.html:14
-#: templates/oscar/dashboard/offers/offer_list.html:14
-#: templates/oscar/dashboard/offers/step_form.html:21
 #: templates/oscar/dashboard/partials/nav_accounts.html:44
 #: templates/oscar/partials/nav_accounts.html:47
 msgid "Cockpit"
-msgstr ""
-
-#: apps/dashboard/offers/config.py:8
-msgid "Offers dashboard"
-msgstr ""
-
-#: apps/dashboard/offers/forms.py:25 apps/offer/models.py:108
-#: templates/oscar/dashboard/offers/offer_list.html:48
-msgid "Start date"
-msgstr ""
-
-#: apps/dashboard/offers/forms.py:28 apps/offer/models.py:110
-#: templates/oscar/dashboard/offers/offer_list.html:49
-msgid "End date"
-msgstr ""
-
-#: apps/dashboard/offers/forms.py:47
-msgid "The end date must be after the start date"
-msgstr ""
-
-#: apps/dashboard/offers/forms.py:54
-msgid "Custom condition"
-msgstr ""
-
-#: apps/dashboard/offers/forms.py:86
-msgid ""
-"Please either choose a range, type and value OR select a custom condition"
-msgstr ""
-
-#: apps/dashboard/offers/forms.py:92
-msgid "A range is required"
-msgstr ""
-
-#: apps/dashboard/offers/forms.py:108
-msgid "Custom incentive"
-msgstr ""
-
-#: apps/dashboard/offers/forms.py:139
-msgid ""
-"Please either choose a range, type and value OR select a custom incentive"
-msgstr ""
-
-#: apps/dashboard/offers/forms.py:145
-msgid "No other options can be set if you are using a custom incentive"
-msgstr ""
-
-#: apps/dashboard/offers/forms.py:164
-#: templates/oscar/dashboard/offers/offer_list.html:47
-msgid "Offer name"
-msgstr ""
-
-#: apps/dashboard/offers/forms.py:165
-msgid "Is active?"
-msgstr ""
-
-#: apps/dashboard/offers/views.py:41
-msgid "All offers"
-msgstr ""
-
-#: apps/dashboard/offers/views.py:54
-#, python-format
-msgid "Offers matching '%s'"
-msgstr ""
-
-#: apps/dashboard/offers/views.py:87
-#, python-format
-msgid "%s step not complete"
-msgstr ""
-
-#: apps/dashboard/offers/views.py:240
-#, python-format
-msgid "Offer '%s' updated"
-msgstr ""
-
-#: apps/dashboard/offers/views.py:242
-#, python-format
-msgid "Offer '%s' created!"
-msgstr ""
-
-#: apps/dashboard/offers/views.py:272
-msgid "Name and description"
-msgstr ""
-
-#: apps/dashboard/offers/views.py:288
-#: templates/oscar/dashboard/offers/offer_detail.html:73
-#: templates/oscar/dashboard/offers/offer_list.html:50
-#: templates/oscar/dashboard/offers/summary.html:19
-msgid "Incentive"
-msgstr ""
-
-#: apps/dashboard/offers/views.py:318
-#: templates/oscar/dashboard/offers/offer_detail.html:83
-#: templates/oscar/dashboard/offers/offer_list.html:53
-#: templates/oscar/dashboard/offers/summary.html:32
-msgid "Restrictions"
-msgstr ""
-
-#: apps/dashboard/offers/views.py:327
-msgid "Offer deleted!"
-msgstr ""
-
-#: apps/dashboard/offers/views.py:350
-msgid "Offer is already suspended"
-msgstr ""
-
-#: apps/dashboard/offers/views.py:353
-msgid "Offer suspended"
-msgstr ""
-
-#: apps/dashboard/offers/views.py:361
-msgid "Offer cannot be reinstated as it is not currently suspended"
-msgstr ""
-
-#: apps/dashboard/offers/views.py:365
-msgid "Offer reinstated"
 msgstr ""
 
 #: apps/offer/config.py:8
@@ -831,9 +708,6 @@ msgid "Type"
 msgstr ""
 
 #: apps/offer/models.py:94 apps/offer/models.py:431
-#: templates/oscar/dashboard/offers/offer_detail.html:78
-#: templates/oscar/dashboard/offers/offer_list.html:51
-#: templates/oscar/dashboard/offers/summary.html:26
 msgid "Condition"
 msgstr ""
 
@@ -847,6 +721,14 @@ msgstr ""
 
 #: apps/offer/models.py:100
 msgid "The highest priority offers are applied first"
+msgstr ""
+
+#: apps/offer/models.py:108
+msgid "Start date"
+msgstr ""
+
+#: apps/offer/models.py:110
+msgid "End date"
 msgstr ""
 
 #: apps/offer/models.py:111
@@ -1425,14 +1307,6 @@ msgid "Stock alert requests"
 msgstr ""
 
 #: defaults.py:117 defaults.py:121
-#: templates/oscar/dashboard/offers/offer_delete.html:7
-#: templates/oscar/dashboard/offers/offer_delete.html:17
-#: templates/oscar/dashboard/offers/offer_detail.html:18
-#: templates/oscar/dashboard/offers/offer_list.html:8
-#: templates/oscar/dashboard/offers/offer_list.html:17
-#: templates/oscar/dashboard/offers/offer_list.html:24
-#: templates/oscar/dashboard/offers/step_form.html:15
-#: templates/oscar/dashboard/offers/step_form.html:25
 msgid "Offers"
 msgstr ""
 
@@ -1619,7 +1493,6 @@ msgstr ""
 #: templates/oscar/checkout/shipping_address.html:79
 #: templates/oscar/checkout/user_address_delete.html:30
 #: templates/oscar/checkout/user_address_form.html:25
-#: templates/oscar/dashboard/offers/offer_delete.html:37
 #: templates/oscar/dashboard/partials/form.html:10
 #: templates/oscar/partials/form.html:11
 msgid "or"
@@ -1628,8 +1501,6 @@ msgstr ""
 #: templates/oscar/basket/partials/basket_content.html:125
 #: templates/oscar/checkout/user_address_delete.html:30
 #: templates/oscar/checkout/user_address_form.html:25
-#: templates/oscar/dashboard/offers/offer_delete.html:38
-#: templates/oscar/dashboard/offers/step_form.html:84
 #: templates/oscar/dashboard/partials/form.html:10
 #: templates/oscar/partials/form.html:11
 msgid "cancel"
@@ -1703,7 +1574,6 @@ msgid "These will be applied once your order is placed."
 msgstr ""
 
 #: templates/oscar/basket/partials/basket_totals.html:133
-#: templates/oscar/dashboard/offers/offer_detail.html:109
 msgid "Order total"
 msgstr ""
 
@@ -1764,7 +1634,6 @@ msgstr ""
 #: templates/oscar/checkout/gateway.html:59
 #: templates/oscar/checkout/payment_details.html:29
 #: templates/oscar/checkout/shipping_address.html:78
-#: templates/oscar/dashboard/offers/step_form.html:78
 msgid "Continue"
 msgstr ""
 
@@ -1812,7 +1681,6 @@ msgstr ""
 
 #: templates/oscar/checkout/preview.html:35
 #: templates/oscar/checkout/user_address_delete.html:29
-#: templates/oscar/dashboard/offers/step_form.html:78
 #: templates/oscar/partials/nav_accounts.html:29
 msgid "Submitting..."
 msgstr ""
@@ -1832,8 +1700,6 @@ msgstr ""
 #: templates/oscar/checkout/shipping_address.html:41
 #: templates/oscar/checkout/shipping_address.html:43
 #: templates/oscar/checkout/user_address_form.html:24
-#: templates/oscar/dashboard/offers/restrictions_form.html:14
-#: templates/oscar/dashboard/offers/step_form.html:80
 #: templates/oscar/partials/form.html:10
 msgid "Saving..."
 msgstr ""
@@ -1853,8 +1719,6 @@ msgid "Edit address"
 msgstr ""
 
 #: templates/oscar/checkout/shipping_address.html:52
-#: templates/oscar/dashboard/offers/offer_delete.html:37
-#: templates/oscar/dashboard/offers/offer_list.html:94
 msgid "Delete"
 msgstr ""
 
@@ -1883,230 +1747,6 @@ msgstr ""
 #: templates/oscar/dashboard/partials/form.html:9
 #: templates/oscar/partials/form.html:10
 msgid "Save"
-msgstr ""
-
-#: templates/oscar/dashboard/offers/benefit_form.html:14
-msgid "Build a new incentive"
-msgstr ""
-
-#: templates/oscar/dashboard/offers/benefit_form.html:19
-#: templates/oscar/dashboard/offers/condition_form.html:23
-#, python-format
-msgid ""
-"\n"
-"        Ranges can be created and edited from within the <a href="
-"\"%(range_list_url)s\">range dashboard</a>.\n"
-"        "
-msgstr ""
-
-#: templates/oscar/dashboard/offers/benefit_form.html:28
-#: templates/oscar/dashboard/offers/condition_form.html:31
-msgid "...or choose a pre-defined one"
-msgstr ""
-
-#: templates/oscar/dashboard/offers/benefit_form.html:33
-msgid "Continue to step 3"
-msgstr ""
-
-#: templates/oscar/dashboard/offers/condition_form.html:18
-msgid "Build a new condition"
-msgstr ""
-
-#: templates/oscar/dashboard/offers/condition_form.html:36
-msgid "Continue to step 4"
-msgstr ""
-
-#: templates/oscar/dashboard/offers/metadata_form.html:8
-msgid "Continue to step 2"
-msgstr ""
-
-#: templates/oscar/dashboard/offers/offer_delete.html:7
-#: templates/oscar/dashboard/offers/offer_detail.html:34
-msgid "Delete offer"
-msgstr ""
-
-#: templates/oscar/dashboard/offers/offer_delete.html:24
-msgid "Delete?"
-msgstr ""
-
-#: templates/oscar/dashboard/offers/offer_delete.html:35
-msgid "Are you sure you want to delete this offer?"
-msgstr ""
-
-#: templates/oscar/dashboard/offers/offer_delete.html:37
-msgid "Deleting..."
-msgstr ""
-
-#: templates/oscar/dashboard/offers/offer_detail.html:6
-#, python-format
-msgid ""
-"\n"
-"        %(name)s | Offers\n"
-"    "
-msgstr ""
-
-#: templates/oscar/dashboard/offers/offer_detail.html:30
-msgid "Reinstating..."
-msgstr ""
-
-#: templates/oscar/dashboard/offers/offer_detail.html:30
-msgid "Reinstate offer"
-msgstr ""
-
-#: templates/oscar/dashboard/offers/offer_detail.html:32
-msgid "Suspending..."
-msgstr ""
-
-#: templates/oscar/dashboard/offers/offer_detail.html:32
-msgid "Suspend offer"
-msgstr ""
-
-#: templates/oscar/dashboard/offers/offer_detail.html:46
-msgid "Offer currently available"
-msgstr ""
-
-#: templates/oscar/dashboard/offers/offer_detail.html:48
-msgid "Offer not available due to restrictions!"
-msgstr ""
-
-#: templates/oscar/dashboard/offers/offer_detail.html:51
-msgid "Total cost:"
-msgstr ""
-
-#: templates/oscar/dashboard/offers/offer_detail.html:52
-msgid "Number of orders:"
-msgstr ""
-
-#: templates/oscar/dashboard/offers/offer_detail.html:53
-msgid "Number of uses:"
-msgstr ""
-
-#: templates/oscar/dashboard/offers/offer_detail.html:58
-msgid "Date created:"
-msgstr ""
-
-#: templates/oscar/dashboard/offers/offer_detail.html:59
-msgid "Offer details"
-msgstr ""
-
-#: templates/oscar/dashboard/offers/offer_detail.html:66
-#: templates/oscar/dashboard/offers/offer_detail.html:75
-#: templates/oscar/dashboard/offers/offer_detail.html:80
-#: templates/oscar/dashboard/offers/offer_detail.html:95
-#: templates/oscar/dashboard/offers/offer_list.html:93
-#: templates/oscar/dashboard/offers/summary.html:9
-#: templates/oscar/dashboard/offers/summary.html:18
-#: templates/oscar/dashboard/offers/summary.html:25
-#: templates/oscar/dashboard/offers/summary.html:31
-msgid "Edit"
-msgstr ""
-
-#: templates/oscar/dashboard/offers/offer_detail.html:102
-msgid "Export to CSV"
-msgstr ""
-
-#: templates/oscar/dashboard/offers/offer_detail.html:103
-msgid "Orders that used this offer"
-msgstr ""
-
-#: templates/oscar/dashboard/offers/offer_detail.html:107
-msgid "Order number"
-msgstr ""
-
-#: templates/oscar/dashboard/offers/offer_detail.html:108
-msgid "Order date"
-msgstr ""
-
-#: templates/oscar/dashboard/offers/offer_detail.html:110
-#: templates/oscar/dashboard/offers/offer_list.html:55
-msgid "Cost"
-msgstr ""
-
-#: templates/oscar/dashboard/offers/offer_list.html:23
-#: templates/oscar/dashboard/offers/step_form.html:13
-#: templates/oscar/dashboard/offers/step_form.html:35
-#: templates/oscar/dashboard/offers/step_form.html:45
-msgid "Create new offer"
-msgstr ""
-
-#: templates/oscar/dashboard/offers/offer_list.html:32
-msgid "Searching..."
-msgstr ""
-
-#: templates/oscar/dashboard/offers/offer_list.html:32
-#: templates/oscar/partials/search.html:7
-msgid "Search"
-msgstr ""
-
-#: templates/oscar/dashboard/offers/offer_list.html:42
-msgid "Reset"
-msgstr ""
-
-#: templates/oscar/dashboard/offers/offer_list.html:52
-msgid "Is available?"
-msgstr ""
-
-#: templates/oscar/dashboard/offers/offer_list.html:54
-msgid "Uses"
-msgstr ""
-
-#: templates/oscar/dashboard/offers/offer_list.html:66
-msgid "Yes"
-msgstr ""
-
-#: templates/oscar/dashboard/offers/offer_list.html:68
-msgid "No"
-msgstr ""
-
-#: templates/oscar/dashboard/offers/offer_list.html:88
-msgid "Actions"
-msgstr ""
-
-#: templates/oscar/dashboard/offers/offer_list.html:92
-msgid "Stats"
-msgstr ""
-
-#: templates/oscar/dashboard/offers/offer_list.html:103
-msgid "No offers found."
-msgstr ""
-
-#: templates/oscar/dashboard/offers/progress.html:5
-msgid "Steps"
-msgstr ""
-
-#: templates/oscar/dashboard/offers/progress.html:10
-#: templates/oscar/dashboard/offers/progress.html:12
-msgid "1. Name and description"
-msgstr ""
-
-#: templates/oscar/dashboard/offers/progress.html:17
-#: templates/oscar/dashboard/offers/progress.html:19
-msgid "2. Incentive"
-msgstr ""
-
-#: templates/oscar/dashboard/offers/progress.html:24
-#: templates/oscar/dashboard/offers/progress.html:26
-msgid "3. Condition"
-msgstr ""
-
-#: templates/oscar/dashboard/offers/progress.html:30
-msgid "4. Restrictions"
-msgstr ""
-
-#: templates/oscar/dashboard/offers/restrictions_form.html:14
-msgid "Save this offer"
-msgstr ""
-
-#: templates/oscar/dashboard/offers/step_form.html:65
-msgid "Fields marked with * are mandatory."
-msgstr ""
-
-#: templates/oscar/dashboard/offers/step_form.html:80
-msgid "Save changes"
-msgstr ""
-
-#: templates/oscar/dashboard/offers/summary.html:4
-msgid "Offer summary"
 msgstr ""
 
 #: templates/oscar/dashboard/partials/form_fields.html:5
@@ -2178,6 +1818,10 @@ msgstr ""
 #: templates/oscar/partials/pagination.html:16
 #: templates/oscar/search/partials/pagination.html:16
 msgid "next"
+msgstr ""
+
+#: templates/oscar/partials/search.html:7
+msgid "Search"
 msgstr ""
 
 #: templates/oscar/registration/password_reset_complete.html:4
