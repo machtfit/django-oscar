@@ -22,7 +22,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django-oscar\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-09 14:45+0100\n"
+"POT-Creation-Date: 2017-11-09 16:36+0100\n"
 "PO-Revision-Date: 2015-03-06 21:39+0000\n"
 "Last-Translator: Marc Wienhold <marc.wienhold@gmail.com>\n"
 "Language-Team: German (http://www.transifex.com/projects/p/django-oscar/"
@@ -137,7 +137,7 @@ msgstr "Name des Landes"
 msgid "Official name"
 msgstr "Offizieller Name"
 
-#: apps/address/abstract_models.py:400 apps/catalogue/abstract_models.py:519
+#: apps/address/abstract_models.py:400
 msgid "Display order"
 msgstr "Reihenfolge"
 
@@ -273,8 +273,7 @@ msgstr "Status"
 msgid "Vouchers"
 msgstr "Gutscheine"
 
-#: apps/basket/abstract_models.py:50 apps/catalogue/abstract_models.py:212
-#: apps/catalogue/abstract_models.py:522 apps/partner/abstract_models.py:144
+#: apps/basket/abstract_models.py:50 apps/partner/abstract_models.py:144
 msgid "Date created"
 msgstr "Erstellungsdatum"
 
@@ -318,9 +317,7 @@ msgstr ""
 msgid "Line Reference"
 msgstr "Zeilenbezug"
 
-#: apps/basket/abstract_models.py:575 apps/catalogue/abstract_models.py:149
-#: apps/catalogue/abstract_models.py:239 apps/catalogue/abstract_models.py:512
-#: apps/partner/abstract_models.py:90
+#: apps/basket/abstract_models.py:575 apps/partner/abstract_models.py:90
 msgid "Product"
 msgstr "Produkt"
 
@@ -466,131 +463,6 @@ msgstr "Kein Gutschein mit ID „%d“ gefunden"
 msgid "Voucher '%s' removed from basket"
 msgstr "Gutschein „%s“ wurde aus Ihrem Warenkorb entfernt"
 
-#: apps/catalogue/abstract_models.py:33 apps/offer/models.py:58
-#: apps/offer/models.py:684 apps/payment/abstract_models.py:202
-msgid "Name"
-msgstr "Name"
-
-#: apps/catalogue/abstract_models.py:34 apps/catalogue/abstract_models.py:210
-#: apps/offer/models.py:62
-msgid "Description"
-msgstr "Beschreibung"
-
-#: apps/catalogue/abstract_models.py:35
-msgid "Image"
-msgstr "Bild"
-
-#: apps/catalogue/abstract_models.py:37 apps/catalogue/abstract_models.py:209
-#: apps/offer/models.py:61 apps/offer/models.py:686
-msgid "Slug"
-msgstr "Slug"
-
-#: apps/catalogue/abstract_models.py:134 apps/catalogue/abstract_models.py:151
-msgid "Category"
-msgstr "Kategorie"
-
-#: apps/catalogue/abstract_models.py:135 apps/catalogue/abstract_models.py:220
-#: apps/catalogue/abstract_models.py:432 defaults.py:79
-msgid "Categories"
-msgstr "Kategorie"
-
-#: apps/catalogue/abstract_models.py:158
-msgid "Product category"
-msgstr "Produktkategorien"
-
-#: apps/catalogue/abstract_models.py:159
-msgid "Product categories"
-msgstr "Produktkategorien"
-
-#: apps/catalogue/abstract_models.py:183
-msgid "Stand-alone product"
-msgstr "Einzelprodukt"
-
-#: apps/catalogue/abstract_models.py:184 apps/catalogue/abstract_models.py:199
-msgid "Parent product"
-msgstr "Elternprodukt"
-
-#: apps/catalogue/abstract_models.py:185
-msgid "Child product"
-msgstr "Kinderprodukt"
-
-#: apps/catalogue/abstract_models.py:188
-msgid "Product structure"
-msgstr "Produktstruktur"
-
-#: apps/catalogue/abstract_models.py:192
-msgid "UPC"
-msgstr "UPC"
-
-#: apps/catalogue/abstract_models.py:193
-msgid ""
-"Universal Product Code (UPC) is an identifier for a product which is not "
-"specific to a particular  supplier. Eg an ISBN for a book."
-msgstr ""
-"Der Universl Product Code (UPC) identifiziert ein Produkt, das keinem "
-"bestimmten Zulieferer zugeordnet ist. Bspw. die ISBN eines Buchs."
-
-#: apps/catalogue/abstract_models.py:200
-msgid ""
-"Only choose a parent product if you're creating a child product.  For "
-"example if this is a size 4 of a particular t-shirt.  Leave blank if this is "
-"a stand-alone product (i.e. there is only one version of this product)."
-msgstr ""
-"Wählen Sie nur dann ein Stammprodukt, wenn Sie eine Kindprodukt erstellen. Z."
-"B. Größe L eines bestimmten T-Shirts. Freilassen, wenn dies ein "
-"Einzelprodukt ist (z.B. es gibt nur eine Version dieses Produkts)."
-
-#: apps/catalogue/abstract_models.py:207 apps/catalogue/abstract_models.py:412
-msgctxt "Product title"
-msgid "Title"
-msgstr "Titel"
-
-#: apps/catalogue/abstract_models.py:216 apps/partner/abstract_models.py:145
-msgid "Date updated"
-msgstr "Aktualisierungsdatum"
-
-#: apps/catalogue/abstract_models.py:228
-msgid "Is discountable?"
-msgstr "Ist rabattfähig?"
-
-#: apps/catalogue/abstract_models.py:229
-msgid "This flag indicates if this product can be used in an offer or not"
-msgstr ""
-"Gibt an, ob dieses Produkt in einem Angebot verwendet werden kann oder nicht"
-
-#: apps/catalogue/abstract_models.py:240 defaults.py:75
-msgid "Products"
-msgstr "Produkte"
-
-#: apps/catalogue/abstract_models.py:280
-msgid "The specified parent product is a child product."
-msgstr "Das gewählte Stammprodukt ist ein Kindprodukt."
-
-#: apps/catalogue/abstract_models.py:283
-msgid "One can't add a child product to a product with stock records."
-msgstr "Man kann keinem Produkt mit Bestand Kindprodukte zuordnen."
-
-#: apps/catalogue/abstract_models.py:514
-msgid "Original"
-msgstr "Original"
-
-#: apps/catalogue/abstract_models.py:515
-msgid "Caption"
-msgstr "Beschriftung"
-
-#: apps/catalogue/abstract_models.py:520
-msgid ""
-"An image with a display order of zero will be the primary image for a product"
-msgstr "Das Bild an Position null wird das Hauptbild für ein Produkt sein"
-
-#: apps/catalogue/abstract_models.py:531
-msgid "Product image"
-msgstr "Produktbild"
-
-#: apps/catalogue/abstract_models.py:532
-msgid "Product images"
-msgstr "Produktbilder"
-
 #: apps/catalogue/config.py:8 defaults.py:71
 msgid "Catalogue"
 msgstr "Katalog"
@@ -723,9 +595,22 @@ msgstr "Kunde"
 msgid "Offer"
 msgstr "Angebot"
 
+#: apps/offer/models.py:58 apps/offer/models.py:684
+#: apps/payment/abstract_models.py:202
+msgid "Name"
+msgstr "Name"
+
 #: apps/offer/models.py:59
 msgid "This is displayed within the customer's basket"
 msgstr "Wird im Warenkorb des Kunden angezeigt"
+
+#: apps/offer/models.py:61 apps/offer/models.py:686
+msgid "Slug"
+msgstr "Slug"
+
+#: apps/offer/models.py:62
+msgid "Description"
+msgstr "Beschreibung"
 
 #: apps/offer/models.py:63
 msgid "This is displayed on the offer browsing page"
@@ -1159,6 +1044,10 @@ msgstr "Anzahl zugeordnet"
 msgid "Low Stock Threshold"
 msgstr "Schwellwert niedriger Bestand"
 
+#: apps/partner/abstract_models.py:145
+msgid "Date updated"
+msgstr "Aktualisierungsdatum"
+
 #: apps/partner/abstract_models.py:159
 msgid "Stock record"
 msgstr "Lagerbestand"
@@ -1354,6 +1243,14 @@ msgstr "Bitte wählen Sie ein ungewöhnlicheres Passwort"
 #: templates/oscar/partials/nav_accounts.html:47
 msgid "Cockpit"
 msgstr ""
+
+#: defaults.py:75
+msgid "Products"
+msgstr "Produkte"
+
+#: defaults.py:79
+msgid "Categories"
+msgstr "Kategorie"
 
 #: defaults.py:83
 msgid "Low stock alerts"
@@ -2066,6 +1963,84 @@ msgstr "Dies ist keine gültige Vorwahl für %s."
 #: views/generic.py:208
 msgid "This is not a valid local or international phone format."
 msgstr "Dies ist keine gültige lokale oder internationale Telefonnummer."
+
+#~ msgid "Image"
+#~ msgstr "Bild"
+
+#~ msgid "Category"
+#~ msgstr "Kategorie"
+
+#~ msgid "Product category"
+#~ msgstr "Produktkategorien"
+
+#~ msgid "Product categories"
+#~ msgstr "Produktkategorien"
+
+#~ msgid "Stand-alone product"
+#~ msgstr "Einzelprodukt"
+
+#~ msgid "Parent product"
+#~ msgstr "Elternprodukt"
+
+#~ msgid "Child product"
+#~ msgstr "Kinderprodukt"
+
+#~ msgid "Product structure"
+#~ msgstr "Produktstruktur"
+
+#~ msgid "UPC"
+#~ msgstr "UPC"
+
+#~ msgid ""
+#~ "Universal Product Code (UPC) is an identifier for a product which is not "
+#~ "specific to a particular  supplier. Eg an ISBN for a book."
+#~ msgstr ""
+#~ "Der Universl Product Code (UPC) identifiziert ein Produkt, das keinem "
+#~ "bestimmten Zulieferer zugeordnet ist. Bspw. die ISBN eines Buchs."
+
+#~ msgid ""
+#~ "Only choose a parent product if you're creating a child product.  For "
+#~ "example if this is a size 4 of a particular t-shirt.  Leave blank if this "
+#~ "is a stand-alone product (i.e. there is only one version of this product)."
+#~ msgstr ""
+#~ "Wählen Sie nur dann ein Stammprodukt, wenn Sie eine Kindprodukt "
+#~ "erstellen. Z.B. Größe L eines bestimmten T-Shirts. Freilassen, wenn dies "
+#~ "ein Einzelprodukt ist (z.B. es gibt nur eine Version dieses Produkts)."
+
+#~ msgctxt "Product title"
+#~ msgid "Title"
+#~ msgstr "Titel"
+
+#~ msgid "Is discountable?"
+#~ msgstr "Ist rabattfähig?"
+
+#~ msgid "This flag indicates if this product can be used in an offer or not"
+#~ msgstr ""
+#~ "Gibt an, ob dieses Produkt in einem Angebot verwendet werden kann oder "
+#~ "nicht"
+
+#~ msgid "The specified parent product is a child product."
+#~ msgstr "Das gewählte Stammprodukt ist ein Kindprodukt."
+
+#~ msgid "One can't add a child product to a product with stock records."
+#~ msgstr "Man kann keinem Produkt mit Bestand Kindprodukte zuordnen."
+
+#~ msgid "Original"
+#~ msgstr "Original"
+
+#~ msgid "Caption"
+#~ msgstr "Beschriftung"
+
+#~ msgid ""
+#~ "An image with a display order of zero will be the primary image for a "
+#~ "product"
+#~ msgstr "Das Bild an Position null wird das Hauptbild für ein Produkt sein"
+
+#~ msgid "Product image"
+#~ msgstr "Produktbild"
+
+#~ msgid "Product images"
+#~ msgstr "Produktbilder"
 
 #~ msgid "Offers dashboard"
 #~ msgstr "Angebote-Dashboard"
