@@ -22,7 +22,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django-oscar\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-09 10:57+0100\n"
+"POT-Creation-Date: 2017-11-09 14:45+0100\n"
 "PO-Revision-Date: 2015-03-06 21:39+0000\n"
 "Last-Translator: Marc Wienhold <marc.wienhold@gmail.com>\n"
 "Language-Team: German (http://www.transifex.com/projects/p/django-oscar/"
@@ -719,14 +719,6 @@ msgstr "Benutzer"
 msgid "Customer"
 msgstr "Kunde"
 
-#: apps/dashboard/config.py:8 defaults.py:66
-#: templates/oscar/dashboard/layout.html:25
-#: templates/oscar/dashboard/layout.html:84
-#: templates/oscar/dashboard/partials/nav_accounts.html:44
-#: templates/oscar/partials/nav_accounts.html:47
-msgid "Cockpit"
-msgstr ""
-
 #: apps/offer/config.py:8
 msgid "Offer"
 msgstr "Angebot"
@@ -763,7 +755,7 @@ msgstr ""
 "die Dauer der Sitzung zur Verfügung"
 
 #: apps/offer/models.py:86 apps/offer/models.py:421 apps/offer/models.py:514
-#: apps/payment/abstract_models.py:34 defaults.py:145
+#: apps/payment/abstract_models.py:34 defaults.py:144
 msgid "Type"
 msgstr "Typ"
 
@@ -1356,6 +1348,13 @@ msgstr "Dieses Feld ist erforderlich"
 msgid "Please choose a less common password"
 msgstr "Bitte wählen Sie ein ungewöhnlicheres Passwort"
 
+#: defaults.py:66 templates/oscar/dashboard/layout.html:25
+#: templates/oscar/dashboard/layout.html:84
+#: templates/oscar/dashboard/partials/nav_accounts.html:44
+#: templates/oscar/partials/nav_accounts.html:47
+msgid "Cockpit"
+msgstr ""
+
 #: defaults.py:83
 msgid "Low stock alerts"
 msgstr "Wenige Exemplare auf Lager"
@@ -1392,23 +1391,23 @@ msgstr "Inhalt"
 msgid "Email templates"
 msgstr "E-Mail-Vorlagen"
 
-#: defaults.py:151
+#: defaults.py:150
 msgid "Price range"
 msgstr "Preisspanne"
 
-#: defaults.py:156
+#: defaults.py:155
 msgid "0 to 20"
 msgstr "0 bis 20"
 
-#: defaults.py:157
+#: defaults.py:156
 msgid "20 to 40"
 msgstr "20 bis 40"
 
-#: defaults.py:158
+#: defaults.py:157
 msgid "40 to 60"
 msgstr "40 bis 60"
 
-#: defaults.py:159
+#: defaults.py:158
 msgid "60+"
 msgstr "60+"
 
