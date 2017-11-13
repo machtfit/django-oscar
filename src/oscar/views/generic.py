@@ -72,60 +72,6 @@ class BulkEditMixin(object):
         return self.get_queryset().in_bulk(ids)
 
 
-class ObjectLookupView(View):
-    """Base view for json lookup for objects"""
-    def get_lookup_queryset(self):
-        return self.model.objects.all()
-
-    def format_object(self, obj):
-        return {
-            'id': obj.pk,
-            'text': six.text_type(obj),
-        }
-
-    def initial_filter(self, qs, value):
-        return qs.filter(pk__in=value.split(','))
-
-    def lookup_filter(self, qs, term):
-        return qs
-
-    def paginate(self, qs, page, page_limit):
-        total = qs.count()
-
-        start = (page - 1) * page_limit
-        stop = start + page_limit
-
-        qs = qs[start:stop]
-
-        return qs, (page_limit * page < total)
-
-    def get_args(self):
-        GET = self.request.GET
-        return (GET.get('initial', None),
-                GET.get('q', None),
-                int(GET.get('page', 1)),
-                int(GET.get('page_limit', 20)))
-
-    def get(self, request, *args, **kwargs):
-        self.request = request
-        qs = self.get_lookup_queryset()
-
-        initial, q, page, page_limit = self.get_args()
-
-        if initial:
-            qs = self.initial_filter(qs, initial)
-            more = False
-        else:
-            if q:
-                qs = self.lookup_filter(qs, q)
-            qs, more = self.paginate(qs, page, page_limit)
-
-        return HttpResponse(json.dumps({
-            'results': [self.format_object(obj) for obj in qs],
-            'more': more,
-        }), content_type='application/json')
-
-
 class PhoneNumberMixin(object):
     """
     Validation mixin for forms with a phone number, and optionally a country.
