@@ -18,28 +18,6 @@ from oscar.core.utils import safe_referrer
 from oscar.core.phonenumber import PhoneNumber
 
 
-class PostActionMixin(object):
-    """
-    Simple mixin to forward POST request that contain a key 'action'
-    onto a method of form "do_{action}".
-
-    This only works with DetailView
-    """
-    def post(self, request, *args, **kwargs):
-        if 'action' in self.request.POST:
-            model = self.get_object()
-            # The do_* method is required to do what it needs to with the model
-            # it is passed, and then to assign the HTTP response to
-            # self.response.
-            method_name = "do_%s" % self.request.POST['action'].lower()
-            if hasattr(self, method_name):
-                getattr(self, method_name)(model)
-                return self.response
-            else:
-                messages.error(request, _("Invalid form submission"))
-        return super(PostActionMixin, self).post(request, *args, **kwargs)
-
-
 class BulkEditMixin(object):
     """
     Mixin for views that have a bulk editing facility.  This is normally in the
