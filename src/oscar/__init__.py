@@ -26,7 +26,6 @@ OSCAR_CORE_APPS = [
     'oscar.apps.address',
     'oscar.apps.shipping',
     'oscar.apps.partner',
-    'oscar.apps.basket',
     'oscar.apps.offer',
     'oscar.apps.order',
     'oscar.apps.customer',
