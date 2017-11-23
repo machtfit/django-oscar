@@ -22,7 +22,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django-oscar\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-09 16:36+0100\n"
+"POT-Creation-Date: 2017-11-23 16:12+0100\n"
 "PO-Revision-Date: 2015-03-06 21:39+0000\n"
 "Last-Translator: Marc Wienhold <marc.wienhold@gmail.com>\n"
 "Language-Team: German (http://www.transifex.com/projects/p/django-oscar/"
@@ -199,9 +199,8 @@ msgstr "Anzahl der Bestellungen"
 msgid "Address Hash"
 msgstr "Hash der Adresse"
 
-#: apps/address/abstract_models.py:506 apps/basket/abstract_models.py:595
-#: apps/offer/models.py:158 apps/offer/models.py:712
-#: apps/partner/abstract_models.py:243 apps/payment/abstract_models.py:39
+#: apps/address/abstract_models.py:506 apps/offer/models.py:158
+#: apps/offer/models.py:712 apps/partner/abstract_models.py:243
 msgid "Date Created"
 msgstr "Erstellt am"
 
@@ -237,235 +236,6 @@ msgstr "Partneradresse"
 #: apps/address/abstract_models.py:583
 msgid "Partner addresses"
 msgstr "Partneradressen"
-
-#: apps/basket/abstract_models.py:27
-msgid "Owner"
-msgstr "Besitzer"
-
-#: apps/basket/abstract_models.py:35
-msgid "Open - currently active"
-msgstr "Offen – derzeit aktiv"
-
-#: apps/basket/abstract_models.py:36
-msgid "Merged - superceded by another basket"
-msgstr "Zusammengeführt – ersetzt durch einen anderen Warenkorb"
-
-#: apps/basket/abstract_models.py:37
-msgid "Saved - for items to be purchased later"
-msgstr "Gespeichert – für Artikel zum späteren Kauf"
-
-#: apps/basket/abstract_models.py:38
-msgid "Frozen - the basket cannot be modified"
-msgstr "Eingefroren – Warenkorb kann nicht geändert werden"
-
-#: apps/basket/abstract_models.py:39
-msgid "Submitted - has been ordered at the checkout"
-msgstr "Abgeschickt – wurde an der Kasse bestellt"
-
-#: apps/basket/abstract_models.py:42 apps/offer/models.py:91
-#: apps/offer/models.py:1163 apps/partner/abstract_models.py:241
-#: apps/payment/abstract_models.py:38
-msgid "Status"
-msgstr "Status"
-
-#: apps/basket/abstract_models.py:48
-#: templates/oscar/basket/partials/basket_totals.html:38
-msgid "Vouchers"
-msgstr "Gutscheine"
-
-#: apps/basket/abstract_models.py:50 apps/partner/abstract_models.py:144
-msgid "Date created"
-msgstr "Erstellungsdatum"
-
-#: apps/basket/abstract_models.py:51
-msgid "Date merged"
-msgstr "Datum der Zusammenführung"
-
-#: apps/basket/abstract_models.py:52
-msgid "Date submitted"
-msgstr "Sendedatum"
-
-#: apps/basket/abstract_models.py:61 apps/basket/abstract_models.py:564
-#: apps/basket/config.py:8 templates/oscar/basket/basket.html:6
-#: templates/oscar/basket/basket.html:14 templates/oscar/basket/basket.html:22
-#: templates/oscar/basket/partials/basket_totals.html:8
-#: templates/oscar/basket/partials/basket_totals.html:98
-#: templates/oscar/dashboard/partials/nav_primary.html:21
-#: templates/oscar/partials/nav_primary.html:20
-msgid "Basket"
-msgstr "Warenkorb"
-
-#: apps/basket/abstract_models.py:62
-msgid "Baskets"
-msgstr "Warenkörbe"
-
-#: apps/basket/abstract_models.py:81
-#, python-format
-msgid "%(status)s basket (owner: %(owner)s, lines: %(num_lines)d)"
-msgstr "%(status)s Warenkorb (Besitzer: %(owner)s, Zeilen: %(num_lines)d)"
-
-#: apps/basket/abstract_models.py:140
-#, python-format
-msgid ""
-"Due to technical limitations we are not able to ship more than %(threshold)d "
-"items in one order."
-msgstr ""
-"Leider ist es uns technisch nicht möglich mehr als %(threshold)d Artikel mit "
-"einer Bestellung zu liefern."
-
-#: apps/basket/abstract_models.py:571
-msgid "Line Reference"
-msgstr "Zeilenbezug"
-
-#: apps/basket/abstract_models.py:575 apps/partner/abstract_models.py:90
-msgid "Product"
-msgstr "Produkt"
-
-#: apps/basket/abstract_models.py:581 apps/basket/forms.py:134
-#: apps/basket/forms.py:250
-#: templates/oscar/basket/partials/basket_content.html:30
-#: templates/oscar/checkout/checkout.html:93
-msgid "Quantity"
-msgstr "Menge"
-
-#: apps/basket/abstract_models.py:587 apps/partner/abstract_models.py:103
-#: apps/payment/abstract_models.py:73
-msgid "Currency"
-msgstr "Währung"
-
-#: apps/basket/abstract_models.py:589
-msgid "Price excl. Tax"
-msgstr "Preis ohne Steuer"
-
-#: apps/basket/abstract_models.py:592
-msgid "Price incl. Tax"
-msgstr "Preis inkl. MWSt"
-
-#: apps/basket/abstract_models.py:608
-msgid "Basket line"
-msgstr "Warenkorbzeile"
-
-#: apps/basket/abstract_models.py:609
-msgid "Basket lines"
-msgstr "Warenkorbzeilen"
-
-#: apps/basket/abstract_models.py:613
-#, python-format
-msgid "Basket #%(basket_id)d, Product #%(product_id)d, quantity %(quantity)d"
-msgstr "Warenkorb #%(basket_id)d, Produkt #%(product_id)d, Menge %(quantity)d"
-
-#: apps/basket/abstract_models.py:621
-#, python-format
-msgid "You cannot modify a %s basket"
-msgstr "Ein %s Warenkorb kann nicht geändert werden"
-
-#: apps/basket/abstract_models.py:814
-#, python-format
-msgid ""
-"The price of '%(product)s' has increased from %(old_price)s to %(new_price)s "
-"since you added it to your basket"
-msgstr ""
-"Der Preis von „%(product)s“ hat sich von %(old_price)s auf %(new_price)s "
-"erhöht, seit Sie es zu Ihrem Warenkorb hinzugefügt haben"
-
-#: apps/basket/abstract_models.py:819
-#, python-format
-msgid ""
-"The price of '%(product)s' has decreased from %(old_price)s to %(new_price)s "
-"since you added it to your basket"
-msgstr ""
-"Der Preis von „%(product)s“ hat sich von %(old_price)s auf %(new_price)s "
-"verringert, seit Sie es zu Ihrem Warenkorb hinzugefügt haben"
-
-#: apps/basket/forms.py:17
-msgid "Save for Later"
-msgstr "Für Später Speichern"
-
-#: apps/basket/forms.py:75
-msgid "Move to Basket"
-msgstr "In Warenkorb legen"
-
-#: apps/basket/forms.py:124 apps/partner/abstract_models.py:21
-#: apps/payment/abstract_models.py:204
-msgid "Code"
-msgstr "Code"
-
-#: apps/basket/forms.py:178
-msgid "Variant"
-msgstr "Variante"
-
-#: apps/basket/forms.py:189
-msgid "Please select a valid product"
-msgstr "Bitte wählen Sie ein gültiges Produkt"
-
-#: apps/basket/forms.py:206
-#, python-format
-msgid ""
-"Due to technical limitations we are not able to ship more than %(threshold)d "
-"items in one order. Your basket currently has %(basket)d items."
-msgstr ""
-"Leider ist es uns technisch nicht möglich mehr als %(threshold)d Artikel mit "
-"einer Bestellung zu liefern. Ihr Warenkorb enthält momentan %(basket)d "
-"Artikel."
-
-#: apps/basket/forms.py:229
-msgid ""
-"This product cannot be added to the basket as its currency isn't the same as "
-"other products in your basket"
-msgstr ""
-"Dieses Produkt kann nicht zum Warenkorb hinzugefügt werden, da die Währung "
-"nicht der anderer Produkte im Warenkorb entspricht"
-
-#: apps/basket/views.py:218
-msgid "You can't save an item for later if you're not logged in!"
-msgstr "Sie können nichts vormerken, wenn Sie nicht angemeldet sind."
-
-#: apps/basket/views.py:281
-msgid "Your basket couldn't be updated"
-msgstr "Der Warenkorb konnte nicht aktualisiert werden."
-
-#: apps/basket/views.py:367
-#, python-format
-msgid "The '%(code)s' voucher has expired"
-msgstr "Der „%(code)s“ Gutschein ist bereits abgelaufen"
-
-#: apps/basket/views.py:396
-msgid "Your basket does not qualify for a voucher discount"
-msgstr "Sie können keinen Gutschein mit Ihrem Warenkorb verwenden"
-
-#: apps/basket/views.py:401
-#, python-format
-msgid "Voucher '%(code)s' added to basket"
-msgstr "Gutschein „%(code)s“ zum Warenkorb hinzugefügt"
-
-#: apps/basket/views.py:411
-#, python-format
-msgid "You have already added the '%(code)s' voucher to your basket"
-msgstr ""
-"Sie haben den Gutschein „%(code)s“ bereits zu Ihrem Warenkorb hinzugefügt"
-
-#: apps/basket/views.py:419
-#, python-format
-msgid "No voucher found with code '%(code)s'"
-msgstr "Es wurde kein Gutschein mit dem Code „%(code)s“ gefunden"
-
-#: apps/basket/views.py:426
-msgid "Please enter a voucher code"
-msgstr "Bitte geben Sie einen Gutscheincode ein"
-
-#: apps/basket/views.py:447
-#, python-format
-msgid "No voucher found with id '%d'"
-msgstr "Kein Gutschein mit ID „%d“ gefunden"
-
-#: apps/basket/views.py:453
-#, python-format
-msgid "Voucher '%s' removed from basket"
-msgstr "Gutschein „%s“ wurde aus Ihrem Warenkorb entfernt"
-
-#: apps/catalogue/config.py:8 defaults.py:71
-msgid "Catalogue"
-msgstr "Katalog"
 
 #: apps/checkout/config.py:8
 #: templates/oscar/basket/partials/basket_quick.html:38
@@ -596,7 +366,6 @@ msgid "Offer"
 msgstr "Angebot"
 
 #: apps/offer/models.py:58 apps/offer/models.py:684
-#: apps/payment/abstract_models.py:202
 msgid "Name"
 msgstr "Name"
 
@@ -640,9 +409,14 @@ msgstr ""
 "die Dauer der Sitzung zur Verfügung"
 
 #: apps/offer/models.py:86 apps/offer/models.py:421 apps/offer/models.py:514
-#: apps/payment/abstract_models.py:34 defaults.py:144
+#: defaults.py:140
 msgid "Type"
 msgstr "Typ"
+
+#: apps/offer/models.py:91 apps/offer/models.py:1163
+#: apps/partner/abstract_models.py:241
+msgid "Status"
+msgstr "Status"
 
 #: apps/offer/models.py:94 apps/offer/models.py:431
 msgid "Condition"
@@ -985,7 +759,7 @@ msgstr "Upload-Datei Sortimentprodukt"
 msgid "Range Product Uploaded Files"
 msgstr "Upload-Dateien Sortimentprodukt"
 
-#: apps/order/config.py:8 apps/payment/abstract_models.py:68
+#: apps/order/config.py:8
 msgid "Order"
 msgstr "Bestellung"
 
@@ -1003,6 +777,10 @@ msgstr "Leere Warenkörbe können nicht bearbeitet werden"
 msgid "There is already an order with number %s"
 msgstr "Es gibt bereits eine Bestellung mit der Nummer %s"
 
+#: apps/partner/abstract_models.py:21
+msgid "Code"
+msgstr "Code"
+
 #: apps/partner/abstract_models.py:24
 msgctxt "Partner's name"
 msgid "Name"
@@ -1016,9 +794,17 @@ msgstr "Abwicklungspartner"
 msgid "Fulfillment partners"
 msgstr "Abwicklungspartner"
 
+#: apps/partner/abstract_models.py:90
+msgid "Product"
+msgstr "Produkt"
+
 #: apps/partner/abstract_models.py:99
 msgid "Partner SKU"
 msgstr "Partner SKU"
+
+#: apps/partner/abstract_models.py:103
+msgid "Currency"
+msgstr "Währung"
 
 #: apps/partner/abstract_models.py:111
 msgid "Price (excl. tax)"
@@ -1043,6 +829,10 @@ msgstr "Anzahl zugeordnet"
 #: apps/partner/abstract_models.py:141
 msgid "Low Stock Threshold"
 msgstr "Schwellwert niedriger Bestand"
+
+#: apps/partner/abstract_models.py:144
+msgid "Date created"
+msgstr "Erstellungsdatum"
 
 #: apps/partner/abstract_models.py:145
 msgid "Date updated"
@@ -1124,78 +914,6 @@ msgstr "Verfügbar"
 msgid "In stock (%d available)"
 msgstr "Auf Lager (%d verfügbar)"
 
-#: apps/payment/abstract_models.py:28 apps/payment/abstract_models.py:104
-msgid "Source"
-msgstr "Quelle"
-
-#: apps/payment/abstract_models.py:36
-msgid "Amount"
-msgstr "Betrag"
-
-#: apps/payment/abstract_models.py:37 apps/payment/abstract_models.py:88
-msgid "Reference"
-msgstr "Referenz"
-
-#: apps/payment/abstract_models.py:42
-#, python-format
-msgid "%(type)s of %(amount).2f"
-msgstr "%(type)s von %(amount).2f"
-
-#: apps/payment/abstract_models.py:50
-msgid "Transaction"
-msgstr "Transaktion"
-
-#: apps/payment/abstract_models.py:51
-msgid "Transactions"
-msgstr "Transaktionen"
-
-#: apps/payment/abstract_models.py:70 apps/payment/abstract_models.py:210
-msgid "Source Type"
-msgstr "Quelltyp"
-
-#: apps/payment/abstract_models.py:77
-msgid "Amount Allocated"
-msgstr "Zugeteilter Betrag"
-
-#: apps/payment/abstract_models.py:80
-msgid "Amount Debited"
-msgstr "Abgebuchter Betrag"
-
-#: apps/payment/abstract_models.py:83
-msgid "Amount Refunded"
-msgstr "Erstatteter Betrag"
-
-#: apps/payment/abstract_models.py:91
-msgid "Label"
-msgstr "Bezeichnung"
-
-#: apps/payment/abstract_models.py:105
-msgid "Sources"
-msgstr "Quellen"
-
-#: apps/payment/abstract_models.py:108
-#, python-format
-msgid "Allocation of %(amount)s from type %(type)s"
-msgstr "Zuweisung von %(amount)s des Typs %(type)s"
-
-#: apps/payment/abstract_models.py:112
-#, python-format
-msgid " (reference: %s)"
-msgstr " (Referenz: %s)"
-
-#: apps/payment/abstract_models.py:205
-msgid "This is used within forms to identify this source type"
-msgstr "Genutzt innerhalb von Formularen zur Identifikation von Quelltypen"
-
-#: apps/payment/abstract_models.py:211
-msgid "Source Types"
-msgstr "Quelltypen"
-
-#: apps/payment/config.py:8 templates/oscar/checkout/checkout.html:67
-#: templates/oscar/checkout/checkout.html:73
-msgid "Payment"
-msgstr "Zahlung"
-
 #: apps/shipping/config.py:8 templates/oscar/checkout/checkout.html:28
 msgid "Shipping"
 msgstr "Versand"
@@ -1237,74 +955,78 @@ msgstr "Dieses Feld ist erforderlich"
 msgid "Please choose a less common password"
 msgstr "Bitte wählen Sie ein ungewöhnlicheres Passwort"
 
-#: defaults.py:66 templates/oscar/dashboard/layout.html:25
+#: defaults.py:62 templates/oscar/dashboard/layout.html:25
 #: templates/oscar/dashboard/layout.html:84
 #: templates/oscar/dashboard/partials/nav_accounts.html:44
 #: templates/oscar/partials/nav_accounts.html:47
 msgid "Cockpit"
 msgstr ""
 
-#: defaults.py:75
+#: defaults.py:67
+msgid "Catalogue"
+msgstr "Katalog"
+
+#: defaults.py:71
 msgid "Products"
 msgstr "Produkte"
 
-#: defaults.py:79
+#: defaults.py:75
 msgid "Categories"
 msgstr "Kategorie"
 
-#: defaults.py:83
+#: defaults.py:79
 msgid "Low stock alerts"
 msgstr "Wenige Exemplare auf Lager"
 
-#: defaults.py:89
+#: defaults.py:85
 msgid "Fulfilment"
 msgstr "Auftragsabwicklung"
 
-#: defaults.py:93
+#: defaults.py:89
 msgid "Orders"
 msgstr "Bestellungen"
 
-#: defaults.py:97
+#: defaults.py:93
 msgid "Statistics"
 msgstr "Statistiken"
 
-#: defaults.py:103 defaults.py:107
+#: defaults.py:99 defaults.py:103
 msgid "Customers"
 msgstr "Kunden"
 
-#: defaults.py:111
+#: defaults.py:107
 msgid "Stock alert requests"
 msgstr "Produktbenachrichtigungen"
 
-#: defaults.py:117 defaults.py:121
+#: defaults.py:113 defaults.py:117
 msgid "Offers"
 msgstr "Angebote"
 
-#: defaults.py:127
+#: defaults.py:123
 msgid "Content"
 msgstr "Inhalt"
 
-#: defaults.py:131
+#: defaults.py:127
 msgid "Email templates"
 msgstr "E-Mail-Vorlagen"
 
-#: defaults.py:150
+#: defaults.py:146
 msgid "Price range"
 msgstr "Preisspanne"
 
-#: defaults.py:155
+#: defaults.py:151
 msgid "0 to 20"
 msgstr "0 bis 20"
 
-#: defaults.py:156
+#: defaults.py:152
 msgid "20 to 40"
 msgstr "20 bis 40"
 
-#: defaults.py:157
+#: defaults.py:153
 msgid "40 to 60"
 msgstr "40 bis 60"
 
-#: defaults.py:158
+#: defaults.py:154
 msgid "60+"
 msgstr "60+"
 
@@ -1315,14 +1037,6 @@ msgstr "URL"
 #: templates/oscar/base.html:61
 msgid "Version:"
 msgstr "Version:"
-
-#: templates/oscar/basket/basket.html:12
-#: templates/oscar/registration/password_reset_complete.html:9
-#: templates/oscar/registration/password_reset_confirm.html:9
-#: templates/oscar/registration/password_reset_done.html:9
-#: templates/oscar/registration/password_reset_form.html:9
-msgid "Home"
-msgstr "Startseite"
 
 #: templates/oscar/basket/messages/addition.html:4
 #, python-format
@@ -1413,122 +1127,6 @@ msgstr ""
 "Ihr Warenkorb ist nicht mehr für das Angebot\n"
 "<strong>%(name)s</strong> zugelassen.\n"
 
-#: templates/oscar/basket/partials/basket_content.html:8
-msgid "Important messages about items in your basket"
-msgstr "Wichtige Nachrichten über Artikel in Ihrem Warenkorb verfügbar"
-
-#: templates/oscar/basket/partials/basket_content.html:16
-msgid "You could be missing out on offers!"
-msgstr "Sie könnten tolle Angebote verpassen!"
-
-#: templates/oscar/basket/partials/basket_content.html:18
-#, python-format
-msgid ""
-"\n"
-"                <div class=\"warning\">%(message)s to qualify for the <a "
-"href=\"%(url)s\">%(offer_name)s</a> special offer</div>\n"
-"            "
-msgstr ""
-"\n"
-"                <div class=\"warning\">%(message)s, um das <a href=\"%(url)s"
-"\">%(offer_name)s</a>-Angebot wahrzunehmen</div>\n"
-"            "
-
-#: templates/oscar/basket/partials/basket_content.html:29
-msgid "Items to buy now"
-msgstr "Artikel jetzt zum Kauf"
-
-#: templates/oscar/basket/partials/basket_content.html:31
-#: templates/oscar/basket/partials/basket_content.html:170
-msgid "Price"
-msgstr "Preis"
-
-#: templates/oscar/basket/partials/basket_content.html:32
-#: templates/oscar/checkout/checkout.html:94
-msgid "Total"
-msgstr "Gesamt"
-
-#: templates/oscar/basket/partials/basket_content.html:65
-msgid "Updating..."
-msgstr "Aktualisiere..."
-
-#: templates/oscar/basket/partials/basket_content.html:65
-msgid "Update"
-msgstr "Aktualisieren"
-
-#: templates/oscar/basket/partials/basket_content.html:68
-#: templates/oscar/basket/partials/basket_content.html:193
-#: templates/oscar/basket/partials/basket_totals.html:47
-msgid "Remove"
-msgstr "Entfernen"
-
-#: templates/oscar/basket/partials/basket_content.html:70
-msgid "Save for later"
-msgstr "Für später speichern"
-
-#: templates/oscar/basket/partials/basket_content.html:116
-msgid "Voucher/promo code"
-msgstr "Gutscheincode"
-
-#: templates/oscar/basket/partials/basket_content.html:118
-msgid "I have a voucher code..."
-msgstr "Ich habe einen Gutschein..."
-
-#: templates/oscar/basket/partials/basket_content.html:124
-msgid "Adding..."
-msgstr "Füge hinzu..."
-
-#: templates/oscar/basket/partials/basket_content.html:124
-msgid "Add voucher"
-msgstr "Gutschein hinzufügen"
-
-#: templates/oscar/basket/partials/basket_content.html:125
-#: templates/oscar/checkout/shipping_address.html:79
-#: templates/oscar/checkout/user_address_delete.html:30
-#: templates/oscar/checkout/user_address_form.html:25
-#: templates/oscar/dashboard/partials/form.html:10
-#: templates/oscar/partials/form.html:11
-msgid "or"
-msgstr "oder"
-
-#: templates/oscar/basket/partials/basket_content.html:125
-#: templates/oscar/checkout/user_address_delete.html:30
-#: templates/oscar/checkout/user_address_form.html:25
-#: templates/oscar/dashboard/partials/form.html:10
-#: templates/oscar/partials/form.html:11
-msgid "cancel"
-msgstr "abbrechen"
-
-#: templates/oscar/basket/partials/basket_content.html:135
-#: templates/oscar/checkout/checkout.html:134
-msgid "Totals"
-msgstr "Gesamtbeträge"
-
-#: templates/oscar/basket/partials/basket_content.html:147
-msgid "Proceed to checkout"
-msgstr "Weiter zur Kasse"
-
-#: templates/oscar/basket/partials/basket_content.html:156
-#: templates/oscar/basket/partials/basket_quick.html:41
-msgid "Your basket is empty."
-msgstr "Ihr Warenkorb ist leer."
-
-#: templates/oscar/basket/partials/basket_content.html:157
-msgid "Continue shopping"
-msgstr "Einkauf fortsetzen"
-
-#: templates/oscar/basket/partials/basket_content.html:166
-msgid "Items to buy later"
-msgstr "Artikel später kaufen"
-
-#: templates/oscar/basket/partials/basket_content.html:169
-msgid "Items"
-msgstr "Artikel"
-
-#: templates/oscar/basket/partials/basket_content.html:210
-msgid "Move to basket"
-msgstr "In Warenkorb legen"
-
 #: templates/oscar/basket/partials/basket_quick.html:24
 msgid "Qty"
 msgstr "Menge"
@@ -1538,6 +1136,17 @@ msgstr "Menge"
 msgid "Total:"
 msgstr "Gesamt:"
 
+#: templates/oscar/basket/partials/basket_quick.html:41
+msgid "Your basket is empty."
+msgstr "Ihr Warenkorb ist leer."
+
+#: templates/oscar/basket/partials/basket_totals.html:8
+#: templates/oscar/basket/partials/basket_totals.html:98
+#: templates/oscar/dashboard/partials/nav_primary.html:21
+#: templates/oscar/partials/nav_primary.html:20
+msgid "Basket"
+msgstr "Warenkorb"
+
 #: templates/oscar/basket/partials/basket_totals.html:15
 msgid "Basket total (before discounts)"
 msgstr "Summe (ohne Rabatte)"
@@ -1545,6 +1154,14 @@ msgstr "Summe (ohne Rabatte)"
 #: templates/oscar/basket/partials/basket_totals.html:27
 msgid "Discount"
 msgstr "Rabatt"
+
+#: templates/oscar/basket/partials/basket_totals.html:38
+msgid "Vouchers"
+msgstr "Gutscheine"
+
+#: templates/oscar/basket/partials/basket_totals.html:47
+msgid "Remove"
+msgstr "Entfernen"
 
 #: templates/oscar/basket/partials/basket_totals.html:61
 msgid "Basket total (after discounts)"
@@ -1591,6 +1208,11 @@ msgstr "Telefon"
 msgid "Email"
 msgstr "E-Mail-Adresse"
 
+#: templates/oscar/checkout/checkout.html:67
+#: templates/oscar/checkout/checkout.html:73
+msgid "Payment"
+msgstr "Zahlung"
+
 #: templates/oscar/checkout/checkout.html:74
 msgid "Payment details to go here"
 msgstr "Zahlungsdaten hier eintragen"
@@ -1606,6 +1228,18 @@ msgstr "Bestellung"
 #: templates/oscar/checkout/checkout.html:92
 msgid "Item"
 msgstr "Artikel"
+
+#: templates/oscar/checkout/checkout.html:93
+msgid "Quantity"
+msgstr "Menge"
+
+#: templates/oscar/checkout/checkout.html:94
+msgid "Total"
+msgstr "Gesamt"
+
+#: templates/oscar/checkout/checkout.html:134
+msgid "Totals"
+msgstr "Gesamtbeträge"
 
 #: templates/oscar/checkout/gateway.html:7
 msgid "Checkout gateway"
@@ -1722,6 +1356,14 @@ msgid "Or a new address?"
 msgstr "Oder eine neue Adresse?"
 
 #: templates/oscar/checkout/shipping_address.html:79
+#: templates/oscar/checkout/user_address_delete.html:30
+#: templates/oscar/checkout/user_address_form.html:25
+#: templates/oscar/dashboard/partials/form.html:10
+#: templates/oscar/partials/form.html:11
+msgid "or"
+msgstr "oder"
+
+#: templates/oscar/checkout/shipping_address.html:79
 msgid "return to basket"
 msgstr "zum Warenkorb zurückkehren"
 
@@ -1737,6 +1379,13 @@ msgstr "Sind Sie sicher, dass Sie diese Adresse löschen möchten?"
 #: templates/oscar/checkout/user_address_delete.html:29
 msgid "Yes!"
 msgstr "Ja!"
+
+#: templates/oscar/checkout/user_address_delete.html:30
+#: templates/oscar/checkout/user_address_form.html:25
+#: templates/oscar/dashboard/partials/form.html:10
+#: templates/oscar/partials/form.html:11
+msgid "cancel"
+msgstr "abbrechen"
 
 #: templates/oscar/checkout/user_address_form.html:24
 #: templates/oscar/dashboard/partials/form.html:9
@@ -1830,6 +1479,13 @@ msgstr "Suche"
 #: templates/oscar/registration/password_reset_complete.html:18
 msgid "Password reset complete"
 msgstr "Zurücksetzen des Passworts abgeschlossen"
+
+#: templates/oscar/registration/password_reset_complete.html:9
+#: templates/oscar/registration/password_reset_confirm.html:9
+#: templates/oscar/registration/password_reset_done.html:9
+#: templates/oscar/registration/password_reset_form.html:9
+msgid "Home"
+msgstr "Startseite"
 
 #: templates/oscar/registration/password_reset_complete.html:12
 #: templates/oscar/registration/password_reset_confirm.html:12
@@ -1934,35 +1590,270 @@ msgstr "Sende..."
 msgid "Send reset email"
 msgstr "E-Mail zum Zurücksetzen senden "
 
-#: views/decorators.py:43
-msgid "You must log in to access this page"
-msgstr "Sie müssen eingeloggt sein, um diese Seite angezeigt zu bekommen"
-
-#: views/generic.py:39
-msgid "Invalid form submission"
-msgstr "Ungültiges Formular"
-
-#: views/generic.py:72
-msgid "Invalid action"
-msgstr "Ungültige Aktion"
-
-#: views/generic.py:81
-#, python-format
-msgid "You need to select some %ss"
-msgstr "Sie müssen einige %s auswählen"
-
-#: views/generic.py:192
+#: views/generic.py:52
 msgid "This is not a valid international phone format."
 msgstr "Dies ist keine gültige internationale Telefonnummer."
 
-#: views/generic.py:203
+#: views/generic.py:63
 #, python-format
 msgid "This is not a valid local phone format for %s."
 msgstr "Dies ist keine gültige Vorwahl für %s."
 
-#: views/generic.py:208
+#: views/generic.py:68
 msgid "This is not a valid local or international phone format."
 msgstr "Dies ist keine gültige lokale oder internationale Telefonnummer."
+
+#~ msgid "Owner"
+#~ msgstr "Besitzer"
+
+#~ msgid "Open - currently active"
+#~ msgstr "Offen – derzeit aktiv"
+
+#~ msgid "Merged - superceded by another basket"
+#~ msgstr "Zusammengeführt – ersetzt durch einen anderen Warenkorb"
+
+#~ msgid "Saved - for items to be purchased later"
+#~ msgstr "Gespeichert – für Artikel zum späteren Kauf"
+
+#~ msgid "Frozen - the basket cannot be modified"
+#~ msgstr "Eingefroren – Warenkorb kann nicht geändert werden"
+
+#~ msgid "Submitted - has been ordered at the checkout"
+#~ msgstr "Abgeschickt – wurde an der Kasse bestellt"
+
+#~ msgid "Date merged"
+#~ msgstr "Datum der Zusammenführung"
+
+#~ msgid "Date submitted"
+#~ msgstr "Sendedatum"
+
+#~ msgid "Baskets"
+#~ msgstr "Warenkörbe"
+
+#~ msgid "%(status)s basket (owner: %(owner)s, lines: %(num_lines)d)"
+#~ msgstr "%(status)s Warenkorb (Besitzer: %(owner)s, Zeilen: %(num_lines)d)"
+
+#~ msgid ""
+#~ "Due to technical limitations we are not able to ship more than "
+#~ "%(threshold)d items in one order."
+#~ msgstr ""
+#~ "Leider ist es uns technisch nicht möglich mehr als %(threshold)d Artikel "
+#~ "mit einer Bestellung zu liefern."
+
+#~ msgid "Line Reference"
+#~ msgstr "Zeilenbezug"
+
+#~ msgid "Price excl. Tax"
+#~ msgstr "Preis ohne Steuer"
+
+#~ msgid "Price incl. Tax"
+#~ msgstr "Preis inkl. MWSt"
+
+#~ msgid "Basket line"
+#~ msgstr "Warenkorbzeile"
+
+#~ msgid "Basket lines"
+#~ msgstr "Warenkorbzeilen"
+
+#~ msgid ""
+#~ "Basket #%(basket_id)d, Product #%(product_id)d, quantity %(quantity)d"
+#~ msgstr ""
+#~ "Warenkorb #%(basket_id)d, Produkt #%(product_id)d, Menge %(quantity)d"
+
+#~ msgid "You cannot modify a %s basket"
+#~ msgstr "Ein %s Warenkorb kann nicht geändert werden"
+
+#~ msgid ""
+#~ "The price of '%(product)s' has increased from %(old_price)s to "
+#~ "%(new_price)s since you added it to your basket"
+#~ msgstr ""
+#~ "Der Preis von „%(product)s“ hat sich von %(old_price)s auf %(new_price)s "
+#~ "erhöht, seit Sie es zu Ihrem Warenkorb hinzugefügt haben"
+
+#~ msgid ""
+#~ "The price of '%(product)s' has decreased from %(old_price)s to "
+#~ "%(new_price)s since you added it to your basket"
+#~ msgstr ""
+#~ "Der Preis von „%(product)s“ hat sich von %(old_price)s auf %(new_price)s "
+#~ "verringert, seit Sie es zu Ihrem Warenkorb hinzugefügt haben"
+
+#~ msgid "Save for Later"
+#~ msgstr "Für Später Speichern"
+
+#~ msgid "Move to Basket"
+#~ msgstr "In Warenkorb legen"
+
+#~ msgid "Variant"
+#~ msgstr "Variante"
+
+#~ msgid "Please select a valid product"
+#~ msgstr "Bitte wählen Sie ein gültiges Produkt"
+
+#~ msgid ""
+#~ "Due to technical limitations we are not able to ship more than "
+#~ "%(threshold)d items in one order. Your basket currently has %(basket)d "
+#~ "items."
+#~ msgstr ""
+#~ "Leider ist es uns technisch nicht möglich mehr als %(threshold)d Artikel "
+#~ "mit einer Bestellung zu liefern. Ihr Warenkorb enthält momentan "
+#~ "%(basket)d Artikel."
+
+#~ msgid ""
+#~ "This product cannot be added to the basket as its currency isn't the same "
+#~ "as other products in your basket"
+#~ msgstr ""
+#~ "Dieses Produkt kann nicht zum Warenkorb hinzugefügt werden, da die "
+#~ "Währung nicht der anderer Produkte im Warenkorb entspricht"
+
+#~ msgid "You can't save an item for later if you're not logged in!"
+#~ msgstr "Sie können nichts vormerken, wenn Sie nicht angemeldet sind."
+
+#~ msgid "Your basket couldn't be updated"
+#~ msgstr "Der Warenkorb konnte nicht aktualisiert werden."
+
+#~ msgid "The '%(code)s' voucher has expired"
+#~ msgstr "Der „%(code)s“ Gutschein ist bereits abgelaufen"
+
+#~ msgid "Your basket does not qualify for a voucher discount"
+#~ msgstr "Sie können keinen Gutschein mit Ihrem Warenkorb verwenden"
+
+#~ msgid "Voucher '%(code)s' added to basket"
+#~ msgstr "Gutschein „%(code)s“ zum Warenkorb hinzugefügt"
+
+#~ msgid "You have already added the '%(code)s' voucher to your basket"
+#~ msgstr ""
+#~ "Sie haben den Gutschein „%(code)s“ bereits zu Ihrem Warenkorb hinzugefügt"
+
+#~ msgid "No voucher found with code '%(code)s'"
+#~ msgstr "Es wurde kein Gutschein mit dem Code „%(code)s“ gefunden"
+
+#~ msgid "Please enter a voucher code"
+#~ msgstr "Bitte geben Sie einen Gutscheincode ein"
+
+#~ msgid "No voucher found with id '%d'"
+#~ msgstr "Kein Gutschein mit ID „%d“ gefunden"
+
+#~ msgid "Voucher '%s' removed from basket"
+#~ msgstr "Gutschein „%s“ wurde aus Ihrem Warenkorb entfernt"
+
+#~ msgid "Source"
+#~ msgstr "Quelle"
+
+#~ msgid "Amount"
+#~ msgstr "Betrag"
+
+#~ msgid "Reference"
+#~ msgstr "Referenz"
+
+#~ msgid "%(type)s of %(amount).2f"
+#~ msgstr "%(type)s von %(amount).2f"
+
+#~ msgid "Transaction"
+#~ msgstr "Transaktion"
+
+#~ msgid "Transactions"
+#~ msgstr "Transaktionen"
+
+#~ msgid "Source Type"
+#~ msgstr "Quelltyp"
+
+#~ msgid "Amount Allocated"
+#~ msgstr "Zugeteilter Betrag"
+
+#~ msgid "Amount Debited"
+#~ msgstr "Abgebuchter Betrag"
+
+#~ msgid "Amount Refunded"
+#~ msgstr "Erstatteter Betrag"
+
+#~ msgid "Label"
+#~ msgstr "Bezeichnung"
+
+#~ msgid "Sources"
+#~ msgstr "Quellen"
+
+#~ msgid "Allocation of %(amount)s from type %(type)s"
+#~ msgstr "Zuweisung von %(amount)s des Typs %(type)s"
+
+#~ msgid " (reference: %s)"
+#~ msgstr " (Referenz: %s)"
+
+#~ msgid "This is used within forms to identify this source type"
+#~ msgstr "Genutzt innerhalb von Formularen zur Identifikation von Quelltypen"
+
+#~ msgid "Source Types"
+#~ msgstr "Quelltypen"
+
+#~ msgid "Important messages about items in your basket"
+#~ msgstr "Wichtige Nachrichten über Artikel in Ihrem Warenkorb verfügbar"
+
+#~ msgid "You could be missing out on offers!"
+#~ msgstr "Sie könnten tolle Angebote verpassen!"
+
+#~ msgid ""
+#~ "\n"
+#~ "                <div class=\"warning\">%(message)s to qualify for the <a "
+#~ "href=\"%(url)s\">%(offer_name)s</a> special offer</div>\n"
+#~ "            "
+#~ msgstr ""
+#~ "\n"
+#~ "                <div class=\"warning\">%(message)s, um das <a href="
+#~ "\"%(url)s\">%(offer_name)s</a>-Angebot wahrzunehmen</div>\n"
+#~ "            "
+
+#~ msgid "Items to buy now"
+#~ msgstr "Artikel jetzt zum Kauf"
+
+#~ msgid "Price"
+#~ msgstr "Preis"
+
+#~ msgid "Updating..."
+#~ msgstr "Aktualisiere..."
+
+#~ msgid "Update"
+#~ msgstr "Aktualisieren"
+
+#~ msgid "Save for later"
+#~ msgstr "Für später speichern"
+
+#~ msgid "Voucher/promo code"
+#~ msgstr "Gutscheincode"
+
+#~ msgid "I have a voucher code..."
+#~ msgstr "Ich habe einen Gutschein..."
+
+#~ msgid "Adding..."
+#~ msgstr "Füge hinzu..."
+
+#~ msgid "Add voucher"
+#~ msgstr "Gutschein hinzufügen"
+
+#~ msgid "Proceed to checkout"
+#~ msgstr "Weiter zur Kasse"
+
+#~ msgid "Continue shopping"
+#~ msgstr "Einkauf fortsetzen"
+
+#~ msgid "Items to buy later"
+#~ msgstr "Artikel später kaufen"
+
+#~ msgid "Items"
+#~ msgstr "Artikel"
+
+#~ msgid "Move to basket"
+#~ msgstr "In Warenkorb legen"
+
+#~ msgid "You must log in to access this page"
+#~ msgstr "Sie müssen eingeloggt sein, um diese Seite angezeigt zu bekommen"
+
+#~ msgid "Invalid form submission"
+#~ msgstr "Ungültiges Formular"
+
+#~ msgid "Invalid action"
+#~ msgstr "Ungültige Aktion"
+
+#~ msgid "You need to select some %ss"
+#~ msgstr "Sie müssen einige %s auswählen"
 
 #~ msgid "Image"
 #~ msgstr "Bild"
