@@ -2,17 +2,9 @@ import django
 
 from oscar.core.loading import is_model_registered
 from oscar.apps.address.abstract_models import AbstractPartnerAddress
-from oscar.apps.partner.abstract_models import (
-    AbstractPartner, AbstractStockRecord, AbstractStockAlert)
+from oscar.apps.partner.abstract_models import AbstractStockRecord, AbstractStockAlert
 
 __all__ = []
-
-
-if not is_model_registered('partner', 'Partner'):
-    class Partner(AbstractPartner):
-        pass
-
-    __all__.append('Partner')
 
 
 if not is_model_registered('partner', 'PartnerAddress'):
