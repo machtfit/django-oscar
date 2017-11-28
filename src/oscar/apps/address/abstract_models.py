@@ -549,25 +549,6 @@ class AbstractUserAddress(AbstractShippingAddress):
                               " book")]})
 
 
-class AbstractBillingAddress(AbstractAddress):
-    class Meta:
-        abstract = True
-        # BillingAddress is registered in order/models.py
-        app_label = 'order'
-        verbose_name = _("Billing address")
-        verbose_name_plural = _("Billing addresses")
-
-    @property
-    def order(self):
-        """
-        Return the order linked to this shipping address
-        """
-        try:
-            return self.order_set.all()[0]
-        except IndexError:
-            return None
-
-
 class AbstractPartnerAddress(AbstractAddress):
     """
     A partner can have one or more addresses. This can be useful e.g. when
