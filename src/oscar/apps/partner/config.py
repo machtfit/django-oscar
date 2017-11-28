@@ -6,6 +6,3 @@ class PartnerConfig(AppConfig):
     label = 'partner'
     name = 'oscar.apps.partner'
     verbose_name = _('Partner')
-
-    def ready(self):
-        from . import receivers  # noqa
