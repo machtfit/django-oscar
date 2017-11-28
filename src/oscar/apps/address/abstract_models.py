@@ -547,18 +547,3 @@ class AbstractUserAddress(AbstractShippingAddress):
             raise exceptions.ValidationError({
                 '__all__': [_("This address is already in your address"
                               " book")]})
-
-
-class AbstractPartnerAddress(AbstractAddress):
-    """
-    A partner can have one or more addresses. This can be useful e.g. when
-    determining US tax which depends on the origin of the shipment.
-    """
-    partner = models.ForeignKey('partner.Partner', related_name='addresses',
-                                verbose_name=_('Partner'))
-
-    class Meta:
-        abstract = True
-        app_label = 'partner'
-        verbose_name = _("Partner address")
-        verbose_name_plural = _("Partner addresses")
