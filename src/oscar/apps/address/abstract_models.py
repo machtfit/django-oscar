@@ -547,37 +547,3 @@ class AbstractUserAddress(AbstractShippingAddress):
             raise exceptions.ValidationError({
                 '__all__': [_("This address is already in your address"
                               " book")]})
-
-
-class AbstractBillingAddress(AbstractAddress):
-    class Meta:
-        abstract = True
-        # BillingAddress is registered in order/models.py
-        app_label = 'order'
-        verbose_name = _("Billing address")
-        verbose_name_plural = _("Billing addresses")
-
-    @property
-    def order(self):
-        """
-        Return the order linked to this shipping address
-        """
-        try:
-            return self.order_set.all()[0]
-        except IndexError:
-            return None
-
-
-class AbstractPartnerAddress(AbstractAddress):
-    """
-    A partner can have one or more addresses. This can be useful e.g. when
-    determining US tax which depends on the origin of the shipment.
-    """
-    partner = models.ForeignKey('partner.Partner', related_name='addresses',
-                                verbose_name=_('Partner'))
-
-    class Meta:
-        abstract = True
-        app_label = 'partner'
-        verbose_name = _("Partner address")
-        verbose_name_plural = _("Partner addresses")
