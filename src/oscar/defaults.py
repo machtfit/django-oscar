@@ -51,11 +51,6 @@ OSCAR_PROMOTION_POSITIONS = (('page', 'Page'),
 # disabled.
 OSCAR_EAGER_ALERTS = True
 
-# Slug handling
-OSCAR_SLUG_FUNCTION = 'oscar.core.utils.default_slugifier'
-OSCAR_SLUG_MAP = {}
-OSCAR_SLUG_BLACKLIST = []
-
 # Menu structure of the dashboard navigation
 OSCAR_DASHBOARD_NAVIGATION = [
     {

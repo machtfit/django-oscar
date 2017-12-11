@@ -9,26 +9,6 @@ from oscar.core import validators
 from oscar.forms import fields
 
 import oscar.core.phonenumber as phonenumber
-# allow importing as oscar.models.fields.AutoSlugField
-from .autoslugfield import AutoSlugField
-AutoSlugField = AutoSlugField
-
-try:
-    from south.modelsinspector import add_introspection_rules
-except ImportError:
-    pass
-else:
-    add_introspection_rules([], ["^oscar\.models\.fields\.ExtendedURLField$"])
-    add_introspection_rules([], [
-        "^oscar\.models\.fields\.PositiveDecimalField$"])
-    add_introspection_rules([], [
-        "^oscar\.models\.fields\.UppercaseCharField$"])
-    add_introspection_rules([], [
-        "^oscar\.models\.fields\.NullCharField$"])
-    add_introspection_rules([], [
-        "^oscar\.models\.fields\.PhoneNumberField$"])
-    add_introspection_rules([], [
-        "^oscar\.models\.fields\.AutoSlugField$"])
 
 
 class ExtendedURLField(CharField):
