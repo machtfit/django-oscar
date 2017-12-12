@@ -48,30 +48,6 @@ class ExtendedURLValidator(validators.URLValidator):
         return value
 
 
-class URLDoesNotExistValidator(ExtendedURLValidator):
-
-    def __call__(self, value):
-        """
-        Validate that the URLdoes not already exist.
-
-        The URL will be verified first and raises ``ValidationError`` when
-        it is invalid. A valid URL is checked for existance and raises
-        ``ValidationError`` if the URL already exists. Setting attribute
-        ``verify_exists`` has no impact on validation.
-        This validation uses two calls to ExtendedURLValidator which can
-        be slow. Be aware of this, when you use it.
-
-        Returns ``None`` if URL is valid and does not exist.
-        """
-        try:
-            self.validate_local_url(value)
-        except ValidationError:
-            # Page exists - that is what we want
-            return
-        raise ValidationError(
-            _('Specified page already exists!'), code='invalid')
-
-
 def non_whitespace(value):
     stripped = value.strip()
     if not stripped:
