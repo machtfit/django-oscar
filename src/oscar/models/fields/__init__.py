@@ -8,9 +8,6 @@ from django.utils.translation import ugettext_lazy as _
 import oscar.core.phonenumber as phonenumber
 
 
-
-
-
 class UppercaseCharField(six.with_metaclass(SubfieldBase, CharField)):
     """
     A simple subclass of ``django.db.models.fields.CharField`` that
@@ -26,43 +23,6 @@ class UppercaseCharField(six.with_metaclass(SubfieldBase, CharField)):
             return val.upper()
         else:
             return val
-
-
-class NullCharField(six.with_metaclass(SubfieldBase, CharField)):
-    """
-    CharField that stores '' as None and returns None as ''
-    Useful when using unique=True and forms. Implies null==blank==True.
-
-    When a ModelForm with a CharField with null=True gets saved, the field will
-    be set to '': https://code.djangoproject.com/ticket/9590
-    This breaks usage with unique=True, as '' is considered equal to another
-    field set to ''.
-    """
-    description = "CharField that stores '' as None and returns None as ''"
-
-    def __init__(self, *args, **kwargs):
-        if not kwargs.get('null', True) or not kwargs.get('blank', True):
-            raise ImproperlyConfigured(
-                "NullCharField implies null==blank==True")
-        kwargs['null'] = kwargs['blank'] = True
-        super(NullCharField, self).__init__(*args, **kwargs)
-
-    def to_python(self, value):
-        val = super(NullCharField, self).to_python(value)
-        return val if val is not None else u''
-
-    def get_prep_value(self, value):
-        prepped = super(NullCharField, self).get_prep_value(value)
-        return prepped if prepped != u"" else None
-
-    def deconstruct(self):
-        """
-        deconstruct() is needed by Django's migration framework
-        """
-        name, path, args, kwargs = super(NullCharField, self).deconstruct()
-        del kwargs['null']
-        del kwargs['blank']
-        return name, path, args, kwargs
 
 
 class PhoneNumberField(six.with_metaclass(SubfieldBase, CharField)):
