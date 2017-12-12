@@ -1,51 +1,6 @@
 from django.core import validators
 from django.core.exceptions import ValidationError
-from django.core.urlresolvers import resolve
-from oscar.core.loading import get_model
-from django.http import Http404
 from django.utils.translation import ugettext_lazy as _
-
-
-class ExtendedURLValidator(validators.URLValidator):
-
-    def __init__(self, *args, **kwargs):
-        # 'verify_exists' has been removed in Django 1.5 and so we no longer
-        # pass it up to the core validator class
-        self.is_local_url = False
-        verify_exists = kwargs.pop('verify_exists', False)
-        super(ExtendedURLValidator, self).__init__(*args, **kwargs)
-        self.verify_exists = verify_exists
-
-    def __call__(self, value):
-        try:
-            super(ExtendedURLValidator, self).__call__(value)
-        except ValidationError:
-            # The parent validator will raise an exception if the URL does not
-            # exist and so we test here to see if the value is a local URL.
-            if value:
-                self.validate_local_url(value)
-            else:
-                raise
-
-    def validate_local_url(self, value):
-        value = self.clean_url(value)
-        try:
-            resolve(value)
-        except Http404:
-            raise ValidationError(_('The URL "%s" does not exist') % value)
-        else:
-            self.is_local_url = True
-
-    def clean_url(self, value):
-        """
-        Ensure url has a preceding slash and no query string
-        """
-        if value != '/':
-            value = '/' + value.lstrip('/')
-        q_index = value.find('?')
-        if q_index > 0:
-            value = value[:q_index]
-        return value
 
 
 def non_whitespace(value):
