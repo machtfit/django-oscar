@@ -1,6 +1,6 @@
 
 from django.core.exceptions import ImproperlyConfigured
-from django.db.models.fields import CharField, DecimalField
+from django.db.models.fields import CharField
 from django.db.models import SubfieldBase
 from django.utils import six
 from django.utils.translation import ugettext_lazy as _
@@ -8,13 +8,7 @@ from django.utils.translation import ugettext_lazy as _
 import oscar.core.phonenumber as phonenumber
 
 
-class PositiveDecimalField(DecimalField):
-    """
-    A simple subclass of ``django.db.models.fields.DecimalField`` that
-    restricts values to be non-negative.
-    """
-    def formfield(self, **kwargs):
-        return super(PositiveDecimalField, self).formfield(min_value=0)
+
 
 
 class UppercaseCharField(six.with_metaclass(SubfieldBase, CharField)):
