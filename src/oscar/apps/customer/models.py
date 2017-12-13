@@ -1,1 +1,0 @@
-from oscar.apps.customer import abstract_models
