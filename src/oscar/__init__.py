@@ -25,9 +25,7 @@ OSCAR_CORE_APPS = [
     'oscar.apps.checkout',
     'oscar.apps.address',
     'oscar.apps.shipping',
-    'oscar.apps.offer',
     'oscar.apps.customer',
-    'oscar.apps.dashboard',
     # 3rd-party apps that oscar depends on
     'treebeard',
     'sorl.thumbnail',
