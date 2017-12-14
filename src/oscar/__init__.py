@@ -19,33 +19,3 @@ def get_version():
 # extended by templates with the same filename
 OSCAR_MAIN_TEMPLATE_DIR = os.path.join(
     os.path.dirname(os.path.abspath(__file__)), 'templates/oscar')
-
-OSCAR_CORE_APPS = [
-    'oscar',
-    # 3rd-party apps that oscar depends on
-    'treebeard',
-    'sorl.thumbnail',
-    'django_tables2',
-]
-
-
-def get_core_apps(overrides=None):
-    """
-    Return a list of oscar's apps amended with any passed overrides
-    """
-    if not overrides:
-        return OSCAR_CORE_APPS
-
-    def get_app_label(app_label, overrides):
-        pattern = app_label.replace('oscar.apps.', '')
-        for override in overrides:
-            if override.endswith(pattern):
-                if 'dashboard' in override and 'dashboard' not in pattern:
-                    continue
-                return override
-        return app_label
-
-    apps = []
-    for app_label in OSCAR_CORE_APPS:
-        apps.append(get_app_label(app_label, overrides))
-    return apps
