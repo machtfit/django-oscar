@@ -22,7 +22,6 @@ OSCAR_MAIN_TEMPLATE_DIR = os.path.join(
 
 OSCAR_CORE_APPS = [
     'oscar',
-    'oscar.apps.address',
     # 3rd-party apps that oscar depends on
     'treebeard',
     'sorl.thumbnail',
