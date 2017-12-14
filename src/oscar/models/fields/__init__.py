@@ -8,23 +8,6 @@ from django.utils.translation import ugettext_lazy as _
 import oscar.core.phonenumber as phonenumber
 
 
-class UppercaseCharField(six.with_metaclass(SubfieldBase, CharField)):
-    """
-    A simple subclass of ``django.db.models.fields.CharField`` that
-    restricts all text to be uppercase.
-
-    Defined with the with_metaclass helper so that to_python is called
-    https://docs.djangoproject.com/en/1.6/howto/custom-model-fields/#the-subfieldbase-metaclass  # NOQA
-    """
-
-    def to_python(self, value):
-        val = super(UppercaseCharField, self).to_python(value)
-        if isinstance(val, six.string_types):
-            return val.upper()
-        else:
-            return val
-
-
 class PhoneNumberField(six.with_metaclass(SubfieldBase, CharField)):
     """
     An international phone number.
