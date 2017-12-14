@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django-oscar\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-23 16:12+0100\n"
+"POT-Creation-Date: 2017-12-14 11:28+0100\n"
 "PO-Revision-Date: 2013-02-18 17:05+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: English (United States) (http://www.transifex.com/projects/p/"
@@ -173,7 +173,7 @@ msgstr ""
 msgid "Default billing address?"
 msgstr ""
 
-#: apps/address/abstract_models.py:500 apps/offer/models.py:154
+#: apps/address/abstract_models.py:500
 msgid "Number of Orders"
 msgstr ""
 
@@ -181,8 +181,7 @@ msgstr ""
 msgid "Address Hash"
 msgstr ""
 
-#: apps/address/abstract_models.py:506 apps/offer/models.py:158
-#: apps/offer/models.py:712 apps/partner/abstract_models.py:243
+#: apps/address/abstract_models.py:506
 msgid "Date Created"
 msgstr ""
 
@@ -196,27 +195,6 @@ msgstr ""
 
 #: apps/address/abstract_models.py:548
 msgid "This address is already in your address book"
-msgstr ""
-
-#: apps/address/abstract_models.py:557
-msgid "Billing address"
-msgstr ""
-
-#: apps/address/abstract_models.py:558
-msgid "Billing addresses"
-msgstr ""
-
-#: apps/address/abstract_models.py:577 apps/partner/abstract_models.py:92
-#: apps/partner/config.py:8
-msgid "Partner"
-msgstr ""
-
-#: apps/address/abstract_models.py:582
-msgid "Partner address"
-msgstr ""
-
-#: apps/address/abstract_models.py:583
-msgid "Partner addresses"
 msgstr ""
 
 #: apps/checkout/config.py:8
@@ -316,547 +294,12 @@ msgstr ""
 msgid "date joined"
 msgstr ""
 
-#: apps/customer/abstract_models.py:67 apps/partner/abstract_models.py:30
+#: apps/customer/abstract_models.py:67
 msgid "Users"
 msgstr ""
 
 #: apps/customer/config.py:8
 msgid "Customer"
-msgstr ""
-
-#: apps/offer/config.py:8
-msgid "Offer"
-msgstr ""
-
-#: apps/offer/models.py:58 apps/offer/models.py:684
-msgid "Name"
-msgstr ""
-
-#: apps/offer/models.py:59
-msgid "This is displayed within the customer's basket"
-msgstr ""
-
-#: apps/offer/models.py:61 apps/offer/models.py:686
-msgid "Slug"
-msgstr ""
-
-#: apps/offer/models.py:62
-msgid "Description"
-msgstr ""
-
-#: apps/offer/models.py:63
-msgid "This is displayed on the offer browsing page"
-msgstr ""
-
-#: apps/offer/models.py:78
-msgid "Site offer - available to all users"
-msgstr ""
-
-#: apps/offer/models.py:79
-msgid ""
-"Voucher offer - only available after entering the appropriate voucher code"
-msgstr ""
-
-#: apps/offer/models.py:81
-msgid "User offer - available to certain types of user"
-msgstr ""
-
-#: apps/offer/models.py:82
-msgid ""
-"Session offer - temporary offer, available for a user for the duration of "
-"their session"
-msgstr ""
-
-#: apps/offer/models.py:86 apps/offer/models.py:421 apps/offer/models.py:514
-#: defaults.py:140
-msgid "Type"
-msgstr ""
-
-#: apps/offer/models.py:91 apps/offer/models.py:1163
-#: apps/partner/abstract_models.py:241
-msgid "Status"
-msgstr ""
-
-#: apps/offer/models.py:94 apps/offer/models.py:431
-msgid "Condition"
-msgstr ""
-
-#: apps/offer/models.py:95 apps/offer/models.py:541
-msgid "Benefit"
-msgstr ""
-
-#: apps/offer/models.py:99
-msgid "Priority"
-msgstr ""
-
-#: apps/offer/models.py:100
-msgid "The highest priority offers are applied first"
-msgstr ""
-
-#: apps/offer/models.py:108
-msgid "Start date"
-msgstr ""
-
-#: apps/offer/models.py:110
-msgid "End date"
-msgstr ""
-
-#: apps/offer/models.py:111
-msgid "Offers are active until the end of the 'end date'"
-msgstr ""
-
-#: apps/offer/models.py:117
-msgid "Max global applications"
-msgstr ""
-
-#: apps/offer/models.py:118
-msgid "The number of times this offer can be used before it is unavailable"
-msgstr ""
-
-#: apps/offer/models.py:125
-msgid "Max user applications"
-msgstr ""
-
-#: apps/offer/models.py:126
-msgid "The number of times a single user can use this offer"
-msgstr ""
-
-#: apps/offer/models.py:132
-msgid "Max basket applications"
-msgstr ""
-
-#: apps/offer/models.py:134
-msgid "The number of times this offer can be applied to a basket (and order)"
-msgstr ""
-
-#: apps/offer/models.py:140
-msgid "Max discount"
-msgstr ""
-
-#: apps/offer/models.py:142
-msgid ""
-"When an offer has given more discount to orders than this threshold, then "
-"the offer becomes unavailable"
-msgstr ""
-
-#: apps/offer/models.py:149
-msgid "Total Discount"
-msgstr ""
-
-#: apps/offer/models.py:152
-msgid "Number of applications"
-msgstr ""
-
-#: apps/offer/models.py:157
-msgid "URL redirect (optional)"
-msgstr ""
-
-#: apps/offer/models.py:170
-msgid "Conditional offer"
-msgstr ""
-
-#: apps/offer/models.py:171
-msgid "Conditional offers"
-msgstr ""
-
-#: apps/offer/models.py:193
-msgid "End date should be later than start date"
-msgstr ""
-
-#: apps/offer/models.py:319
-msgid "Offer is suspended"
-msgstr ""
-
-#: apps/offer/models.py:324
-#, python-format
-msgid "Limited to %(total)d uses (%(remainder)d remaining)"
-msgstr ""
-
-#: apps/offer/models.py:332
-msgid "Limited to 1 use per user"
-msgstr ""
-
-#: apps/offer/models.py:334
-#, python-format
-msgid "Limited to %(total)d uses per user"
-msgstr ""
-
-#: apps/offer/models.py:341
-msgid "Limited to 1 use per basket"
-msgstr ""
-
-#: apps/offer/models.py:343
-#, python-format
-msgid "Limited to %(total)d uses per basket"
-msgstr ""
-
-#: apps/offer/models.py:362
-#, python-format
-msgid "Available between %(start)s and %(end)s"
-msgstr ""
-
-#: apps/offer/models.py:368
-#, python-format
-msgid "Available from %(start)s"
-msgstr ""
-
-#: apps/offer/models.py:372
-#, python-format
-msgid "Available until %(end)s"
-msgstr ""
-
-#: apps/offer/models.py:380
-#, python-format
-msgid "Limited to a cost of %(max)s"
-msgstr ""
-
-#: apps/offer/models.py:418
-msgid "Place no restriction on the basket"
-msgstr ""
-
-#: apps/offer/models.py:420 apps/offer/models.py:505 apps/offer/models.py:723
-#: apps/offer/models.py:1150
-msgid "Range"
-msgstr ""
-
-#: apps/offer/models.py:424 apps/offer/models.py:520
-msgid "Value"
-msgstr ""
-
-#: apps/offer/models.py:427 apps/offer/models.py:537 apps/offer/models.py:710
-msgid "Custom class"
-msgstr ""
-
-#: apps/offer/models.py:432
-msgid "Conditions"
-msgstr ""
-
-#: apps/offer/models.py:510
-msgid "Discount is a percentage off of the product's value"
-msgstr ""
-
-#: apps/offer/models.py:511
-msgid "Discount is a fixed amount off of the product's value"
-msgstr ""
-
-#: apps/offer/models.py:525
-msgid "Max Affected Items"
-msgstr ""
-
-#: apps/offer/models.py:526
-msgid ""
-"Set this to prevent the discount consuming all items within the range that "
-"are in the basket."
-msgstr ""
-
-#: apps/offer/models.py:530
-msgid "Can apply with other benefits"
-msgstr ""
-
-#: apps/offer/models.py:531
-msgid "All benefits that have this checked can apply to the same item."
-msgstr ""
-
-#: apps/offer/models.py:542
-msgid "Benefits"
-msgstr ""
-
-#: apps/offer/models.py:616
-msgid "Multibuy benefits require a product range"
-msgstr ""
-
-#: apps/offer/models.py:619
-msgid "Multibuy benefits don't require a value"
-msgstr ""
-
-#: apps/offer/models.py:622
-msgid "Multibuy benefits don't require a 'max affected items' attribute"
-msgstr ""
-
-#: apps/offer/models.py:628
-msgid "Percentage benefits require a product range"
-msgstr ""
-
-#: apps/offer/models.py:631
-msgid "Percentage discount cannot be greater than 100"
-msgstr ""
-
-#: apps/offer/models.py:636
-msgid ""
-"No range should be selected as the condition range will be used instead."
-msgstr ""
-
-#: apps/offer/models.py:642
-msgid "Fixed discount benefits require a product range"
-msgstr ""
-
-#: apps/offer/models.py:645
-msgid "Fixed discount benefits require a value"
-msgstr ""
-
-#: apps/offer/models.py:692
-msgid "Is public?"
-msgstr ""
-
-#: apps/offer/models.py:693
-msgid "Public ranges have a customer-facing page"
-msgstr ""
-
-#: apps/offer/models.py:696
-msgid "Includes all products?"
-msgstr ""
-
-#: apps/offer/models.py:700
-msgid "Included Products"
-msgstr ""
-
-#: apps/offer/models.py:703
-msgid "Excluded Products"
-msgstr ""
-
-#: apps/offer/models.py:706
-msgid "Included Categories"
-msgstr ""
-
-#: apps/offer/models.py:724
-msgid "Ranges"
-msgstr ""
-
-#: apps/offer/models.py:893
-msgid "No condition"
-msgstr ""
-
-#: apps/offer/models.py:910
-msgid "No Condition"
-msgstr ""
-
-#: apps/offer/models.py:911
-msgid "No Conditions"
-msgstr ""
-
-#: apps/offer/models.py:1011
-#, python-format
-msgid "%(value)s%% discount on %(range)s"
-msgstr ""
-
-#: apps/offer/models.py:1028
-msgid "Percentage discount benefit"
-msgstr ""
-
-#: apps/offer/models.py:1029
-msgid "Percentage discount benefits"
-msgstr ""
-
-#: apps/offer/models.py:1083
-#, python-format
-msgid "%(value)s discount on %(range)s"
-msgstr ""
-
-#: apps/offer/models.py:1100
-msgid "Absolute discount benefit"
-msgstr ""
-
-#: apps/offer/models.py:1101
-msgid "Absolute discount benefits"
-msgstr ""
-
-#: apps/offer/models.py:1151
-msgid "File Path"
-msgstr ""
-
-#: apps/offer/models.py:1152
-msgid "Size"
-msgstr ""
-
-#: apps/offer/models.py:1154
-msgid "Uploaded By"
-msgstr ""
-
-#: apps/offer/models.py:1155
-msgid "Date Uploaded"
-msgstr ""
-
-#: apps/offer/models.py:1165
-msgid "Error Message"
-msgstr ""
-
-#: apps/offer/models.py:1169
-msgid "Date Processed"
-msgstr ""
-
-#: apps/offer/models.py:1170
-msgid "Number of New SKUs"
-msgstr ""
-
-#: apps/offer/models.py:1172
-msgid "Number of Unknown SKUs"
-msgstr ""
-
-#: apps/offer/models.py:1175
-msgid "Number of Duplicate SKUs"
-msgstr ""
-
-#: apps/offer/models.py:1180
-msgid "Range Product Uploaded File"
-msgstr ""
-
-#: apps/offer/models.py:1181
-msgid "Range Product Uploaded Files"
-msgstr ""
-
-#: apps/order/config.py:8
-msgid "Order"
-msgstr ""
-
-#: apps/order/processing.py:87 apps/order/processing.py:98
-#, python-format
-msgid "The selected quantity for line #%(line_id)s is too large"
-msgstr ""
-
-#: apps/order/utils.py:47
-msgid "Empty baskets cannot be submitted"
-msgstr ""
-
-#: apps/order/utils.py:58
-#, python-format
-msgid "There is already an order with number %s"
-msgstr ""
-
-#: apps/partner/abstract_models.py:21
-msgid "Code"
-msgstr ""
-
-#: apps/partner/abstract_models.py:24
-msgctxt "Partner's name"
-msgid "Name"
-msgstr ""
-
-#: apps/partner/abstract_models.py:70
-msgid "Fulfillment partner"
-msgstr ""
-
-#: apps/partner/abstract_models.py:71
-msgid "Fulfillment partners"
-msgstr ""
-
-#: apps/partner/abstract_models.py:90
-msgid "Product"
-msgstr ""
-
-#: apps/partner/abstract_models.py:99
-msgid "Partner SKU"
-msgstr ""
-
-#: apps/partner/abstract_models.py:103
-msgid "Currency"
-msgstr ""
-
-#: apps/partner/abstract_models.py:111
-msgid "Price (excl. tax)"
-msgstr ""
-
-#: apps/partner/abstract_models.py:118
-msgid "Price (retail)"
-msgstr ""
-
-#: apps/partner/abstract_models.py:125
-msgid "Cost Price"
-msgstr ""
-
-#: apps/partner/abstract_models.py:130
-msgid "Number in stock"
-msgstr ""
-
-#: apps/partner/abstract_models.py:136
-msgid "Number allocated"
-msgstr ""
-
-#: apps/partner/abstract_models.py:141
-msgid "Low Stock Threshold"
-msgstr ""
-
-#: apps/partner/abstract_models.py:144
-msgid "Date created"
-msgstr ""
-
-#: apps/partner/abstract_models.py:145
-msgid "Date updated"
-msgstr ""
-
-#: apps/partner/abstract_models.py:159
-msgid "Stock record"
-msgstr ""
-
-#: apps/partner/abstract_models.py:160
-msgid "Stock records"
-msgstr ""
-
-#: apps/partner/abstract_models.py:207
-msgid "Invalid stock consumption request"
-msgstr ""
-
-#: apps/partner/abstract_models.py:234
-msgid "Stock Record"
-msgstr ""
-
-#: apps/partner/abstract_models.py:235
-msgid "Threshold"
-msgstr ""
-
-#: apps/partner/abstract_models.py:238
-msgid "Open"
-msgstr ""
-
-#: apps/partner/abstract_models.py:239
-msgid "Closed"
-msgstr ""
-
-#: apps/partner/abstract_models.py:244
-msgid "Date Closed"
-msgstr ""
-
-#: apps/partner/abstract_models.py:252
-#, python-format
-msgid "<stockalert for \"%(stock)s\" status %(status)s>"
-msgstr ""
-
-#: apps/partner/abstract_models.py:259
-msgid "Stock alert"
-msgstr ""
-
-#: apps/partner/abstract_models.py:260
-msgid "Stock alerts"
-msgstr ""
-
-#: apps/partner/availability.py:42
-msgid "unavailable"
-msgstr ""
-
-#: apps/partner/availability.py:53 apps/partner/availability.py:104
-#: apps/partner/availability.py:110
-msgid "Unavailable"
-msgstr ""
-
-#: apps/partner/availability.py:64
-msgid "Available"
-msgstr ""
-
-#: apps/partner/availability.py:87
-msgid "no stock available"
-msgstr ""
-
-#: apps/partner/availability.py:89
-#, python-format
-msgid "a maximum of %(max)d can be bought"
-msgstr ""
-
-#: apps/partner/availability.py:103
-msgid "In stock"
-msgstr ""
-
-#: apps/partner/availability.py:109
-#, python-format
-msgid "In stock (%d available)"
 msgstr ""
 
 #: apps/shipping/config.py:8 templates/oscar/checkout/checkout.html:28
@@ -900,10 +343,7 @@ msgstr ""
 msgid "Please choose a less common password"
 msgstr ""
 
-#: defaults.py:62 templates/oscar/dashboard/layout.html:25
-#: templates/oscar/dashboard/layout.html:84
-#: templates/oscar/dashboard/partials/nav_accounts.html:44
-#: templates/oscar/partials/nav_accounts.html:47
+#: defaults.py:62
 msgid "Cockpit"
 msgstr ""
 
@@ -953,6 +393,10 @@ msgstr ""
 
 #: defaults.py:127
 msgid "Email templates"
+msgstr ""
+
+#: defaults.py:140
+msgid "Type"
 msgstr ""
 
 #: defaults.py:146
@@ -1068,7 +512,6 @@ msgstr ""
 
 #: templates/oscar/basket/partials/basket_totals.html:8
 #: templates/oscar/basket/partials/basket_totals.html:98
-#: templates/oscar/dashboard/partials/nav_primary.html:21
 #: templates/oscar/partials/nav_primary.html:20
 msgid "Basket"
 msgstr ""
@@ -1234,7 +677,6 @@ msgstr ""
 
 #: templates/oscar/checkout/preview.html:35
 #: templates/oscar/checkout/user_address_delete.html:29
-#: templates/oscar/partials/nav_accounts.html:29
 msgid "Submitting..."
 msgstr ""
 
@@ -1282,7 +724,6 @@ msgstr ""
 #: templates/oscar/checkout/shipping_address.html:79
 #: templates/oscar/checkout/user_address_delete.html:30
 #: templates/oscar/checkout/user_address_form.html:25
-#: templates/oscar/dashboard/partials/form.html:10
 #: templates/oscar/partials/form.html:11
 msgid "or"
 msgstr ""
@@ -1306,51 +747,27 @@ msgstr ""
 
 #: templates/oscar/checkout/user_address_delete.html:30
 #: templates/oscar/checkout/user_address_form.html:25
-#: templates/oscar/dashboard/partials/form.html:10
 #: templates/oscar/partials/form.html:11
 msgid "cancel"
 msgstr ""
 
 #: templates/oscar/checkout/user_address_form.html:24
-#: templates/oscar/dashboard/partials/form.html:9
 #: templates/oscar/partials/form.html:10
 msgid "Save"
 msgstr ""
 
-#: templates/oscar/dashboard/partials/form_fields.html:5
 #: templates/oscar/partials/form_fields.html:5
 msgid "Oops! We found some errors"
 msgstr ""
 
-#: templates/oscar/dashboard/partials/form_fields.html:5
 #: templates/oscar/partials/form_fields.html:5
 msgid "please check the error messages below and try again"
 msgstr ""
 
-#: templates/oscar/dashboard/partials/nav_accounts.html:26
-#: templates/oscar/partials/nav_accounts.html:29
-msgid "Go"
+#: templates/oscar/partials/mini_basket.html:5
+msgid "Basket total:"
 msgstr ""
 
-#: templates/oscar/dashboard/partials/nav_accounts.html:36
-#: templates/oscar/dashboard/partials/nav_accounts.html:40
-#: templates/oscar/partials/nav_accounts.html:39
-#: templates/oscar/partials/nav_accounts.html:43
-msgid "Account"
-msgstr ""
-
-#: templates/oscar/dashboard/partials/nav_accounts.html:46
-#: templates/oscar/partials/nav_accounts.html:49
-msgid "Logout"
-msgstr ""
-
-#: templates/oscar/dashboard/partials/nav_accounts.html:48
-#: templates/oscar/partials/nav_accounts.html:51
-msgid "Login or register"
-msgstr ""
-
-#: templates/oscar/dashboard/partials/nav_primary.html:24
-#: templates/oscar/dashboard/partials/nav_primary.html:28
 #: templates/oscar/partials/nav_primary.html:23
 #: templates/oscar/partials/nav_primary.html:27
 #, python-format
@@ -1360,22 +777,15 @@ msgid ""
 "                    "
 msgstr ""
 
-#: templates/oscar/dashboard/partials/nav_primary.html:41
 #: templates/oscar/partials/nav_primary.html:40
 msgid "Browse store"
 msgstr ""
 
-#: templates/oscar/partials/mini_basket.html:5
-msgid "Basket total:"
-msgstr ""
-
 #: templates/oscar/partials/pagination.html:8
-#: templates/oscar/search/partials/pagination.html:8
 msgid "previous"
 msgstr ""
 
 #: templates/oscar/partials/pagination.html:11
-#: templates/oscar/search/partials/pagination.html:11
 #, python-format
 msgid ""
 "\n"
@@ -1384,7 +794,6 @@ msgid ""
 msgstr ""
 
 #: templates/oscar/partials/pagination.html:16
-#: templates/oscar/search/partials/pagination.html:16
 msgid "next"
 msgstr ""
 
